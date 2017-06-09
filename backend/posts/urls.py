@@ -3,8 +3,11 @@ from django.conf.urls import url
 from .views import BrowseView, ProfileView, SubscriptionsView
 from .views import PostDetailView, post_create, post_edit, post_delete
 from .views import upvote, unupvote, post_publish, post_unpublish
+from .feeds import UserFeed
 
 urlpatterns = [
+
+    url(r'^@(?P<username>[^\.]+)/posts.atom$', UserFeed()),        
 
     url(r'^@(?P<username>[^\.]+)/tag/(?P<tag>[^\.]+)/$', ProfileView.as_view()),        
     url(r'^@(?P<username>[^\.]+)/(?P<category>[^\.]+)/$', ProfileView.as_view()),
