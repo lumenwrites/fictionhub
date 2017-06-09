@@ -26,4 +26,4 @@ services:
     links:
       - postgres
     ports:
-      - '8000:8000'
+      - '8400:8000'
