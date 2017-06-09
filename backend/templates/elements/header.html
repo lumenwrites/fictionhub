@@ -1,0 +1,102 @@
+  <header>
+    <div class="container">
+      <div class="row">      
+	<div class="col-xs-12 col-sm-4">
+	  <!-- Logo -->
+	  <div class="dropdown">
+	    <a href="/" class="logo">
+	      <img src="/static/img/logo_128x128.png"/>
+	      fiction<b>hub</b>
+	    </a>
+	  </div> <!-- End .dropdown -->
+	</div>
+	<!-- Menu -->
+	<div class="col-xs-12 col-sm-8">
+	  <div class="main-menu">
+	    <div class="dropdown">
+	      <a class="btn btn-default" href="/">
+		Browse
+	      </a>
+	      <ul class="dropdown-menu" role="menu">
+		<li>
+		  <a href="/">
+		    <i class="fa fa-compass"></i> All Stories
+		  </a>
+		</li>
+		<li>
+		  <a href="/subscriptions/">
+		    <i class="fa fa-rss"></i> Subscriptions
+		  </a>
+		</li>
+		<li>
+		  <a href="/leaderboard">
+		    <i class="fi-torsos"></i> Leaderboard
+		  </a>
+		</li>
+		<li>
+		  <a href="/discussion">
+		    <i class="fi-comments"></i> Discussion
+		  </a>
+		</li>
+		<li>
+		  <a href="/about">
+		    <i class="fa fa-info-circle"></i> About
+		  </a>
+		</li>
+	      </ul>
+	    </div>
+
+	    {% if user.is_authenticated %}
+	    <a href="/write" class="btn btn-default">
+	      Write
+	    </a>
+	    <div class="dropdown">
+	      <a class="btn btn-default" href="/@{{user.username}}">
+		Profile
+	      </a>
+	      
+	      <ul class="dropdown-menu" role="menu">
+		<!-- Profile page -->
+		<li>
+		  <a href="/@{{user.username}}">
+		    <i class="fa fa-home"></i> Profile
+		  </a>
+		</li>
+		<!-- Inbox -->
+		<li>
+		  <a href="/inbox/">
+		    {% if user.has_unread_notifications %}
+		    <i class="fa fa-envelope-o notifications"></i> Inbox
+		    {% else %}
+		    <i class="fa fa-envelope-o"></i> Inbox
+		    {% endif %}
+		  </a>
+		</li>
+		<!-- Settings -->
+		<li>
+		  <a href="/settings">
+		    <i class="fa fa-gear"></i> Settings
+		  </a>
+		</li>
+		<!-- Logout -->
+		<li>
+		  <a href="/logout">
+		    <i class="fa fa-sign-out"></i> Logout
+		  </a>
+		</li>				
+	      </ul>
+	    </div>
+
+	    {% else %}
+	    <a data-toggle="modal" data-target="#login" class="btn btn-default">
+	      <!-- Login -->
+	      <!-- <i class="fa fa-sign-in"></i>  -->
+	      Login/Join
+	    </a>
+	    {% endif %}	    	    
+	  </div>	  
+	</div>
+      </div>
+
+
+  </header>

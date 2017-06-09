@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row row-centered edit">
+    <div class="col-xs-6 col-centered">
+      <article>
+	<img src="/media/images/pages/writing-desk.jpg" class="top-image"/>
+	<h3>Fiction Writing Starter Kit</h3>
+	<p>This is a set of tools for aspiring writers.</p>
+	<p>Learn to create imaginary worlds filled with engaging stories, insightful ideas, shocking plot twists, and witty jokes.</p>
+	<img src="/media/images/pages/guide.png"
+	     style="float:right;width:100px;"/>
+	<h4>Getting started guide</h4>
+	<p> This guide will help you to begin your journey to masteing the art of writing fiction. You will learn how to start writing, understand the fundamental principles of storytelling, rapidly improve your skills and have fun in the process. </p>	
+	<h4>Writing Prompts </h4>
+	<!-- <img src="/media/images/pages/prompt.png" style=""/> -->
+	<p>Our newsletter will inspire you to write regularly, and make sure that you never run out of ideas. You will regularly receive awesome writing prompts, advice, and great stories from our community.</p>
+	<h4>Story writing template</h4>
+	<!-- <img src="/media/images/pages/story-template.png"/> -->
+	<p>This template will take you, step by step, through the process of writing a story. You will have all the tools you need to go from a blank page to the complete story, and solve any problem you encounter. It will help you to overcome writer's block and makes writing process interactive, and incredibly easy to begin and continue.
+	</p>
+
+	<p>Get started on your path to becoming an excellent storyteller!</p>
+
+	<!-- Get Response -->
+	<form action="https://app.getresponse.com/add_subscriber.html"
+	      method="post">
+	  <input type="email" name="email" class="form-control-cta"
+		 placeholder="Enter your email..." />
+	  <!-- Meta -->
+	  <input type="hidden" name="campaign_token" value="TkG7W" />
+	  <input type="hidden" name="thankyou_url" value="http://writing.city/thankyou"/>
+	  <input type="hidden" name="src" value="" />	  
+	  <button class="btn btn-cta-large full-width"  type="submit">
+	    Subscribe and receive the Starter Kit
+	  </button>
+	</form>
+
+	<!-- My own
+	<form method="post" action="/subscribe/?next={{request.path}}">{% csrf_token %}  
+	  <input type="email" name="email" class="form-control-cta"
+		 placeholder="Enter your email..." />
+	  <button class="btn btn-cta-large full-width"  type="submit">
+	    Subscribe and receive the Starter Kit
+	  </button>
+	</form>
+	-->
+      </article>
+    </div>   <!-- End .col-xs-12 -->
+  </div> <!-- End .row .edit -->
+</div> <!-- End .container -->
+{% endblock %}

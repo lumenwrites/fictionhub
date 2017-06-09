@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row edit">
+    <div class="col-xs-12">
+      <div class="editor">
+	{{form.errors}}
+	<!-- Submit Form -->
+	<form
+	   {% if post %}
+	   action="{{post.get_absolute_url}}edit"
+	   {% else %}
+	   action="/create"
+	   {% endif %}	   
+	   method="post">{% csrf_token %}
+
+	  <!-- Chapters
+	  <div class="chapters">
+	    <a class="btn btn-default nulis" href="https://nulis.io" target="_blank" >
+	      Nulis
+	    </a>
+	    <a class="btn btn-default">Add Chapter</a>
+	    <div class="dropdown">
+	      <a class="btn btn-default" href="/@{{user.username}}">
+		Chapter 1: Trials and Tribulations
+	      </a>
+	      
+	      <ul class="dropdown-menu" role="menu">
+		<li>
+		  <a href="">
+		    Chapter 2: Lah di dah
+		  </a>
+		</li>
+	      </ul>
+	    </div>
+	  </div>
+	  -->
+
+	  <!-- Editor -->
+	  {{form.body}}
+	  
+	  <!-- Category -->
+          <div class="col-xs-12 col-sm-3">
+	    <select name="post_category" class="form-control">
+	      <option value="">Category</option>
+	      {% for category in categories %}
+	      <option value="{{category.slug}}"
+		      {% if category == post.category %}selected{% endif %}
+		      >{{category.title}}</option>
+	      {% endfor %}
+	    </select>
+	  </div>
+
+	  <!-- Tags -->
+          <div class="col-xs-12 col-sm-9">
+            <input type="text" class="form-control"
+		   name="tags" placeholder="Tags (SciFi, Comedy, Fanfiction)"
+		   value="{{post_tags}}">
+          </div>
+
+
+
+	  <!-- Buttons -->
+          <div class="clearfix"></div><br/>
+	  <div>
+	    {% if post %}
+	    <div class="left">
+	      <a data-toggle="modal" data-target="#delete" 
+		 class="btn btn-danger">
+		Delete
+	      </a>
+	    </div>
+	    {% endif %}
+
+	    <div class="right">
+	      {% if post %}
+	      <a class="btn btn-primary" href="{{post.get_absolute_url}}">
+		View
+	      </a>
+
+	      {% if not post.published %}
+	      <a class="btn btn-primary" href="{{post.get_absolute_url}}publish">
+		Publish
+	      </a>
+	      {% else %}
+	      <a class="btn btn-primary" href="{{post.get_absolute_url}}unpublish">
+		Un-Publish
+	      </a>	      
+	      {% endif %}
+	      
+	      {% endif %}
+	      <button class="btn btn-primary" type="submit">
+		Save
+	      </button>
+	    </div>
+	  </div> <!-- End col-xs-12 (buttons) -->
+	  
+	</form>
+      </div> <!-- End .editor -->
+    </div>   <!-- End .col-sm-12 -->
+  </div> <!-- End .row .edit -->
+</div> <!-- End .container -->
+
+
+
+
+
+<div id="delete" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+      <div class="modal-body">
+	<p>Are you sure you want to delete the post?</p>
+	<a href="{{post.get_absolute_url}}delete"
+	   class="btn btn-danger right">
+	  Delete
+	</a>
+        <button class="btn btn-default right margins-h-10" data-dismiss="modal">
+	  Cancel
+	</button>
+	<div class="clearfix"></div>
+      </div> <!-- End .modal-body -->
+    </div> <!-- End .modal-content -->
+  </div> <!-- End .modal-dialog -->
+</div>	 <!-- End .modal -->
+
+
+
+
+
+{% endblock %}

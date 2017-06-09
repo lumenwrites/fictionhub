@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-12 col-sm-12">
+
+    <article>
+      <h2> Edit Comment </h2>
+
+      {{submitform.errors}}
+
+      <!-- Submit Form -->
+      <form class="form-horizontal"
+	    action="/comment/{{post_slug}}/{{comment.id}}/edit" method="post">{% csrf_token %}
+	<textarea class="form-control" name="body"
+		  placeholder="Edit the comment....">{{comment.body}}</textarea>
+	<br/>
+	<a href="/comment/{{post_slug}}/{{comment.id}}/delete"
+		  class="btn btn-default left">
+	  Delete
+	</a>
+	<button type="submit"
+		class="btn btn-primary right">
+	  Submit
+	</button>
+      </form>
+      <div class="clearfix"></div>
+    </article>
+  </div>
+</div>  
+{% endblock %}

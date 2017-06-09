@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row edit">
+    <div class="col-xs-12">
+      <article>
+	<img src="{% static "/img/valley_cropped.png" %}" class="top-image"/>
+	<h1>Welcome to Fiction Hub!</h1>
+	<p> Hi! Welcome to our friendly and intelligent community of fiction writers and readers =)</p>
+	{% if not user.is_authenticated or True%}
+	<a class="btn btn-cta full-width" data-toggle="modal" data-target="#login" >
+	  Join
+	</a>
+	{% endif %}
+	<p> The goal of this website is to make it easy for writers to find their audience, and for readers to discover great fiction.</p>
+	<h2>Publish your stories</h2>
+	<p>Use our great tools to publish your stories.
+	  Distraction-free writing(side by side?).</p>
+	<p>[Editor screenshot]</p>
+	<h2>Find your audience</h2>
+	<p> Best stories will be will be featured on our front page,  shared with our&nbsp;<a href="https://twitter.com/fictionhub">twitter followers</a>, and sent to all of our subscribers in the weekly email digest.</p>
+	<p>[something screenshot]</p>
+	<p>build your following and receive view</p>
+	<h2>Receive great feedback</h2>
+	<p> You will find feedback and great writing tools and other value props.</p>
+	<p>[Comments and feedback]</p>
+	<h2>Become a better writer</h2>
+	<p>we also have tools that will help you become a better writer - daily streaks and wordcounts</p>
+	<p> Leaderboard </p>
+	<p>[Leaderboard and metrics]</p>
+	<p> Talk to great writers and receive advice on our discussion forum </p>
+	<p>[Discussion]</p>
+	<p> Writing resources </p>
+	<p> Come over and join our growing community! </p>
+	<!-- Competitions -->
+	<!-- Marketplace -->
+
+	{% if not user.is_authenticated or True%}
+	<a class="btn btn-cta full-width" data-toggle="modal" data-target="#login" >
+	  Join
+	</a>
+	{% endif %}
+
+      </article>
+    </div>   <!-- End .col-xs-12 -->
+  </div> <!-- End .row .edit -->
+</div> <!-- End .container -->
+
+{% endblock %}

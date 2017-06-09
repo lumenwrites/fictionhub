@@ -1,0 +1,181 @@
+article {
+    background: white;
+    padding: 20px 40px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    border: 1px solid rgba(0,0,0,.09);
+    margin-top: 20px;
+
+    img {
+	max-width: 100%;
+	display: block;
+	margin: auto;
+    }
+    .top-image {
+	margin: -40px -40px 0 -40px;
+	max-width: calc(100% + 80px);
+	width: calc(100% + 80px);
+    }
+    .readMore {
+	font-size: 12px;
+	color: rgba(0, 0, 0, 0.44);
+    }
+
+    .post-footer {
+	font-size: 14px;
+	color: $gray;
+	background: rgba(0,0,0,0.02);
+	padding: 7px 10px 10px 10px;
+	margin: 5px -40px -20px -40px;
+	background-color: #fcfcfc;
+	border-top: 1px solid #e8e8e8;
+
+	.label {
+	    margin-right: 4px;
+	}
+	/* Buttons/Voting */
+	.btn {
+	    padding: 2px 8px;
+	    margin: -3px 5px -6px 0;
+	    float:left;
+	    &:hover {
+		background: $light-gray;
+	    }
+	}
+
+	.fi-arrow-up:before {
+	    transform: scale(1.2,1);
+	}
+	.upvoted {
+	    background: $orange;
+	    color: white;
+	    border: none;
+	}	    
+	
+    }
+
+    .subtitle {
+        color: rgba(0,0,0,0.44)!important;
+        font-weight: normal!important;
+        font-size: 1.5em!important;
+    }
+
+
+    @media (max-width: 768px) {
+        padding: 10px;
+	.post-footer {
+	    margin: 5px -10px -10px -10px;
+	    width: calc(100% + 20px);
+	}
+	h1 {
+	    line-height: 45px;
+	}
+    }    
+}
+
+@media (max-width: 768px) {
+    padding:0;
+}
+
+.post-detail {
+    article {
+	border: none;
+	padding: 40px 40px 20px 40px;	
+    }
+}
+
+
+.tag-description {
+    margin-top: 20px;
+    .panel {
+	padding: 20px;
+	margin-bottom: 0;
+
+	h1 {
+	    font-weight: bold;
+	    font-size: 20px;
+	    margin-top: 0;
+	}
+	h2 {
+	    font-weight: normal;
+	    font-size: 18px;
+	    margin: 0;
+	}
+    }
+}
+
+
+/* Post detail */
+
+.comment {
+    box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.04);
+    min-height: 0;
+    padding: 20px;
+    .footer {
+	float: right;
+	a {
+	    cursor: pointer;
+	}
+	.score {
+	    font-weight: bold;
+	}
+
+	.comment-upvoted {
+	    color: $orange;
+	}
+    }
+
+}
+
+.comment .comment{
+    margin-right: -20.5px;
+}
+
+
+
+.editor {
+    padding-top: 20px;
+    position: relative;
+
+    .dropdown {
+	z-index:10;
+	.dropdown-menu {
+	    box-sizing: border-box;
+	    width: 100%;
+	}
+    }
+    .chapters {
+	position: absolute;
+	right: 10px;
+	top:26px;
+	z-index:10;
+
+	.nulis {
+	    margin-right: 5px;
+	    float:left;
+	}
+    }
+    /* SimpleMDE */
+    .editor-toolbar {
+	border-radius: 0;
+	background: white;
+    }
+    .CodeMirror {
+	border-radius: 0;
+	border-bottom: none;
+    }
+    .editor-statusbar {
+	border: 1px solid #ddd;
+    }
+    
+    /* No gap between category and tags */
+    .col-sm-3, .col-sm-9 {
+	padding: 0;
+    }
+}
+
+/* Messages */
+.message {
+    p {
+	font-size: 16px;
+    }
+}

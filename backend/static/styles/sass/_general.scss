@@ -1,0 +1,114 @@
+html, body {
+    font-family: "Open Sans", sans-serif;
+    background: $background;
+    color: $black;
+}
+
+/* Typography */
+article h1, h1 a {
+    font-size: 36px;
+    font-weight: bold;
+    border-bottom: 1px solid #dddddd;
+    line-height: 50px;
+    margin-top: 0;
+}
+article h2, h2 a {
+    font-size: 30px;
+    font-weight: bold;	
+}
+h3 {
+    font-size: 24px;
+    font-weight: bold;		
+}
+h4 {
+    font-size: 24px;
+    font-weight: bold;		
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom:20px;
+}
+
+li {
+    font-size: 1.1em;
+}
+
+
+a {
+    color: $black;
+    &:hover {
+	color: $black;
+	text-decoration: none;
+    }
+    cursor: pointer;
+}
+
+article p a {
+    color: $blue;
+}
+
+hr {
+    border:none;
+    border-top: 1px solid rgba(0,0,0,.15);
+    margin: 10px 0;
+}
+
+textarea, textarea:focus, textarea:active {
+    resize: none;
+    box-shadow: none!important;    
+}
+
+
+
+
+/* Customize bootstrap */
+.btn-default {
+    border-radius: 2px;
+    background: transparent;
+    color: $dark-gray;
+    border: 1px solid $gray;
+}
+
+.btn-cta {
+    background: $orange;
+    border: none;
+    color: white;
+    &:hover {
+	color: white;
+    }
+}
+
+.btn-cta-large {
+    @extend .btn-cta;
+    padding: 15px 20px; 
+}
+
+
+.form-control {
+    height: 40px;
+}
+
+.form-control-cta {
+    @extend .form-control;
+    height: auto;
+    padding: 12px 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.close {
+    margin: 20px;
+}
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% if profile %}
+  {% include "elements/subheader.html" %}
+{% endif %}
+{% include "elements/subnav.html" %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+
+      {% for post in posts %}
+      {% include "posts/post.html" %}
+      {% endfor %}
+
+      {% include "elements/pagination.html" %}
+      
+    </div>
+  </div>
+</div>
+{% endblock %}

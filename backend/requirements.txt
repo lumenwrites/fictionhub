@@ -1,0 +1,17 @@
+Django==1.10
+djangorestframework
+psycopg2
+django-cors-headers
+
+Mastodon.py
+								
+markdown
+html2text
+pycurl
+bleach
+beautifulsoup4
+
+Pillow	
+	
+requests
+yamjam

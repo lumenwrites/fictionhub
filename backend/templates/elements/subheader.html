@@ -1,0 +1,98 @@
+<div class="subheader">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+	<div class="left">
+	  <img class="avatar left hidden"
+	       src="/media/images/profiles/avatars/signature-256x256.png"/>
+	  <a class="username" href="/@{{profile.username}}"><h1>rayalez</h1></a>
+	  <div class="stats">
+	    <span data-toggle="tooltip" data-placement="top" title="Subscribers">
+	      <i class="fi-torsos-all"></i> {{profile.subscribers.count}}
+	    </span>
+	    <span data-toggle="tooltip" data-placement="top" title="Upvotes">
+	      <i class="fi-arrow-up"></i> {{profile.karma}}
+	    </span>
+	    <!-- 
+	    <span data-toggle="tooltip" data-placement="top" title="Views">
+	      <i class="fi-eye"></i> {{profile.views}}
+	    </span>
+	    <span data-toggle="tooltip" data-placement="top"
+		  title="Weekly leaderboard rank">
+	      <i class="fi-graph-trend"></i> 272
+	    </span>
+	    <div class="calendar"
+		 data-toggle="tooltip" data-placement="top" data-html="true"
+		 title="Words written <br/> in the past 10 days">
+	      <div class="mark"></div>
+	      <div class="mark"></div>
+	      <div class="mark"></div>
+	      <div class="mark"></div>
+	      <div class="mark"></div>
+	      <div class="mark"></div>
+	      <div class="mark"></div>
+	      <div class="mark"></div>
+	      <div class="mark"></div>
+	      <div class="mark"></div>
+	    </div>
+	    <span data-toggle="tooltip" data-placement="top" data-html="true"
+		  title="Writing streak <br/>
+			 (how many days in a row <br/> written 100+ words)">
+	      18
+	    </span>
+	    -->
+	  </div> <!-- End .stats -->
+	</div>	 <!-- End .left -->
+	<div class="buttons">
+	  {% if profile in user.subscribed_to.all %}
+	  <!-- If already subscribed - unsubscribe. -->
+	  <a class="btn btn-default" href="/@{{profile.username}}/unsubscribe">
+	    Subscribed
+	  </a>	  
+	  {% else %}
+	  <!-- If not subscribed - subscribe.
+	       If it's my own profile - can't subscribe.
+	       If not authenticated - open join modal. -->
+	  <a class="btn btn-default
+		    {% if user == profile %}ddisabled{% endif %}"
+	     {% if not user.is_authenticated %}
+	     data-toggle="modal" data-target="#login"
+	     {% endif %}
+	     href="/@{{profile.username}}/subscribe">
+	    Subscribe
+	  </a>
+	  {% endif %}	  
+	</div>
+	<div class="clearfix"></div>
+      </div> <!-- End .col-xs-12 -->
+    </div> <!-- End .row -->
+  </div> <!-- End .container -->
+  {% if profile.about %}
+  <div class="description">
+    <div class="container">
+      <div class="row">
+	<div class="col-xs-12">
+
+	  <!-- Description -->
+	  <div class="">
+	    {{profile.about}}
+	    <div class="right hidden">
+	      <a href="">
+		rayalez.com
+	      </a>
+	      <!-- Social Icons -->
+	      <a href=""><i class="fa fa-twitter-square"></i></a>
+	      <a href=""><i class="fa fa-facebook-square"></i></a>
+	      <a href=""><i class="fa fa-medium"></i></a>
+	      <a href=""><i class="fa fa-rss"></i></a>
+	    </div>
+	  </div>
+	</div> <!-- End .col-xs-12 -->
+      </div> <!-- End .row -->
+    </div> <!-- End .container -->
+  </div> <!-- End .description -->
+  {% else %}
+  <br/>
+  {% endif %}
+  
+</div>  <!-- End .subheader -->

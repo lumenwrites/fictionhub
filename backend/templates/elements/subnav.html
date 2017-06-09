@@ -1,0 +1,57 @@
+<!-- Subnav -->
+<div class="subnav">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 filters">
+
+	<!-- Sorting -->
+	<div class="dropdown">
+	  <a class="btn btn-default" data-toggle="dropdown">
+	    {% if sorting %}
+	    {{sorting | title}}
+	    {% else %}
+	    Hot
+	    {% endif %}	    
+	  </a>
+	  <ul class="dropdown-menu" role="menu"  id="sorting">
+            <li><a href="hot"><i class="fa fa-fire"></i> Hot</a></li>	    
+            <li><a href="top"><i class="fa fa-arrow-up"></i> Top</a></li>
+            <li><a href="new"><i class="fa fa-clock-o"></i> New</a></li>
+	  </ul>	
+	</div>
+	
+	<!-- Category -->
+	<div class="dropdown">
+	  <a class="btn btn-default" data-toggle="dropdown">
+	    {% if not category %}
+	    Category: All
+	    {% else %}
+	    {{category}}
+	    {% endif %}	    	    
+	  </a>
+	  <ul class="dropdown-menu" role="menu" id="category">
+	    <li><a href="all">All</a></li>
+	    {% for category in categories %}
+            <li><a href="{{category.slug}}">{{category.title}}</a></li>
+	    {% endfor %}	    
+	  </ul>	
+	</div>
+
+
+	<!-- Search -->
+	<form action="" method="get" id="search-form">
+	  <input type="text" class="form-control" id="searchbar"
+		 placeholder=""
+		 data-provide="typeahead"
+		 autocomplete="off"
+		 name="query" value="{{query}}">
+	  <input type='submit' class="hidden"/>
+	  <i class="fa fa-search" aria-hidden="true"></i>    
+
+	</form>
+	
+
+      </div> <!-- End col-xs-12 .filters -->
+    </div>   <!-- End .row -->
+  </div> <!-- End  .container -->
+</div>   <!-- End .subnav -->

@@ -1,0 +1,86 @@
+<!-- Leave a comment -->
+{% if user.is_authenticated %}      
+<form action="/comment-submit/{{post.slug}}?next={{request.path}}"
+      method="post">{% csrf_token %}
+
+  <textarea class="form-control"
+	    name="body"
+	    placeholder="Leave a comment..."></textarea>
+
+  <!-- Submit -->
+  <button class="btn btn-primary right" type="submit">Submit</button>
+  <div class="clearfix"></div>
+</form>
+{% else %}
+<!-- Login to leave a comment. -->
+<a data-toggle="modal"
+   data-target="#login"
+   class="bold">Login</a> to leave a comment.
+<br/>
+{% endif %}
+
+
+
+<!-- Comments -->
+{% for comment in comments %}
+
+{% if comment == "in" %}
+<article class="comment"> <!-- Open Comment Container -->
+{% endif %}
+    
+{% if comment != "in" and comment != "out" %}
+  <div class="body">
+    {{comment.body}}
+  </div>
+  <!-- Comment footer -->
+  <div class="footer">
+    <span class="username bold">@{{comment.author.username}}</span>
+    <!-- Reply -->
+    {% if user.is_authenticated %}      
+    <a class="show-reply">reply</a>
+    {% else %}
+    <a data-toggle="modal" data-target="#login">reply</a>    
+    {% endif %}
+    <!-- Edit -->
+    {% if comment.author == request.user %}        
+    <a href="/comment/{{post.slug}}/{{comment.id}}/edit?next={{request.path}}">edit</a>
+    {% endif %}        
+    
+    {% if user.is_authenticated %}    
+    <!-- Vote -->
+    <a class="comment-upvote
+	      {% if comment in user.comments_upvoted.all %}comment-upvoted{% endif %}"
+       id="comment-upvote-{{comment.id}}">
+      <span class="score">{{comment.score}}</span>
+      <i class="fi-arrow-up"></i>
+    </a>
+    {% else %}
+    <!-- If not authenticated - open login popup. -->
+    <a data-toggle="modal" data-target="#login">
+      <span class="score">{{comment.score}}</span>
+      <i class="fi-arrow-up"></i>
+    </a>    
+    {% endif %}        
+    
+  </div> <!-- End .footer -->
+  <div class="clearfix"></div>
+
+  <!-- Reply form -->
+  <div class="comment-reply" style="display:none;">
+    <form action="/reply/{{post.slug}}/{{comment.id}}/?next={{request.path}}"
+	  method="post">{% csrf_token %}
+      <textarea class="form-control"
+		name="body"
+		placeholder="Leave a reply..."></textarea>
+      <button class="btn btn-primary right" type="submit">Submit</button>
+      <button class="btn btn-default right cancel">Cancel</button>
+      <div class="clearfix"></div>		    
+    </form>
+  </div>
+{% endif %}  
+
+{% if comment == "out" %}        
+</article> <!-- End .comment --> <!-- Close Comment Container -->
+{% endif %}
+
+{% endfor %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row row-centered edit">
+    <div class="col-xs-6 col-centered">
+      <article>
+	<img src="/media/images/pages/writing-desk.jpg" class="top-image"/>
+	<h3>Ultimate Fiction Writing Starter Kit</h3>
+	<p>Welcome to Writing City! This is a newsletter of the best learning resources for Fiction and Screen Writers.</p>
+	<p>Enter your email below to receive our free Fiction Writing Starter Kit - the 3 must-read books for every aspiring writer:</p>
+	<img src="/media/images/pages/starter-kit.png"/>
+	<p>
+	  <b>1000 Awesome Writing Prompts</b> will give you a lot of fun exercises(easy, intermediate, and challenging) so that you always have ideas to write about, and can practice creating stories without ever hitting a writer's block.
+	</p>
+	<p>
+	  <b>10 Steps to becoming a Writer</b> will take you through all the fundamentals you need to know to begin your journey as a writer.
+	</p>
+	<p>
+	  <b>Align your Writing Habits to Success</b> will teach you how to avoid procrastination, quickly develop good writing habits, and help you become an inspired, productive writer.
+	</p>
+	<p>Get started on your path to becoming an excellent storyteller!</p>
+	<form method="post" action="/subscribe/?next={{request.path}}">{% csrf_token %}  
+	  <input type="email" name="email" class="form-control-cta"
+		 placeholder="Enter your email..." />
+	  <button class="btn btn-cta-large full-width"  type="submit">
+	    Subscribe and receive the Starter Kit
+	  </button>
+	</form>
+      </article>
+    </div>   <!-- End .col-xs-12 -->
+  </div> <!-- End .row .edit -->
+</div> <!-- End .container -->
+
+<style>
+  header {
+  display:none;
+  }
+  body {
+    background-color: #f6f3ea;
+  }
+</style>
+{% endblock %}

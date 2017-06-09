@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load markdownify %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row edit">
+    <div class="col-xs-12">
+      {% for message in messages %}
+      <article class="message">
+	<a class="bold black" href="/@{{message.from_user.username}}">
+	  @{{message.from_user.username}}
+	</a>
+	{{message.body | markdownify | safe}}
+      </article>
+      {% endfor %}
+    </div>   <!-- End .col-xs-12 -->
+  </div> <!-- End .row .edit -->
+</div> <!-- End .container -->
+
+{% endblock %}
