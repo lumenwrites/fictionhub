@@ -32,7 +32,11 @@ class UserFeed(Feed):
 
     def item_title(self, item):
         firstline = item.body.splitlines()[0]
-        return firstline
+        md = Markdown()
+        return md.convert(firstline)
+
+    def item_link(self, item):
+        return "http://fictionhub.io" + item.get_absolute_url()
     
     def item_pubdate(self, item):
         return item.published_at
