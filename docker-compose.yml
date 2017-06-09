@@ -12,6 +12,7 @@ services:
   backend:
     build: ./backend
     container_name: backend
+    env_file: ./backend/config/env
     # Create a volume so I could edit the code without rebuilding container
     volumes:
       - ./backend:/home/fictionhub/backend

@@ -7,10 +7,12 @@ import './voting';
 import './comments';
 import './editor';
 
-import 'npm-font-open-sans';
-import 'notosans-fontface';
 /* import '../node_modules/font-awesome/css/font-awesome.css';*/
 /* import 'foundation-icon-fonts';*/
+
+
+import 'npm-font-open-sans';
+import 'notosans-fontface';
 import '../styles/sass/vendor.scss';
 import '../styles/sass/style.scss';
 
