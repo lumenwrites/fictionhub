@@ -406,7 +406,13 @@ header .main-menu .notifications {
   box-shadow: none;
   background: white;
 }
-/* line 172, sass/_header.scss */
+/* line 171, sass/_header.scss */
+.subnav form .active {
+  outline: 1px solid #cccccc;
+  box-shadow: none;
+  background: white;
+}
+/* line 177, sass/_header.scss */
 .subnav form .fa-search {
   position: absolute;
   right: 26px;
@@ -415,22 +421,22 @@ header .main-menu .notifications {
   /* Click behind it into the input */
   pointer-events: none;
 }
-/* line 181, sass/_header.scss */
+/* line 186, sass/_header.scss */
 .subnav form .typeahead.dropdown-menu {
   width: calc(100% - 80px);
 }
 
-/* line 190, sass/_header.scss */
+/* line 195, sass/_header.scss */
 .dropdown {
   float: left;
   margin-right: 5px;
 }
-/* line 193, sass/_header.scss */
+/* line 198, sass/_header.scss */
 .dropdown li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-/* line 199, sass/_header.scss */
+/* line 204, sass/_header.scss */
 .dropdown:hover .dropdown-menu {
   display: block;
   min-width: 100%;

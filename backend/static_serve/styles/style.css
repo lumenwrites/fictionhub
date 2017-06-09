@@ -361,16 +361,14 @@ header .main-menu .notifications {
 .subnav {
   background-color: rgba(255, 255, 255, 0.33);
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-  height: 38px;
 }
-@media (max-width: 740px) {
-  /* line 135, sass/_header.scss */
+@media (max-width: 420px) {
+  /* line 134, sass/_header.scss */
   .subnav .filters {
-    padding: 0;
-    margin: 0;
+    width: 100%;
   }
 }
-/* line 142, sass/_header.scss */
+/* line 140, sass/_header.scss */
 .subnav .btn {
   border-radius: 0;
   border: none;
@@ -378,23 +376,23 @@ header .main-menu .notifications {
   height: 38px;
 }
 @media (max-width: 420px) {
-  /* line 142, sass/_header.scss */
+  /* line 140, sass/_header.scss */
   .subnav .btn {
     padding: 8px 7px;
   }
 }
-/* line 153, sass/_header.scss */
+/* line 151, sass/_header.scss */
 .subnav form {
   float: right;
   /* Search */
 }
 @media (max-width: 500px) {
-  /* line 153, sass/_header.scss */
+  /* line 151, sass/_header.scss */
   .subnav form {
     width: 100%;
   }
 }
-/* line 161, sass/_header.scss */
+/* line 159, sass/_header.scss */
 .subnav form input {
   height: 38px;
   background: rgba(241, 239, 239, 0.9);
@@ -402,13 +400,19 @@ header .main-menu .notifications {
   border: none;
   box-shadow: none;
 }
-/* line 167, sass/_header.scss */
+/* line 165, sass/_header.scss */
 .subnav form input:focus {
   outline: 1px solid #cccccc;
   box-shadow: none;
   background: white;
 }
-/* line 174, sass/_header.scss */
+/* line 171, sass/_header.scss */
+.subnav form .active {
+  outline: 1px solid #cccccc;
+  box-shadow: none;
+  background: white;
+}
+/* line 177, sass/_header.scss */
 .subnav form .fa-search {
   position: absolute;
   right: 26px;
@@ -416,12 +420,6 @@ header .main-menu .notifications {
   color: #999;
   /* Click behind it into the input */
   pointer-events: none;
-}
-@media (max-width: 740px) {
-  /* line 174, sass/_header.scss */
-  .subnav form .fa-search {
-    right: 8px;
-  }
 }
 /* line 186, sass/_header.scss */
 .subnav form .typeahead.dropdown-menu {
@@ -437,14 +435,8 @@ header .main-menu .notifications {
 .dropdown li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
-@media (max-width: 740px) {
-  /* line 195, sass/_header.scss */
-  .dropdown {
-    margin: 0;
-  }
-}
 
-/* line 208, sass/_header.scss */
+/* line 204, sass/_header.scss */
 .dropdown:hover .dropdown-menu {
   display: block;
   min-width: 100%;
@@ -471,7 +463,7 @@ article .top-image {
   width: calc(100% + 80px);
 }
 /* line 18, sass/_posts.scss */
-article .readMore {
+article .read-more {
   font-size: 12px;
   color: rgba(0, 0, 0, 0.44);
 }
@@ -480,7 +472,7 @@ article .post-footer {
   font-size: 14px;
   color: #999;
   background: rgba(0, 0, 0, 0.02);
-  padding: 7px 10px 10px 10px;
+  padding: 7px 10px;
   margin: 5px -40px -20px -40px;
   background-color: #fcfcfc;
   border-top: 1px solid #e8e8e8;
@@ -493,7 +485,7 @@ article .post-footer .label {
 /* line 36, sass/_posts.scss */
 article .post-footer .btn {
   padding: 2px 8px;
-  margin: -3px 5px -6px 0;
+  margin-right: 5px;
   float: left;
 }
 /* line 40, sass/_posts.scss */
@@ -665,56 +657,67 @@ article .subtitle {
   margin-right: 20px;
   font-weight: bold;
 }
-/* line 41, sass/style.scss */
-.subscription-box .email-form input {
-  float: left;
-}
-/* line 44, sass/style.scss */
-.subscription-box .email-form #id_email {
-  width: calc(100% - 240px);
+/* line 40, sass/style.scss */
+.subscription-box .email-form {
+  float: right;
+  margin-right: 10px;
 }
 @media (max-width: 500px) {
-  /* line 44, sass/style.scss */
-  .subscription-box .email-form #id_email {
+  /* line 40, sass/style.scss */
+  .subscription-box .email-form {
+    margin-right: 0px;
+  }
+}
+/* line 46, sass/style.scss */
+.subscription-box .email-form input {
+  float: left;
+  width: 200px;
+}
+@media (max-width: 500px) {
+  /* line 46, sass/style.scss */
+  .subscription-box .email-form input {
     width: 100%;
   }
 }
-/* line 50, sass/style.scss */
-.subscription-box .email-form #submit-email {
+/* line 53, sass/style.scss */
+.subscription-box .email-form .btn {
+  float: left;
   width: 100px;
 }
 @media (max-width: 500px) {
-  /* line 50, sass/style.scss */
-  .subscription-box .email-form #submit-email {
+  /* line 53, sass/style.scss */
+  .subscription-box .email-form .btn {
     width: 100%;
   }
 }
-/* line 58, sass/style.scss */
+/* line 62, sass/style.scss */
 .subscription-box input {
   height: 40px;
 }
-/* line 62, sass/style.scss */
+/* line 66, sass/style.scss */
 .subscription-box .btn {
   background: #f66303;
   color: white;
   height: 40px;
 }
-/* line 68, sass/style.scss */
+/* line 72, sass/style.scss */
 .subscription-box .close {
   position: absolute;
-  top: 19px;
+  margin: 0;
+  top: 20px;
   right: 32px;
   font-size: 32px;
+  z-index: 10;
 }
 @media (max-width: 740px) {
-  /* line 68, sass/style.scss */
+  /* line 72, sass/style.scss */
   .subscription-box .close {
     top: 10px;
     right: 30px;
   }
 }
 
-/* line 82, sass/style.scss */
+/* line 87, sass/style.scss */
 .alert {
   position: absolute;
   top: 0;
@@ -726,25 +729,25 @@ article .subtitle {
 
 /* Modals */
 /* Pagination */
-/* line 95, sass/style.scss */
+/* line 100, sass/style.scss */
 .pagination {
   width: 100%;
   margin: 10px 0;
   padding: 5px;
   text-align: center;
 }
-/* line 101, sass/style.scss */
+/* line 106, sass/style.scss */
 .pagination .fa {
   margin-top: 6px;
   color: #999;
 }
 
 /* Footer */
-/* line 109, sass/style.scss */
+/* line 114, sass/style.scss */
 footer {
   color: #999;
 }
-/* line 111, sass/style.scss */
+/* line 116, sass/style.scss */
 footer a {
   color: #999;
   font-weight: bold;

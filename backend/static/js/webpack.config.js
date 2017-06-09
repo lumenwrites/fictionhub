@@ -44,6 +44,18 @@ module.exports = {
 		    presets: ['es2015', 'stage-2']
 		}
 	    },
+	    {
+                test: /\.scss$/,
+                loaders: ['style-loader', 'css-loader', 'sass-loader']
+	    },
+	    {
+		test: /\.css$/,
+		loader: 'style-loader!css-loader'
+	    },
+	    {
+		test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+		loader: 'url-loader?limit=100000'
+	    }
 	]
     },
     plugins: getPlugins(),

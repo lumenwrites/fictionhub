@@ -168,7 +168,12 @@ header {
 		background: white;
 	    }
 	}
-
+	.active {
+	    outline: 1px solid #cccccc;
+	    box-shadow: none;
+	    background: white;
+	}
+	
 	.fa-search {
 	    position: absolute;
 	    right: 26px;
