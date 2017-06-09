@@ -2,8 +2,7 @@
 <div class="subnav">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 filters">
-
+      <div class="col-xs-12 col-sm-6 filters">
 	<!-- Sorting -->
 	<div class="dropdown">
 	  <a class="btn btn-default" data-toggle="dropdown">
@@ -37,7 +36,8 @@
 	  </ul>	
 	</div>
 
-
+      </div> <!-- End filters col-sm-6 -->
+      <div class="col-xs-12 col-sm-6">
 	<!-- Search -->
 	<form action="" method="get" id="search-form">
 	  <input type="text" class="form-control" id="searchbar"
@@ -47,10 +47,8 @@
 		 name="query" value="{{query}}">
 	  <input type='submit' class="hidden"/>
 	  <i class="fa fa-search" aria-hidden="true"></i>    
-
 	</form>
-	
-
+	<div class="clearfix"></div>
       </div> <!-- End col-xs-12 .filters -->
     </div>   <!-- End .row -->
   </div> <!-- End  .container -->

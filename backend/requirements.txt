@@ -14,4 +14,4 @@ beautifulsoup4
 Pillow	
 	
 requests
-yamjam
+python-dotenv

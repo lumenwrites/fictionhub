@@ -38,16 +38,20 @@ $light-gray: #e7e7e7;
     }
 
     .email-form {
+	float:right;
+	margin-right:10px;
+	@media  (max-width: 500px) {
+	    margin-right:0px;
+	}
 	input {
 	    float:left;
-	}
-	#id_email {
-	    width: calc(100% - 240px);
+	    width: 200px;
 	    @media  (max-width: 500px) {
 		width: 100%;
 	    }
 	}
-	#submit-email {
+	.btn {
+	    float:left;
 	    width: 100px;	    
 	    @media  (max-width: 500px) {
 		width: 100%;
@@ -67,10 +71,11 @@ $light-gray: #e7e7e7;
 
     .close {
 	position: absolute;
-	top: 19px;
+	margin: 0;
+	top: 20px;
 	right: 32px;	
 	font-size: 32px;
-
+	z-index:10;
 	@media  (max-width: 740px) {	
 	    top: 10px;
 	    right: 30px;

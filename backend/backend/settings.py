@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
 import os
-from YamJam import yamjam
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,8 +21,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-cfg = yamjam(BASE_DIR+"/backend/config.yaml")['backend']
-SECRET_KEY = cfg['django_secret_key']
+dotenv_path = BASE_DIR + "/config/env"
+load_dotenv(dotenv_path)
+
+SECRET_KEY = os.environ["SECRET_KEY"]
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -93,8 +95,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':"fictionhub",
-        'USER':cfg['pg_username'],
-        'PASSWORD':cfg['pg_pass'],
+        'USER':os.environ["PG_USERNAME"],
+        'PASSWORD':os.environ["PG_PASS"],
         'HOST': 'postgres',
         'PORT': '',
     }

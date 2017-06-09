@@ -15,7 +15,7 @@ article {
 	max-width: calc(100% + 80px);
 	width: calc(100% + 80px);
     }
-    .readMore {
+    .read-more {
 	font-size: 12px;
 	color: rgba(0, 0, 0, 0.44);
     }
@@ -24,7 +24,7 @@ article {
 	font-size: 14px;
 	color: $gray;
 	background: rgba(0,0,0,0.02);
-	padding: 7px 10px 10px 10px;
+	padding: 7px 10px;
 	margin: 5px -40px -20px -40px;
 	background-color: #fcfcfc;
 	border-top: 1px solid #e8e8e8;
@@ -35,7 +35,7 @@ article {
 	/* Buttons/Voting */
 	.btn {
 	    padding: 2px 8px;
-	    margin: -3px 5px -6px 0;
+	    margin-right: 5px;
 	    float:left;
 	    &:hover {
 		background: $light-gray;

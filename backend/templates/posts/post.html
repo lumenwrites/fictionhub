@@ -1,7 +1,7 @@
 {% load markdownify %}
 <article>
   <!-- Post body -->
-  {{post.body | markdownify | safe}}
+  {{post | markdownify:truncate | safe}}
   
   <div class="clearfix"></div>
 
@@ -73,8 +73,7 @@
       <!-- If not authenticated - open login popup. -->
       <a class="btn btn-default"
 	 data-toggle="modal" data-target="#login"
-	 data-toggle="tooltip" data-placement="top"
-	 title="Un-Upvote">
+	 title="Login to Upvote">
 	<i class="fa fa-arrow-up"></i>
 	{{post.score}}
       </a>    

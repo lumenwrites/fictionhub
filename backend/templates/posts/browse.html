@@ -16,7 +16,7 @@
       {% include "elements/subscription-box.html" %}
       
       {% for post in posts %}
-      {% include "posts/post.html" %}
+      {% include "posts/post.html" with truncate=True %}
       {% endfor %}
 
       {% include "elements/pagination.html" %}
