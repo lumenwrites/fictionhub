@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-dotenv_path = BASE_DIR + "/config/env"
+dotenv_path = BASE_DIR + '/config/env'
 load_dotenv(dotenv_path)
 
 SECRET_KEY = os.environ["SECRET_KEY"]
@@ -95,8 +95,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':"fictionhub",
-        'USER':os.environ["PG_USERNAME"],
-        'PASSWORD':os.environ["PG_PASS"],
+        'USER':os.environ["POSTGRES_USER"],
+        'PASSWORD':os.environ["POSTGRES_PASSWORD"],
         'HOST': 'postgres',
         'PORT': '',
     }
