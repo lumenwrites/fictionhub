@@ -1,0 +1,54 @@
+/* Helpers */
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+.centered {
+    margin: auto;
+}
+.center-text {
+    text-align: center;
+}
+.hidden {
+    display: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.fill { 
+    min-height: 100%;
+    height: 100%;
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.black {
+    color:$black;
+}
+.gray {
+    color:$gray;
+}
+
+.paddings-10 {
+    padding: 10px;
+}
+
+.margins-h-10 {
+    margin: 0 10px;    
+}

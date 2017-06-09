@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 
 /* Auto open modal (for debugging) */
 $(window).on('load', function(){
@@ -29,14 +30,6 @@ $(document).ready(function() {
 	$(".alert").delay(3000).fadeOut();	
     }
 
-    /* Search autocomplete */
-    $('#searchbar').typeahead({
-	source: [
-            "Django",
-            "React",
-	]
-    });
-    $('#searchbar').typeahead()
     
     /* Search */
     $('#search-form').submit(function(event){
@@ -47,11 +40,11 @@ $(document).ready(function() {
 	var query = $('#searchbar').val(); 
 	var url = $.query.set('query', query);
 	/* Send the get request */
-	window.location = "/"+url;
+	window.location = window.location.href + url;
     });
 
     /* Filtering */
-    $('.dropdown-menu').on('click', 'a', function(e) {
+    $('.subnav .dropdown-menu').on('click', 'a', function(e) {
 	e.preventDefault();
 	/* Grab the value */
 	var value = $(this).attr('href');
@@ -64,13 +57,10 @@ $(document).ready(function() {
 	    url = $.query.REMOVE(filter);	    
 	}
 	/* Go to the url */
-	window.location = "/"+url;
+	var current_url_without_query = window.location.href.split('?')[0];
+	window.location = current_url_without_query+url;
     });
-
-
-
-
-
-    
+    /* Tooltips */
+    $('[data-toggle="tooltip"]').tooltip(); 
 }); /* End document ready */
 

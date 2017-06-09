@@ -1,0 +1,212 @@
+header {
+    background: #fff;
+    padding: 20px;
+    border-top: 3px solid $orange;
+
+    .search {
+	height:38px;
+	@media  (max-width: 740px) {
+	    padding: 0;
+	}
+    }
+    .logo {
+	font-size: 36px;
+	color: $black-lighter;
+	img {
+	    width: 50px;
+	    float: left;
+	    margin-right: 10px;
+	    @media (max-width: 768px) {
+	    }
+	}
+    }
+    .nulis {
+	padding: 4px 0;
+	border: none;
+	box-shadow: none;
+    }
+
+    .tagline {
+	margin: 10px;
+	color: $gray;
+    }
+    
+    .main-menu {
+	padding-top: 5.5px;
+	float: right;
+	@media  (max-width: 740px) {
+	    float:left;
+	}	
+	.btn {
+	    padding-top: 10px;
+	    padding-bottom: 10px;
+	    height: 40px;
+	    border: 1px solid rgba(0,0,0,0.1);
+	    margin-right:5px;
+	    border-radius: 0;
+	    &:hover {
+		background-color: #eeeeee;
+	    }
+	}
+
+	.notifications {
+	    color: $orange;
+	}
+    }
+
+    
+
+}
+
+/* Profile Subheader */
+.subheader {
+    background: white url("/static/img/orange-bg.jpg") no-repeat center;
+    background-size: cover;
+    color: white;
+    padding-top: 20px;
+
+    .avatar {
+	float:left;
+	width: 50px;
+	margin: 20px 10px 0 0;
+	border-radius: 2px;
+    }
+    .username {
+	display: inline-block;
+    }
+    a h1 {
+	color: white;
+    }
+    h1 {
+	text-shadow: 0.5px 0.5px 0.5px black;
+    }
+    .stats {
+	padding-top: 10px;
+
+	span {
+	    margin-right: 4px;
+	}
+	.calendar {
+	    display: inline-block;
+	    .mark {
+		width: 8px;
+		height: 8px;
+		background: rgba(255,255,255,0.0);
+		border: 0.5px solid rgba(255,255,255,0.6);
+		float:left;
+		margin-right: 1px;
+		height: 11px;
+	    }
+	}
+    }
+
+    .buttons {
+	float: right;
+	padding-top: 30px;
+	.btn {
+	    color: white;
+	    background: #403c30;
+	    border: none;
+	    border-radius: 0;
+	    padding: 15px 20px;
+	}
+    }
+
+    .description {
+	color: #fefefe;
+	background: rgba(10, 10, 10, 0.5);
+	padding: 10px 0;
+	margin-top:10px;
+	a {
+	    color: #fefefe;
+	    margin-right: 5px;
+	}
+    }
+
+}
+
+
+
+/* Subnav */
+.subnav {
+    background-color: rgba(255, 255, 255, 0.33);
+    box-shadow: 0 1px 0 0 rgba(0,0,0,.05), 0 2px 4px 0 rgba(0,0,0,.06);
+    height:38px;
+    .filters {
+	@media  (max-width: 740px) {
+	    padding: 0;
+	    margin: 0;
+	}	    
+	
+    }
+    .btn {
+	border-radius: 0;
+	border: none;
+	background: rgba(241, 239, 239, 0.9);
+	height: 38px;
+	@media  (max-width: 420px) {
+	    padding: 8px 7px;
+	}
+    }
+
+
+    form {
+	float: right;
+
+	@media  (max-width: 500px) {
+	    width: 100%;
+	}	
+
+	/* Search */
+	input {
+	    height: 38px;
+	    background: rgba(241, 239, 239, 0.9);	
+	    background:none;
+	    border:none;
+	    box-shadow:none;
+	    &:focus {
+		outline: 1px solid #cccccc;
+		box-shadow: none;
+		background: white;
+	    }
+	}
+
+	.fa-search {
+	    position: absolute;
+	    right: 26px;
+	    top: 12px;
+	    color: $gray;
+	    /* Click behind it into the input */
+	    pointer-events: none;
+	    @media  (max-width: 740px) {
+		right: 8px;
+	    }
+	}
+
+	.typeahead.dropdown-menu {
+	    width: calc(100% - 80px);
+	}
+    }
+
+    
+}
+
+
+.dropdown {
+    float: left;
+    margin-right: 5px;
+    li {
+	border-bottom: 1px solid rgba(0,0,0,.15);
+    }
+
+    @media  (max-width: 740px) {
+	margin: 0;
+    }	    
+}
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    min-width: 100%;
+}
+
