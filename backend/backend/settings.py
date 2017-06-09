@@ -95,7 +95,7 @@ DATABASES = {
         'NAME':"fictionhub",
         'USER':cfg['pg_username'],
         'PASSWORD':cfg['pg_pass'],
-        'HOST': 'localhost',
+        'HOST': 'postgres',
         'PORT': '',
     }
 }
