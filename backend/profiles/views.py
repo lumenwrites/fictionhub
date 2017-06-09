@@ -101,7 +101,7 @@ def unsubscribe(request, username):
     
 
 def leaderboard(request):
-    profiles = User.objects.all().order_by('-karma')[:25]
+    users = User.objects.all().order_by('-karma')[:25]
     return render(request, 'profiles/leaderboard.html',{
         'users':users
     })
