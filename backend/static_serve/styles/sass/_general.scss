@@ -1,6 +1,7 @@
 html, body {
     font-family: "Open Sans", sans-serif;
     background: $background;
+    /* background: #f6f3ea; */
     color: $black;
 }
 
@@ -25,13 +26,13 @@ h4 {
     font-weight: bold;		
 }
 
-p {
-    font-size: 1.1em;
+article p {
+    font-size: 1.5em;
     margin-bottom:20px;
 }
 
-li {
-    font-size: 1.1em;
+article li {
+    font-size: 1.5em;
 }
 
 
@@ -60,9 +61,11 @@ textarea, textarea:focus, textarea:active {
 }
 
 
-
-
 /* Customize bootstrap */
+
+.container {
+    max-width: 900px;
+}
 .btn-default {
     border-radius: 2px;
     background: transparent;
