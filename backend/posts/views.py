@@ -237,13 +237,13 @@ def post_create(request):
                 series.save()
                 # Add the original post to it
                 first_chapter = Post.objects.get(slug=request.GET.get('post'))
-                first_chapter.parent = series
+                first_chapter.series = series
                 first_chapter.save()
                 # Add the post I've just created to it
-                post.parent = series
+                post.series = series
             elif series:
                 series = Series.objects.get(pk=series)
-                post.parent = series
+                post.series = series
 
             post.save()
 

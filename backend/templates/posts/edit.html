@@ -21,10 +21,10 @@
 
 	  <!-- Chapters	-->
 	  <div class="chapters">
-	    {% if post.parent %}
+	    {% if post.series %}
 	    <!-- If post already has series, create chapter under this series. -->
 	    <a class="btn btn-default"
-	       href="/write?series={{post.parent.pk}}">
+	       href="/write?series={{post.series.pk}}">
 		Add Chapter
 	    </a>
 	    {% elif post %}
@@ -38,14 +38,14 @@
 	    {% endif %}	  	       	    
 
 	    <!-- If it's a part of the Series, show other chapters -->
-	    {% if post.parent %}	  
+	    {% if post.series %}	  
 	    <div class="dropdown">
 	      <span class="btn btn-default chapter-title">
 		<!-- Chapter title. Removed markdown. -->
 		{{post|title|striptags}}
 	      </span>
 	      <ul class="dropdown-menu" role="menu">
-		{% for child in post.parent.children.all %}	  	      
+		{% for child in post.series.children.all %}	  	      
 		<li>
 		  <a href="{{child.get_absolute_url}}edit">
 		    {{ forloop.counter }}.

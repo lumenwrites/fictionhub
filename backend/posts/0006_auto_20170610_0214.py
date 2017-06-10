@@ -4,12 +4,11 @@ from __future__ import unicode_literals
 
 from django.db import migrations, models
 import django.db.models.deletion
-from series.models import Series
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('posts', '0005_auto_20170522_1404'),
+        ('posts', '0005_auto_20170522_1404')
     ]
 
     operations = [
