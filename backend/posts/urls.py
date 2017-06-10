@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^upvote/$', upvote),
     url(r'^unupvote/$', unupvote),
 
+    url(r'^browse/$', BrowseView.as_view()),    
     url(r'^subscriptions/$', SubscriptionsView.as_view()),    
     url(r'^tag/(?P<tag>[^\.]+)/$', BrowseView.as_view()),
     url(r'^(?P<category>[^\.]+)/$', BrowseView.as_view()),

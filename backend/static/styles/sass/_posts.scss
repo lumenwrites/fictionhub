@@ -96,6 +96,14 @@ article {
     article {
 	border: none;
 	padding: 40px 40px 20px 40px;	
+
+	@media (max-width: 768px) {
+            padding: 10px;
+	    .post-footer {
+		margin: 5px -10px -10px -10px;
+		width: calc(100% + 20px);
+	    }
+	}    	
     }
 }
 

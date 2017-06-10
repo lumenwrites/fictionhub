@@ -170,7 +170,7 @@ class SubscriptionsView(FilterMixin, ListView):
         qs = super(SubscriptionsView, self).get_queryset()
         # Filter by subscriptions
         subscribed_to = self.request.user.subscribed_to.all()
-        qs = [p for p in qs if (p.author in subscribed_to)]
+        qs = [p for p in qs if (p.author in subscribed_to and p.published)]
         return qs
         
     

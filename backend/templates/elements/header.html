@@ -23,11 +23,13 @@
 		    <i class="fa fa-compass"></i> All Stories
 		  </a>
 		</li>
+		{% if user.is_authenticated %}
 		<li>
 		  <a href="/subscriptions/">
 		    <i class="fa fa-rss"></i> Subscriptions
 		  </a>
 		</li>
+		{% endif %}
 		<li>
 		  <a href="/leaderboard">
 		    <i class="fi-torsos"></i> Leaderboard
