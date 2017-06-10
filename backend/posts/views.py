@@ -18,6 +18,7 @@ from .forms import PostForm
 from core.utils import rank_hot
 from tags.models import Tag
 from categories.models import Category
+from series.models import Series
 from comments.models import Comment
 from profiles.models import User
 
@@ -225,6 +226,25 @@ def post_create(request):
             if category:
                 category = Category.objects.get(slug=category)
                 post.category = category
+
+            # Add series
+            series = request.GET.get('series')
+            if series == "new":
+                # If I'm being sent from a post that doesn't have series
+                # (by clicking "Add Chapter")
+                # I create series
+                series = Series()
+                series.save()
+                # Add the original post to it
+                first_chapter = Post.objects.get(slug=request.GET.get('post'))
+                first_chapter.parent = series
+                first_chapter.save()
+                # Add the post I've just created to it
+                post.parent = series
+            elif series:
+                series = Series.objects.get(pk=series)
+                post.parent = series
+
             post.save()
 
             
@@ -232,7 +252,7 @@ def post_create(request):
             # post.hubs.add(*form.cleaned_data['tags'])
             # hubs = post.hubs.all()
             
-            return HttpResponseRedirect('/post/'+post.slug)
+            return HttpResponseRedirect('/post/'+post.slug+'/edit')
 
     else:
         form = PostForm()
@@ -277,8 +297,7 @@ def post_edit(request, slug):
                 post.category = category
             post.save()
 
-            
-            return HttpResponseRedirect('/post/'+post.slug+'/')
+            return HttpResponseRedirect('/post/'+post.slug+'/edit')
     else:
         form = PostForm(instance=post)
         post_tags = [tag.title for tag in post.tags.all()]

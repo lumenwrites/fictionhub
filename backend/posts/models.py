@@ -8,6 +8,7 @@ from django.db.models import permalink
 
 from tags.models import Tag
 from categories.models import Category
+from series.models import Series
 
 
 # Generate unique slug
@@ -49,7 +50,7 @@ class Post(models.Model):
     views = models.IntegerField(default=0)
 
     # Chapter
-    parent = models.ForeignKey('Post', related_name="children",
+    parent = models.ForeignKey('series.Series', related_name="children",
                                default=None, null=True, blank=True)
     # chapter_number = models.IntegerField(default=1) 
 
@@ -68,4 +69,5 @@ class Post(models.Model):
     def get_absolute_url(self):
         return ('post-detail', None, {'slug': self.slug })
 
-
+    class Meta:
+        ordering = ['created_at']

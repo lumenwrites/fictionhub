@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load markdownify %}
+{% load title %}
 {% load static %}
 
 {% block content %}
@@ -13,31 +15,49 @@
 	   {% if post %}
 	   action="{{post.get_absolute_url}}edit"
 	   {% else %}
-	   action="/create"
+	   action="/create?{{request.GET.urlencode}}"
 	   {% endif %}	   
 	   method="post">{% csrf_token %}
 
-	  <!-- Chapters
+	  <!-- Chapters	-->
 	  <div class="chapters">
-	    <a class="btn btn-default nulis" href="https://nulis.io" target="_blank" >
-	      Nulis
+	    {% if post.parent %}
+	    <!-- If post already has series, create chapter under this series. -->
+	    <a class="btn btn-default"
+	       href="/write?series={{post.parent.pk}}">
+		Add Chapter
 	    </a>
-	    <a class="btn btn-default">Add Chapter</a>
+	    {% elif post %}
+	    <!-- If not - create new series, and add this post to it. -->
+	    <a class="btn btn-default"
+	       href="/write?series=new&post={{post.slug}}">
+		Add Chapter
+	    </a>
+	    {% else %}	  	       	    	    
+	    <!-- If I'm writing a new post - don't show the button. -->
+	    {% endif %}	  	       	    
+
+	    <!-- If it's a part of the Series, show other chapters -->
+	    {% if post.parent %}	  
 	    <div class="dropdown">
-	      <a class="btn btn-default" href="/@{{user.username}}">
-		Chapter 1: Trials and Tribulations
-	      </a>
-	      
+	      <span class="btn btn-default chapter-title">
+		<!-- Chapter title. Removed markdown. -->
+		{{post|title|striptags}}
+	      </span>
 	      <ul class="dropdown-menu" role="menu">
+		{% for child in post.parent.children.all %}	  	      
 		<li>
-		  <a href="">
-		    Chapter 2: Lah di dah
+		  <a href="{{child.get_absolute_url}}edit">
+		    {{ forloop.counter }}.
+		    {{child|markdownify|striptags|truncatechars:30}}		    
 		  </a>
 		</li>
+		{% endfor %}	  	      
 	      </ul>
 	    </div>
+	    {% endif %}	  
 	  </div>
-	  -->
+
 
 	  <!-- Editor -->
 	  {{form.body}}

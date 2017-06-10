@@ -1,12 +1,44 @@
 {% load markdownify %}
+{% load title %}
 <article>
   <!-- Post body -->
   {{post | markdownify:truncate | safe}}
   
   <div class="clearfix"></div>
+  <!-- Chapters -->
+  {% if post.parent and not truncate %}
+  <!-- 
+  <span class="btn btn-default left">
+    < Prev
+  </span>
+  <span class="btn btn-default right">
+    Next > 
+  </span>
+  -->
+  <div class="dropdown toc">
+    <span class="btn btn-default">
+      {{post|title|striptags}}
+    </span>
+    <ul class="dropdown-menu dropdown-menu-right" role="menu">    
+      {% for child in post.parent.children.all %}	  	      
+      <li>
+	<a href="{{child.get_absolute_url}}"
+	   {% if child == post %}
+	   class="active"
+	   {% endif %}>
+	  {{ forloop.counter }}.
+	  {{child|title|striptags}}		    
+	</a>
+      </li>
+      {% endfor %}	  	      
+    </ul>
+  </div>
+  {% endif %}  
+  <div class="clearfix"></div>
 
-  <!-- Categories/tags -->
+  <!-- Footer -->
   <div class="post-footer">
+    <!-- Categories/tags -->
     {% if post.category %}
     <span class="label label-default">
       {% if profile %}

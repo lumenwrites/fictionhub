@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row edit">
+    <div class="col-xs-12">
+      {% for user in users %}
+      <article>
+	{{ forloop.counter }}.
+	<a class="bold" href="/@{{user.username}}">{{user.username}}</a>
+	<span class="right">{{user.karma}}</span>
+      </article>
+      {% endfor %}      
+    </div>   <!-- End .col-xs-12 -->
+  </div> <!-- End .row .edit -->
+</div> <!-- End .container -->
+
+{% endblock %}
