@@ -46,33 +46,34 @@
 	}
     }
 
-    .stories {
-	article {
-	    padding: 10px;
-	    .thumbnail {
-		height: 120px;
-		background-position: 50% 50%;
-		background-size: cover;
-		width: 100%;
-		margin: -10px;
-		width: calc(100% + 20px);
-		max-width: calc(100% + 20px);
-		border: none;
-	    }
-	    .description {
-		height: 140px;
-	    }
-	    h1 {
-		font-size: 22px;
-		border: none;
-		margin-top: 10px;
-		margin-bottom:0;
-		line-height: 32px;
-	    }
-	    p {
-		font-size: 18px;		
-	    }
+
+}
+
+.stories, .story-suggestions {
+    article, .story-box {
+	padding: 10px;
+	.thumbnail {
+	    height: 120px;
+	    background-position: 50% 50%;
+	    background-size: cover;
+	    width: 100%;
+	    margin: -10px;
+	    width: calc(100% + 20px);
+	    max-width: calc(100% + 20px);
+	    border: none;
+	}
+	.description {
+	    height: 140px;
+	}
+	h1 {
+	    font-size: 22px;
+	    border: none;
+	    margin-top: 10px;
+	    margin-bottom:0;
+	    line-height: 32px;
+	}
+	p {
+	    font-size: 18px;		
 	}
     }
 }
-
