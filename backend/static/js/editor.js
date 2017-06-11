@@ -14,7 +14,6 @@ $(document).ready(function() {
 	    insertTexts: {
 		horizontalRule: ["", "\n\n-- readmore ---\n\n"],
 	    },
-	    lineWrapping: false,
 	    placeholder: "Write here...",
 	    spellChecker: false,
 	    status: ["autosave", "words"], // Optional usage
