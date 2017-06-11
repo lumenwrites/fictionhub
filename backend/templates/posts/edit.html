@@ -45,7 +45,7 @@
 		{{post|title|striptags}}
 	      </span>
 	      <ul class="dropdown-menu" role="menu">
-		{% for child in post.series.children.all %}	  	      
+		{% for child in post.series.chapters.all %}	  	      
 		<li>
 		  <a href="{{child.get_absolute_url}}edit"
 		     {% if child == post %}

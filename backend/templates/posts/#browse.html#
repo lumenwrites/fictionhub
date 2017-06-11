@@ -8,12 +8,15 @@
 {% endif %}
 {% include "elements/subnav.html" %}
 
+
 <div class="container">
   <div class="row">
     <div class="col-md-12 col-sm-12">
 
+      {% include "elements/subscription-box.html" %}
+      
       {% for post in posts %}
-      {% include "posts/post.html" %}
+      {% include "posts/post.html" with truncate=True %}
       {% endfor %}
 
       {% include "elements/pagination.html" %}

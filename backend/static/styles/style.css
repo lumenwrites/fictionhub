@@ -498,12 +498,13 @@ header .main-menu .notifications {
   color: #FFC99E;
   margin-right: 10px;
 }
-/* line 50, sass/_home.scss */
-.home .stories article {
+
+/* line 53, sass/_home.scss */
+.stories article, .stories .story-box, .story-suggestions article, .story-suggestions .story-box {
   padding: 10px;
 }
-/* line 52, sass/_home.scss */
-.home .stories article .thumbnail {
+/* line 55, sass/_home.scss */
+.stories article .thumbnail, .stories .story-box .thumbnail, .story-suggestions article .thumbnail, .story-suggestions .story-box .thumbnail {
   height: 120px;
   background-position: 50% 50%;
   background-size: cover;
@@ -513,20 +514,20 @@ header .main-menu .notifications {
   max-width: calc(100% + 20px);
   border: none;
 }
-/* line 62, sass/_home.scss */
-.home .stories article .description {
+/* line 65, sass/_home.scss */
+.stories article .description, .stories .story-box .description, .story-suggestions article .description, .story-suggestions .story-box .description {
   height: 140px;
 }
-/* line 65, sass/_home.scss */
-.home .stories article h1 {
+/* line 68, sass/_home.scss */
+.stories article h1, .stories .story-box h1, .story-suggestions article h1, .story-suggestions .story-box h1 {
   font-size: 22px;
   border: none;
   margin-top: 10px;
   margin-bottom: 0;
   line-height: 32px;
 }
-/* line 72, sass/_home.scss */
-.home .stories article p {
+/* line 75, sass/_home.scss */
+.stories article p, .stories .story-box p, .story-suggestions article p, .story-suggestions .story-box p {
   font-size: 18px;
 }
 

@@ -199,7 +199,7 @@ class PostDetailView(DetailView):
 
         # Prev/next chapters
         if post.series:
-            chapters = post.series.children.all()
+            chapters = post.series.chapters.all()
             this_index = 0
             prev_chapter = 0
             next_chapter = 0                
