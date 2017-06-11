@@ -50,7 +50,7 @@ class Post(models.Model):
     views = models.IntegerField(default=0)
 
     # Chapter
-    series = models.ForeignKey('series.Series', related_name="children",
+    series = models.ForeignKey('series.Series', related_name="chapters",
                                default=None, null=True, blank=True)
     # chapter_number = models.IntegerField(default=1) 
 
