@@ -197,6 +197,9 @@ class PostDetailView(DetailView):
         nested_comments = list(get_comment_list(ranked_comments, rankby="hot"))
         context['comments'] = nested_comments
 
+        # Profile (for header above single posts)
+        context['profile'] = post.author
+
         # Prev/next chapters
         if post.series:
             chapters = post.series.chapters.all()

@@ -16,14 +16,15 @@
 </head>
 
 <body>
-
+  
   <!-- Header -->
   {% include "elements/header.html" %}
 
   <!-- Content -->
+  <div class="page">
   {% block content %}
   {% endblock %}
-
+  </div>
   <!-- Footer -->
   <footer>
     <hr/>
