@@ -17,6 +17,7 @@ urlpatterns = [
     url(r'^post/(?P<slug>[^\.]+)/publish$', post_publish),
     url(r'^post/(?P<slug>[^\.]+)/unpublish$', post_unpublish),        
     url(r'^post/(?P<slug>[^\.]+)/$', PostDetailView.as_view(), name='post-detail'),
+    url(r'^story/(?P<slug>[^\.]+)/$', PostDetailView.as_view()),    
 
     url(r'^create$', post_create),    
     url(r'^write$', post_create),
