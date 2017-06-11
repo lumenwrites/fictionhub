@@ -12,7 +12,7 @@
 	<a class="bold black" href="/@{{message.from_user.username}}">
 	  @{{message.from_user.username}}
 	</a>
-	{{message.body | markdownify | safe}}
+	{{message | markdownify | safe}}
       </article>
       {% endfor %}
     </div>   <!-- End .col-xs-12 -->
