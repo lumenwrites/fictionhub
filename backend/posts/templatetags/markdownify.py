@@ -13,7 +13,7 @@ def markdownify(post, truncate = False):
             text = body.split("<!-- readmore -->")[0].strip()
         except:
             pass
-        text = body[:1024]
+        text = body[:380]
         if len(text) < len(body):
             body = text
             truncated = True

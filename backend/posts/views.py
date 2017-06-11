@@ -154,7 +154,7 @@ class ProfileView(FilterMixin, ListView):
         posts = Post.objects.filter(author=profile)
         profile_categories = []
         for post in posts:
-            if post.category and  post.category not in profile_categories:
+            if post.category and post.category not in profile_categories:
                 profile_categories.append(post.category)
         context['categories'] = profile_categories
         

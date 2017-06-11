@@ -55,7 +55,8 @@ article {
     .post-footer {
 	font-size: 14px;
 	color: $gray;
-	background: rgba(0,0,0,0.02);
+	/* background: rgba(0,0,0,0.02); */ /* brighter */
+	background: rgba(242, 242, 242, 0.6);
 	padding: 7px 10px;
 	margin: 5px -40px -20px -40px;
 	background-color: #fcfcfc;
