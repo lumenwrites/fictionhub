@@ -166,7 +166,8 @@ article {
 /* Post detail */
 
 .comment {
-    box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.04);
+    /* box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.04); */
+    box-shadow: -1px 1px 3px 0px rgba(0, 0, 0, 0.1);
     min-height: 0;
     padding: 20px;
     .footer {
@@ -186,7 +187,8 @@ article {
 }
 
 .comment .comment{
-    margin-right: -20.5px;
+    /* margin-right: -20.5px; */
+    margin-right: -40.5px;    
 }
 
 
