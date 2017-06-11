@@ -76,15 +76,20 @@
 	  <!-- Description -->
 	  <div class="">
 	    {{profile.about}}
-	    <div class="right hidden">
-	      <a href="">
-		rayalez.com
+	    <div class="right">
+	      {% if profile.website %}
+	      <a href="{{profile.website}}">
+		{{profile.website}}
 	      </a>
+	      {% endif %}	      
 	      <!-- Social Icons -->
+	      <!-- 
 	      <a href=""><i class="fa fa-twitter-square"></i></a>
 	      <a href=""><i class="fa fa-facebook-square"></i></a>
 	      <a href=""><i class="fa fa-medium"></i></a>
-	      <a href=""><i class="fa fa-rss"></i></a>
+	      -->
+
+	      <a href="/@{{profile.username}}/posts.atom"><i class="fa fa-rss"></i></a>
 	    </div>
 	  </div>
 	</div> <!-- End .col-xs-12 -->
