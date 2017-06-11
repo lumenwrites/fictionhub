@@ -14,7 +14,7 @@ def get_comment_list(comments=None, rankby="hot"):
         children = comment.children.all()
         if children:
             # Rank children
-            ranked_children = children.order_by('score', '-pub_date')
+            ranked_children = children.order_by('score', '-created_at')
             # loop through children, and apply this function
             for x in get_comment_list(ranked_children, rankby=rankby):
                 # yield children to insert all of them into the comment.
