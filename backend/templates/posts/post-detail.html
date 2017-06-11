@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 {% load markdownify %}
+{% load title %}
 
 {% block meta %}
   <!-- Meta -->
-  <title>{{post | title | striptags }}</title>
+  <title>{{post | title | striptags }} - Fiction Hub</title>
   <meta name="description"
 	content="{{post | markdownify:True | striptags }}">
   <meta name="keywords" content="Fiction, SciFi, Fantasy, Writing, Reading, Stories.">
@@ -19,7 +20,7 @@
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://fictionhub.io{{request.path}}" />
-  <meta property="twitter:title" content="{{post | title | striptags }}" />
+  <meta property="twitter:title" content="{{post | title | striptags }} - Fiction Hub" />
   <meta property="twitter:description" content="{{post | markdownify:True | striptags }}" />
   <meta property="twitter:creator" content="@raymestalez" />
   <meta property="twitter:site" content="@fictionhub" />  
