@@ -9,6 +9,6 @@ class Series(models.Model):
     class Meta:
         verbose_name_plural = "series"
 
-    def __str__(self):
-        return self.title[:100]
+    # def __str__(self):
+    #     return self.title[:100]
 
