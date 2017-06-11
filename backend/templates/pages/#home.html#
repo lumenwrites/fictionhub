@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="home">
+  <!-- Header CTA -->
+  <div class="header">
+    <div class="overlay">
+    <div class="container">
+      <div class="row">
+	<div class="col-xs-12">
+	  <!-- <img src="/static/img/logo_200x200.png"/>	   -->
+	  <!-- <h1>Welcome to Fiction Hub!</h1> -->
+	  <h2>The best place to publish and discover awesome fiction</h2>
+	  <a class="btn btn-cta-large"
+	     data-toggle="modal" data-target="#login" >Get Started</a>
+	  <a class="btn btn-cta-large learn-more" href="/about">Learn More</a>	  
+	</div>   <!-- End .col-xs-12 -->
+      </div> <!-- End .row .edit -->
+    </div> <!-- End .container -->
+    </div> <!-- End .overlay -->
+  </div> <!-- End .header -->
+
+  <div class="subnav">
+      <div class="container">
+	<div class="row">
+	  <div class="col-xs-12">
+	    <a href="">Short Stories</a>
+	    <a href="">Science Fiction</a>
+	    <a href="">Fantasy</a>
+	    <a href="">Comedy</a>
+	    <a href="">On Writing</a>	    	    	    	    
+	  </div>   <!-- End .col-xs-12 -->
+	</div> <!-- End .row .edit -->
+      </div> <!-- End .container -->
+  </div>
+  <!-- Stories -->
+  <div class="stories">
+      <div class="container">
+	<div class="row">
+	  <div class="col-xs-12 col-sm-4">
+	    <a href="/post/the-metropolitan-man">
+	      <article>
+		<div class="thumbnail"
+		     style="background-image:
+			    url('/media/images/pages/stories/metropolitan-man.jpg');"
+		     >
+		</div>
+		<div class="description">
+		  <h1>The Metropolitan Man</h1>
+		  <p>Superman has arrived. Lex Luthor, the protagonist, is coming to grips with the arrival of an alien god.</p>
+		</div>
+	      </article>
+	    </a>
+	  </div>   <!-- End .col-xs-12 col-sm-4 -->
+
+	  <div class="col-xs-12 col-sm-4">
+	    <a href="/post/boxed-in">
+	      <article>
+		<div class="thumbnail"
+		     style="background-image:
+			    url('/media/images/pages/stories/boxed-in.png');"
+		     >
+		</div>
+		<div class="description">
+		  <h1>Boxed In</h1>
+		  <p>Man had created god, and put her in a box.</p>
+		</div>
+	      </article>
+	    </a>
+	  </div>   <!-- End .col-xs-12 col-sm-4 -->	  
+
+	  <div class="col-xs-12 col-sm-4">
+	    <a href="/post/story-writing-process">
+	    <article>
+	      <div class="thumbnail"
+		   style="background-image:
+			  url('/media/images/pages/stories/story-process.png');"
+		   >
+	      </div>
+	      <div class="description">
+		<h1>Story Writing process</h1>
+		<p>Overcome writer’s block, have fun writing fiction daily, and rapidly improve your skills.</p>
+	      </div>
+	    </article>
+	    </a>
+	  </div>   <!-- End .col-xs-12 col-sm-4 -->	  
+	</div> <!-- End .row .edit -->
+
+	<div class="row">
+	  <div class="col-xs-12 col-sm-4">
+	      <a href="/post/siri">
+		<article>
+		  <div class="thumbnail"
+		       style="background-image:
+			      url('/media/images/pages/stories/siri.jpg');"
+		       >
+		  </div>
+		  <div class="description">
+		    <h1>Siri</h1>
+		    <p>A company is releasing an update that adds true AI companions to its mobile devices.</p>
+		  </div>
+		</article>
+	      </a>	    
+	  </div>   <!-- End .col-xs-12 col-sm-4 -->
+
+	  <div class="col-xs-12 col-sm-4">
+	    <a href="/post/shaman">
+	      <article>
+		<div class="thumbnail"
+		     style="background-image:
+			    url('/media/images/pages/stories/shaman.png');"
+		     >
+		</div>
+		<div class="description">
+		  <h1>Shaman</h1>
+		  <p>Stories about a Shaman with the mysterious origin.</p>
+		</div>
+	      </article>
+	    </a>
+	  </div>   <!-- End .col-xs-12 col-sm-4 -->	  
+
+	  <div class="col-xs-12 col-sm-4">
+	    <a href="/post/unaware">
+	      <article>
+		<div class="thumbnail"
+		     style="background-image:
+			    url('/media/images/pages/stories/unaware.jpg');"
+		     >
+		</div>
+		<div class="description">
+		  <h1>Unaware</h1>
+		  <p>The apocalypse has continued for years now, but you’ve never noticed.
+		  </p>
+		</div>
+	      </article>
+	    </a>
+	  </div>   <!-- End .col-xs-12 col-sm-4 -->	  
+	</div> <!-- End .row .edit -->
+	<br/>
+	<a class="btn btn-cta-large right"
+	   href="/browse">Discover more awesome stories</a>
+	<div class="clearfix"></div>
+	<br/>
+      </div> <!-- End .container -->
+  </div> <!-- End .stories -->
+
+</div> <!-- End .home -->
+{% endblock %}
