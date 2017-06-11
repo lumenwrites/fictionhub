@@ -4,6 +4,9 @@ from django.shortcuts import render
 from posts.models import Post
 
 def home(request):
+    if request.user.is_authenticated():
+        return HttpResponseRedirect('/browse/')        
+    
     return render(request, 'pages/home.html', {
     })
 

@@ -121,8 +121,11 @@ class BrowseView(FilterMixin, ListView):
     template_name = "posts/browse.html"
 
     def get_queryset(self):
-        qs = super(BrowseView, self).get_queryset()        
-        qs = [p for p in qs if (p.published == True)]
+        qs = super(BrowseView, self).get_queryset()
+        # Show only published posts
+        # Post doesn't have series, or is the first one in series
+        qs = [p for p in qs if (p.published == True and
+                                (not p.series or p.series.children.all()[0] == p))]
 
         return qs
     
@@ -187,12 +190,30 @@ class PostDetailView(DetailView):
         categories = Category.objects.all()        
         context['categories'] = categories
 
+        post = self.object
         # Comments
-        top_lvl_comments =Comment.objects.filter(post=self.object, parent = None)
+        top_lvl_comments =Comment.objects.filter(post=post, parent = None)
         ranked_comments = top_lvl_comments.order_by('score', '-created_at')
         nested_comments = list(get_comment_list(ranked_comments, rankby="hot"))
         context['comments'] = nested_comments
 
+        # Prev/next chapters
+        chapters = post.series.children.all()
+        this_index = 0
+        prev_chapter = 0
+        next_chapter = 0                
+        if post.series:
+            for index, chapter in enumerate(chapters):
+                if post == chapter:
+                    this_index = index
+        if this_index > 0:
+            prev_chapter = chapters[this_index - 1]
+        if this_index + 1 < len(chapters):
+            next_chapter = chapters[this_index + 1]
+        context['chapters'] = chapters
+        context['prev_chapter'] = prev_chapter
+        context['next_chapter'] = next_chapter        
+                    
         return context
     
 def post_create(request):

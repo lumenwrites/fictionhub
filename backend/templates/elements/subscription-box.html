@@ -9,13 +9,13 @@
 	      </button>
 
 	      <div class="panel-body">
-		<div class="col-xs-12 col-md-6 cta-description">
+		<div class="col-xs-12 col-md-7 cta-description">
 		  <div class="cta">
 		    Subscribe to the weekly digest of our best stories!
 		  </div>
 		</div> <!-- End col 12 -->
 
-		<div class="col-xs-12 col-md-6">
+		<div class="col-xs-12 col-md-5">
 		    <form method="post" class="email-form"
 			  action="/subscribe/?next={{request.path}}">{% csrf_token %}  
 		      <input type="text" name="email"

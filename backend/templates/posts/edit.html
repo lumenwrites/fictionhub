@@ -47,7 +47,10 @@
 	      <ul class="dropdown-menu" role="menu">
 		{% for child in post.series.children.all %}	  	      
 		<li>
-		  <a href="{{child.get_absolute_url}}edit">
+		  <a href="{{child.get_absolute_url}}edit"
+		     {% if child == post %}
+		     class="active"
+		     {% endif %}>
 		    {{ forloop.counter }}.
 		    {{child|markdownify|striptags|truncatechars:30}}		    
 		  </a>
