@@ -63,9 +63,8 @@
 
 
 	  <!-- Editor Body -->
-	  <textarea class="form-control editor" name="body"
-		    placeholder="Write here..." ></textarea>	  
-
+	  {{form.body}}
+	  
 	  <!-- Category -->
           <div class="col-xs-12 col-sm-3">
 	    <select name="post_category" class="form-control">
@@ -151,6 +150,9 @@
     </div> <!-- End .modal-content -->
   </div> <!-- End .modal-dialog -->
 </div>	 <!-- End .modal -->
+
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script src="{% static "/js/editor.js" %}"></script>
 
 
 {% endblock %}
