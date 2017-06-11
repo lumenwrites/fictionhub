@@ -19,9 +19,25 @@ article {
 	font-size: 12px;
 	color: rgba(0, 0, 0, 0.44);
     }
+
+    .prev {
+	margin-left: -10px;	    
+    }
+    .next {
+	margin-right: -10px;	    
+    }
+    
+    .prev, .next {
+	margin-top: -38.5px;
+	@media (max-width: 500px) {
+	    width: 50%;
+	    margin: 0;
+	    margin-top: 4px;
+	}
+    }
     .toc {
 	display: block;
-	width: calc(100% - 170px);
+	width: calc(100% - 150px);
 	@media (max-width: 500px) {
 	    width: 100%;	    
 	}
@@ -66,7 +82,24 @@ article {
 	    color: white;
 	    border: none;
 	}	    
-	
+
+	.actions {
+	    float: right;
+	    @media (max-width: 600px) {
+		float: left;
+		margin-top: 10px;
+	    }
+	    .btn {
+		@media (max-width: 600px) {
+		    margin-right: 2px;
+		}
+	    }
+	}
+	.col-xs-12, .col-sm-6 {
+	    @media (max-width: 700px) {
+		padding: 0;
+	    }
+	}
     }
 
     .subtitle {
@@ -96,6 +129,14 @@ article {
     article {
 	border: none;
 	padding: 40px 40px 20px 40px;	
+
+	@media (max-width: 768px) {
+            padding: 10px;
+	    .post-footer {
+		margin: 5px -10px -10px -10px;
+		width: calc(100% + 20px);
+	    }
+	}    	
     }
 }
 
@@ -157,6 +198,9 @@ article {
 	.dropdown-menu {
 	    box-sizing: border-box;
 	    width: 100%;
+	    .active {
+		font-weight:bold!important;
+	    }
 	}
     }
 

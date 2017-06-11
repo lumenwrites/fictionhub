@@ -1,0 +1,78 @@
+.home {
+    .header {
+	text-align: center;
+	background: #253153 url("/static/img/space_medium.jpg") no-repeat center;
+	background-position: 50% calc(50% - 90px);
+	background-size: cover;
+	color: white;
+	.overlay {
+	    background: rgba(0, 0, 0, 0.175);
+	    padding: 80px;
+	    @media  (max-width: 700px) {
+		padding:20px;
+	    }
+	}
+	@media  (max-width: 700px) {
+	    background-position: initial;		
+	}
+	
+	img {
+	    width: 125px;
+	}
+	h1 {
+	    font-size: 43px;
+	    margin-top: 10px;
+	}
+	h2 {
+	    font-size: 22px;
+	    margin-bottom: 25px;
+	    text-shadow: 0.5px 0.5px 0.5px black;
+	}
+	.btn {
+	    border: 0.5px solid #f66303;	    
+	}
+	.learn-more {
+	    /* background: transparent; */
+	    margin-left: 10px;
+	}
+    }
+
+    .subnav {
+	background: #f6630a;
+	padding: 20px 0;
+	a {
+	    color: #FFC99E;
+	    margin-right:10px;
+	}
+    }
+
+    .stories {
+	article {
+	    padding: 10px;
+	    .thumbnail {
+		height: 120px;
+		background-position: 50% 50%;
+		background-size: cover;
+		width: 100%;
+		margin: -10px;
+		width: calc(100% + 20px);
+		max-width: calc(100% + 20px);
+		border: none;
+	    }
+	    .description {
+		height: 140px;
+	    }
+	    h1 {
+		font-size: 22px;
+		border: none;
+		margin-top: 10px;
+		margin-bottom:0;
+		line-height: 32px;
+	    }
+	    p {
+		font-size: 18px;		
+	    }
+	}
+    }
+}
+

@@ -15,6 +15,7 @@ $light-gray: #e7e7e7;
 @import 'helpers';
 @import 'general';
 @import 'header';
+@import 'home';
 @import 'posts';
 
 .subscription-box {
@@ -109,7 +110,9 @@ $light-gray: #e7e7e7;
 /* Footer */
 
 footer {
-    color: $gray;
+    min-height: 40px;
+    background-color: #333a42;
+    color: #babfc2;    
     a {
 	color: $gray;
 	font-weight: bold;
