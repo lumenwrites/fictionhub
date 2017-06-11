@@ -4,9 +4,10 @@
  
 <head>
   <meta charset="utf-8">
+  {% block meta %}
   <title>Fiction Hub</title>
-
   {% include "elements/meta.html" %}  
+  {% endblock %}
 
   <!-- Styles -->
   <link rel="stylesheet" href="{% static "/styles/vendor.css" %}">  

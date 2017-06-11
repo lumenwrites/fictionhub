@@ -61,7 +61,8 @@ class Post(models.Model):
     def save(self, slug="", *args, **kwargs):
         if not self.id:
             self.created_at = datetime.now()
-            self.slug = unique_slug(self.body[:30])
+            firstline = self.body.splitlines()[0]
+            self.slug = unique_slug(firstline[:30])
 
         return super(Post, self).save(*args, **kwargs)
     

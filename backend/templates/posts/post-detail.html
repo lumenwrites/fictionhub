@@ -1,6 +1,30 @@
 {% extends "base.html" %}
 {% load static %}
+{% load markdownify %}
 
+{% block meta %}
+  <!-- Meta -->
+  <title>{{post | title | striptags }}</title>
+  <meta name="description"
+	content="{{post | markdownify:True | striptags }}">
+  <meta name="keywords" content="Fiction, SciFi, Fantasy, Writing, Reading, Stories.">
+  <meta name="author" content="Ray Alez">  
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
+  <link rel="shortcut icon" href="https://fictionhub.io/static/img/favicon.ico"/>
+  <!-- Facebook -->
+  <meta property="og:description" content="{{post | markdownify:True | striptags }}">
+  <meta property="og:url" content="https://fictionhub.io{{request.path}}">
+  <meta property="og:image" content="https://fictionhub.io/static/img/social.png">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://fictionhub.io{{request.path}}" />
+  <meta property="twitter:title" content="{{post | title | striptags }}" />
+  <meta property="twitter:description" content="{{post | markdownify:True | striptags }}" />
+  <meta property="twitter:creator" content="@raymestalez" />
+  <meta property="twitter:site" content="@fictionhub" />  
+  <meta property="twitter:image" content="https://fictionhub.io/static/img/social.png" />  
+{% endblock %}
 {% block content %}
 <div class="container">
   <div class="row">

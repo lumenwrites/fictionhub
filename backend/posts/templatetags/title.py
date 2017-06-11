@@ -10,5 +10,6 @@ def title(post):
     html = markdown(body)
     firstline = html.splitlines()[0]
     title = firstline[:100]
+    title = "asd " + markdown(title) 
     return title
 
