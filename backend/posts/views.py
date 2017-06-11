@@ -125,7 +125,7 @@ class BrowseView(FilterMixin, ListView):
         # Show only published posts
         # Post doesn't have series, or is the first one in series
         qs = [p for p in qs if (p.published == True and
-                                (not p.series or p.series.children.all()[0] == p))]
+                                (not p.series or p.series.chapters.all()[0] == p))]
 
         return qs
     
