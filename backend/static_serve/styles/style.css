@@ -630,8 +630,8 @@ article .post-footer .fi-arrow-up:before {
 /* line 80, sass/_posts.scss */
 article .post-footer .upvoted {
   background: #f66303;
+  border: 1px solid #f66303;
   color: white;
-  border: none;
 }
 /* line 86, sass/_posts.scss */
 article .post-footer .actions {
