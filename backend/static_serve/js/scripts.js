@@ -16,7 +16,8 @@ $(document).ready(function() {
 	Cookies.set('subscription_box_closed', 'yes', { expires: 7 });
     });	
     /* If a cookie isn't set - display the box (it's hidden by default). */
-    if (Cookies.get('subscription_box_closed')==null) {
+    if (Cookies.get('subscription_box_closed')==null
+	&& $.query.get('notification') != "subscribed") {
         $('.subscription-box').css("display","block");
     }
 
