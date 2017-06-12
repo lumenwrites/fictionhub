@@ -35,31 +35,32 @@ for post in to_import:
         author.save()
 
     series = None
+
+    # Check if has children, if it does - create series
+    for p in to_import:
+        if p["fields"]["parent"] == post["pk"]:
+            # Found a child
+            series_title = post["fields"]["title"]
+            series_slug = post["fields"]["slug"]
+            try:
+                series = Series.objects.get(slug=parent["fields"]["slug"])
+            except:
+                series = Series(title=series_title, slug=series_slug)
+                series.save()
+            break
+
+    # Check if it has parent. if it does - find series ive made above, add to it
     if post["fields"]["parent"]:
         # Find parent
         for p in to_import:
             if post["fields"]["parent"] == p["pk"]:
                 parent = p
-        series_title = parent["fields"]["title"]
-        series_slug = parent["fields"]["slug"]
-        # Get or create series
+        slug = parent["fields"]["slug"] + "-" + slug
         try:
-            series = Series.objects.get(slug=series_slug)
+            series = Series.objects.get(slug=parent["fields"]["slug"])
         except:
             series = Series(title=series_title, slug=series_slug)
             series.save()
-        slug = parent["fields"]["slug"] + "-" + slug
-    else:
-        # If post has no parent, try getting series created just above,
-        # By parent's slug, because Im using it to generate slug for series.
-        try:
-            series = Series.objects.get(slug=slug)
-        except:
-            # Check if has children
-            for p in to_import:
-                if p["fields"]["parent"] == post["pk"]:
-                    series = Series(title=post["fields"]["title"], slug=slug)
-                    series.save()
 
     try:
         Post.objects.get(slug=slug)
