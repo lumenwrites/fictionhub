@@ -15,3 +15,4 @@ Pillow
 	
 requests
 python-dotenv
+furl

@@ -1,3 +1,5 @@
+from furl import furl
+
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth import authenticate
@@ -72,9 +74,13 @@ def email_subscribe(request):
     if request.method == 'POST':    
         email = request.POST.get('email')
         ref = request.GET.get('ref')
+        redirect_to = request.GET.get('next')
+        # Add ?notification=subscribed to show the success alert and close the box
+        # Use furl to magically add it to anything, even if I already have a get query
+        redirect_to =  furl(redirect_to).add({'notification':'subscribed'}).url
         email_subscriber, created = Subscriber.objects.get_or_create(email=email,ref=ref)
         email_subscriber.save()
-        return HttpResponseRedirect('/?notification=subscribed')
+        return HttpResponseRedirect(redirect_to)
 
 
 def subscribe(request, username):

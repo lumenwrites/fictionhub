@@ -25,7 +25,7 @@ $(document).ready(function() {
     if (notification == "subscribed") {
 	$(".alert").show();
 	console.log("Subscription box closed!");
-	Cookies.set('subscription_box_closed', 'yes', { expires: 7 });
+	/* Cookies.set('subscription_box_closed', 'yes', { expires: 500 });*/
 	$(".alert").delay(3000).fadeOut();	
     }
 

@@ -9,7 +9,7 @@ from .views import leaderboard
 urlpatterns = [
     url(r'^join/', join),
     url('^login/$', login),
-    url(r'^logout/', logout),
+    url(r'^logout/', logout, {'next_page':'/'}),
 
     url(r'^@(?P<username>[^\.]+)/subscribe', subscribe),
     url(r'^@(?P<username>[^\.]+)/unsubscribe', unsubscribe),
