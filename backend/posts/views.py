@@ -1,3 +1,5 @@
+import re, time
+from datetime import datetime, timedelta
 
 from django.views.generic import View
 from django.views.generic.list import ListView
@@ -21,6 +23,8 @@ from categories.models import Category
 from series.models import Series
 from comments.models import Comment
 from profiles.models import User
+
+from .utils import update_wordcount
 
 class GeneralMixin(object):
     def get_context_data(self, **kwargs):
@@ -157,7 +161,53 @@ class ProfileView(FilterMixin, ListView):
             if post.category and post.category not in profile_categories:
                 profile_categories.append(post.category)
         context['categories'] = profile_categories
-        
+
+        # Position on the leaderboard
+        leaderboard = list(User.objects.all().order_by('-karma')[:25])
+        context['leaderboard_position'] = leaderboard.index(profile)
+
+        # View Stats
+        view_count = 0
+        for post in profile.posts.all():
+            view_count += post.views
+        if view_count > 1000:
+            view_count = str(floor(view_count/1000)) + "K"
+        context['view_count'] = view_count
+
+        # Calendar
+        calendar = []
+        saved_days = {}
+        if profile.calendar:
+            saved_days = eval(profile.calendar)
+        today = time.strftime("%Y-%m-%d")
+        # String to date
+        start = datetime.strptime(today, "%Y-%m-%d")
+        # Generate calendar
+        for d in range(10):
+            # Subtract d days from today
+            this_day = start - timedelta(days=d)
+            this_day = this_day.strftime("%Y-%m-%d")
+            if this_day in saved_days:
+                # If there's saved wordcount on this day, add it to calendar
+                calendar.append(saved_days[this_day] * 0.001)
+            else:
+                calendar.append(0)
+        context['calendar'] = calendar[::-1]
+
+        # Calculate streak
+        streak = 0
+        for d in range(100):
+            this_day = start - timedelta(days=d)
+            this_day = this_day.strftime("%Y-%m-%d")
+            if this_day in saved_days:
+                # If I wrote 100+ words - increment the streak
+                if saved_days[this_day] > 100:
+                    streak += 1
+                else:
+                    # Once the day is missed - the streak is over
+                    break
+        context['streak'] = streak
+
         return context
 
 
@@ -217,7 +267,12 @@ class PostDetailView(DetailView):
             context['chapters'] = chapters
             context['prev_chapter'] = prev_chapter
             context['next_chapter'] = next_chapter        
-                        
+
+        # Increment view counter
+        if self.request.user != post.author:
+            post.views +=1
+            post.save()
+
         return context
     
 def post_create(request):
@@ -272,8 +327,8 @@ def post_create(request):
 
             post.save()
 
-            
-                    
+            wordcount = len(re.findall(r'\w+', post.body))
+            update_wordcount(wordcount, post.author)
             # post.hubs.add(*form.cleaned_data['tags'])
             # hubs = post.hubs.all()
             
@@ -290,6 +345,7 @@ def post_create(request):
 
 def post_edit(request, slug):
     post = Post.objects.get(slug=slug)
+    prev_wordcount = len(re.findall(r'\w+', post.body))            
     # throw him out if he's not an author
     if request.user != post.author and not request.user.is_staff:
         return HttpResponseRedirect('/')        
@@ -321,6 +377,9 @@ def post_edit(request, slug):
                 category = Category.objects.get(slug=category)
                 post.category = category
             post.save()
+
+            wordcount = len(re.findall(r'\w+', post.body)) - prev_wordcount
+            update_wordcount(wordcount, post.author)
 
             return HttpResponseRedirect('/post/'+post.slug+'/edit')
     else:

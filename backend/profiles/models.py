@@ -20,6 +20,8 @@ class User(AbstractUser):
     about = models.TextField(max_length=512, blank=True)
     website = models.CharField(max_length=64, blank=True)
 
+    calendar = models.TextField(default="", null=True, blank=True)
+
     # Email notifications
     # email_subscriptions = models.BooleanField(default=True,
     # verbose_name='Send me email notifications when someone I follow publishes a new story')

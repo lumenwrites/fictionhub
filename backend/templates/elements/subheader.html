@@ -13,34 +13,29 @@
 	    <span data-toggle="tooltip" data-placement="top" title="Upvotes">
 	      <i class="fi-arrow-up"></i> {{profile.karma}}
 	    </span>
-	    <!-- 
+
 	    <span data-toggle="tooltip" data-placement="top" title="Views">
-	      <i class="fi-eye"></i> {{profile.views}}
+	      <i class="fi-eye"></i> {{view_count}}
 	    </span>
 	    <span data-toggle="tooltip" data-placement="top"
 		  title="Weekly leaderboard rank">
-	      <i class="fi-graph-trend"></i> 272
+	      <i class="fi-graph-trend"></i> {{leaderboard_position}}
 	    </span>
+
+
 	    <div class="calendar"
 		 data-toggle="tooltip" data-placement="top" data-html="true"
 		 title="Words written <br/> in the past 10 days">
-	      <div class="mark"></div>
-	      <div class="mark"></div>
-	      <div class="mark"></div>
-	      <div class="mark"></div>
-	      <div class="mark"></div>
-	      <div class="mark"></div>
-	      <div class="mark"></div>
-	      <div class="mark"></div>
-	      <div class="mark"></div>
-	      <div class="mark"></div>
+	      {% for day in calendar %}
+	      <div class="mark"
+		   style="background:rgba(255,255,255,{{day}})"></div>
+	      {% endfor %}	      
 	    </div>
 	    <span data-toggle="tooltip" data-placement="top" data-html="true"
 		  title="Writing streak <br/>
 			 (how many days in a row <br/> written 100+ words)">
-	      18
+	      {{streak}}
 	    </span>
-	    -->
 	  </div> <!-- End .stats -->
 	</div>	 <!-- End .left -->
 	<div class="buttons">

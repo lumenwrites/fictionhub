@@ -101,7 +101,45 @@ def unsubscribe(request, username):
     
 
 def leaderboard(request):
-    profiles = User.objects.all().order_by('-karma')[:25]
+    users = User.objects.all().order_by('-karma')[:25]
     return render(request, 'profiles/leaderboard.html',{
         'users':users
     })
+
+
+
+
+@login_required
+def settings(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/settings/')            
+    else:
+        form = UserForm(instance=request.user)
+    
+    return render(request, "profiles/settings.html", {
+        'form': form
+    })
+
+@login_required
+def update_password(request):
+    form = PasswordChangeForm(user=request.user)
+
+    if request.method == 'POST':
+        form = PasswordChangeForm(user=request.user, data=request.POST)
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            return HttpResponseRedirect('/preferences/')                        
+    else:
+        form = PasswordChangeForm(user=request.user)
+
+    return render(request, "profiles/prefs.html", {
+        'form': form,
+        # 'message': "Error, try again.",
+        'title': "Change Password"                        
+    })
+
+
