@@ -40,7 +40,8 @@ $(document).ready(function() {
 	var query = $('#searchbar').val(); 
 	var url = $.query.set('query', query);
 	/* Send the get request */
-	window.location = window.location.href + url;
+	var current_url_without_query = window.location.href.split('?')[0];	
+	window.location = current_url_without_query + url;
     });
 
     /* Filtering */
