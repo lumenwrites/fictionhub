@@ -1,6 +1,7 @@
 import json
 from posts.models import Post
 from profiles.models import User
+from categories.models import Category
 
 with open('posts.json') as data_file:    
     posts = json.load(data_file)
@@ -13,6 +14,7 @@ for post in posts:
     if post["fields"]["published"] and post["fields"]["rational"]:
         to_import.append(post)
 
+category = Category.objects.get(slug="rational")        
 for post in to_import:
     body =  "# " + post["fields"]["title"] + "\n" + post["fields"]["body"]
     slug = post["fields"]["slug"]
