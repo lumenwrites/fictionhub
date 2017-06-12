@@ -142,10 +142,11 @@ class ProfileView(FilterMixin, ListView):
     def get_queryset(self):
         qs = super(ProfileView, self).get_queryset()
         profile = User.objects.get(username=self.kwargs['username'])
-
+        # Filter author's posts
+        qs = [p for p in qs if (p.author==profile)]
         # Show all posts to author, only published to everyone else
         if self.request.user != profile:
-            qs = [p for p in qs if (p.published==True)]            
+            qs = [p for p in qs if (p.published==True)]       
         
         return qs
     
