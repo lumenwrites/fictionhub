@@ -23,7 +23,7 @@
 		    <i class="fa fa-compass"></i> All Stories
 		  </a>
 		</li>
-		{% if user.is_authenticated %}
+		{% if user.is_authenticated and user.subscribed_to.count > 0 %}
 		<li>
 		  <a href="/subscriptions/">
 		    <i class="fa fa-rss"></i> Subscriptions

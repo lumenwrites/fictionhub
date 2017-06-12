@@ -342,8 +342,16 @@ def post_create(request):
     else:
         form = PostForm()
         categories =  Category.objects.all()
+
+        today = time.strftime("%Y-%m-%d")
+        if today in request.user.calendar:
+            wordcount = eval(request.user.calendar)[today]
+        else:
+            wordcount = 0
+        
         return render(request, 'posts/edit.html', {
             'form':form,
+            'wordcount':wordcount,            
             'categories': categories
         })
 
