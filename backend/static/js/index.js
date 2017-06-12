@@ -5,7 +5,7 @@ import 'jquery-query-object';
 import './scripts';
 import './voting';
 import './comments';
-import './editor';
+/* import './editor';*/
 
 /* import '../node_modules/font-awesome/css/font-awesome.css';*/
 /* import 'foundation-icon-fonts';*/

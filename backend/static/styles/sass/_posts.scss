@@ -227,6 +227,12 @@ article {
     .editor-toolbar {
 	border-radius: 0;
 	background: white;
+	opacity: 1;
+	border: 1px solid #d4d2cd;
+	border-bottom: snow;
+	a:before {
+	    color: #7e878d;
+	}
     }
     .CodeMirror {
 	border-radius: 0;
@@ -234,12 +240,38 @@ article {
     }
     .editor-statusbar {
 	border: 1px solid #ddd;
+	background: white;
     }
     
     /* No gap between category and tags */
     .col-sm-3, .col-sm-9 {
 	padding: 0;
     }
+}
+
+/* Wordcount widget */
+.progressbar-outer {
+    height:10px;
+    width:100%;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-top: none; border-bottom: none;
+    overflow: hidden;
+    .progressbar-inner {
+	height: 100%;
+	background: rgba(246, 99, 3, 0.8);
+    }
+    .marks {
+	height: 100%;
+	margin-top: -6px;
+	background: none;
+	.mark {
+	    height: 4px;
+	    float:left;
+	    width: 10%;
+	    background: none;
+	    border-right: 0.5px solid #dddddd;
+	}
+    } 
 }
 
 /* Messages */

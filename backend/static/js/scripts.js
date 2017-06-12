@@ -62,7 +62,7 @@ $(document).ready(function() {
     });
 
     /* Highlight search input if there's value in it*/
-    if ($('#searchbar').val().length > 0){
+    if ($('#searchbar').val() && $('#searchbar').val().length > 0){
 	$('#searchbar').addClass('active');
     }
 

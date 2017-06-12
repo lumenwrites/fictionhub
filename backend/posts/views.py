@@ -164,7 +164,7 @@ class ProfileView(FilterMixin, ListView):
 
         # Position on the leaderboard
         leaderboard = list(User.objects.all().order_by('-karma')[:25])
-        context['leaderboard_position'] = leaderboard.index(profile)
+        context['leaderboard_position'] = leaderboard.index(profile) + 1
 
         # View Stats
         view_count = 0
@@ -386,14 +386,20 @@ def post_edit(request, slug):
         form = PostForm(instance=post)
         post_tags = [tag.title for tag in post.tags.all()]
         post_tags = ",".join(post_tags)
-        # form.fields["tags"] = []
-        
-    return render(request, 'posts/edit.html', {
-        'post':post,
-        'form':form,
-        'post_tags':post_tags,
-        'categories': Category.objects.all(),
-    })
+
+        today = time.strftime("%Y-%m-%d")
+        if today in request.user.calendar:
+            wordcount = eval(request.user.calendar)[today]
+        else:
+            wordcount = 0
+            
+        return render(request, 'posts/edit.html', {
+            'post':post,
+            'form':form,
+            'post_tags':post_tags,
+            'wordcount':wordcount,        
+            'categories': Category.objects.all(),
+        })
     
 
 def post_delete(request, slug):

@@ -64,7 +64,16 @@
 
 	  <!-- Editor Body -->
 	  {{form.body}}
-	  
+
+	  <div class="progressbar-outer">
+	    <div class="progressbar-inner">
+	    </div>
+	    <div class="marks">
+	      {% for i in "xxxxxxxxxx" %}
+	      <div class="mark"></div>
+	      {% endfor %}
+	    </div>
+	  </div>
 	  <!-- Category -->
           <div class="col-xs-12 col-sm-3">
 	    <select name="post_category" class="form-control">
@@ -151,8 +160,41 @@
   </div> <!-- End .modal-dialog -->
 </div>	 <!-- End .modal -->
 
-<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-<script src="{% static "/js/editor.js" %}"></script>
 
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script>
+    $(document).ready(function() {
+	var simplemde = new SimpleMDE({
+	    autofocus: true,
+	    autosave: {
+		enabled: false,
+		uniqueId: "MyUniqueID",
+		delay: 1000,
+	    },
+	    insertTexts: {
+		horizontalRule: ["", "\n\n-- readmore ---\n\n"],
+	    },
+	    placeholder: "Write here...",
+	    spellChecker: false,
+	    status: ["autosave", "words"], // Optional usage
+	    status: ["autosave", "words"]
+	});
+	
+	var todays_wordcount = {{wordcount}};
+	$('.progressbar-inner').css("width",todays_wordcount*0.1+"%");	    
+	
+	var text = simplemde.value();
+	var initial_wordcount = text.split(' ').length;	
+	simplemde.codemirror.on("change", function(){
+	    var text = simplemde.value();
+	    var current_wordcount = text.split(' ').length;
+	    var new_words = current_wordcount - initial_wordcount;
+	    var total_progress = (todays_wordcount + new_words) * 0.1;
+	    console.log(total_progress);
+	    $('.progressbar-inner').css("width",total_progress+"%");	    
+	});
+    });
+</script>
 
 {% endblock %}
