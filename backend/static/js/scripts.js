@@ -20,7 +20,6 @@ $(document).ready(function() {
         $('.subscription-box').css("display","block");
     }
 
-
     /* Subscribed notification */
     var notification = $.query.get('notification');
     if (notification == "subscribed") {
@@ -44,12 +43,14 @@ $(document).ready(function() {
     });
 
     /* Filtering */
-    $('.subnav .dropdown-menu').on('click', 'a', function(e) {
+    $('.query-filter').on('click', 'a', function(e) {
 	e.preventDefault();
-	/* Grab the value */
-	var value = $(this).attr('href');
+	/* Grab the value (Hot/Top or SciFi/Fantasy) */
+	var value = $(this).attr('id');
+	/* Grab the filter ("sorting" or "category")  */
 	var filter = $(this).parent().parent().attr('id');
 	/* Add the value to GET request */
+	/* like ?sorting=top or ?category=SciFi */
 	var url = $.query.set(filter, value);
 	console.log(value);
 	/* If the value is set back to default - remove it. */

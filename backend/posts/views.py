@@ -90,15 +90,20 @@ class FilterMixin(object):
         # All Categories
         categories = Category.objects.all()        
         context['categories'] = categories
-
+        
         # Solo Tag
         context['tag'] = self.request.GET.get('tag')
 
         # Category
         category = self.request.GET.get('category')
+        category_page = False
+        if 'category' in self.kwargs:
+            category = self.kwargs['category']
+            category_page = True            
         if category:
             category = Category.objects.get(slug=category)
             context['category'] = category.title
+            context['category_page'] = category_page
 
         # Sorting
         sorting = self.request.GET.get('sorting')

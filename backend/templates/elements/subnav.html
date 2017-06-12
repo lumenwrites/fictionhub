@@ -12,10 +12,10 @@
 	    Hot
 	    {% endif %}	    
 	  </a>
-	  <ul class="dropdown-menu" role="menu"  id="sorting">
-            <li><a href="hot"><i class="fa fa-fire"></i> Hot</a></li>	    
-            <li><a href="top"><i class="fa fa-arrow-up"></i> Top</a></li>
-            <li><a href="new"><i class="fa fa-clock-o"></i> New</a></li>
+	  <ul class="dropdown-menu query-filter" role="menu"  id="sorting">
+            <li><a id="hot"><i class="fa fa-fire"></i> Hot</a></li>	    
+            <li><a id="top"><i class="fa fa-arrow-up"></i> Top</a></li>
+            <li><a id="new"><i class="fa fa-clock-o"></i> New</a></li>
 	  </ul>	
 	</div>
 	
@@ -28,10 +28,19 @@
 	    {{category}}
 	    {% endif %}	    	    
 	  </a>
-	  <ul class="dropdown-menu" role="menu" id="category">
-	    <li><a href="all">All</a></li>
+	  <!-- When clicking on an item from menu with  .query-filter class
+	       is grabbed by javascript, and used to filter posts on this page.
+	       If I'm on the category page, I don't want to do that,
+	       I just want categories dropdown to take me to another category.
+	    -->
+	  <ul class="dropdown-menu  {% if not category_page %}query-filter{% endif %}"
+	      role="menu" id="category">
+	    <li><a href="/browse/" id="all">All</a></li>
 	    {% for category in categories %}
-            <li><a href="/{{category.slug}}">{{category.title}}</a></li>
+	    {% if category.slug != discussion %}
+            <li><a href="/{{category.slug}}" id="{{category.slug}}">
+		{{category.title}}</a></li>
+	    {% endif %}	    	    
 	    {% endfor %}	    
 	  </ul>	
 	</div>
