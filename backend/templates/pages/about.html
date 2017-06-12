@@ -10,39 +10,56 @@
 	<img src="{% static "/img/valley_cropped.png" %}" class="top-image"/>
 	<h1>Welcome to Fiction Hub!</h1>
 	<p> Hi! Welcome to our friendly and intelligent community of fiction writers and readers =)</p>
-	{% if not user.is_authenticated or True%}
+	{% if not user.is_authenticated or True %}
 	<a class="btn btn-cta full-width" data-toggle="modal" data-target="#login" >
 	  Join
 	</a>
 	{% endif %}
-	<p> The goal of this website is to make it easy for writers to find their audience, and make it easy for readers to discover awesome fiction.</p>
-	<h2>Publish your stories</h2>
-	<p>Use our great distraction-free editor to write and publish your stories.</p>
+	<p> The goal of this website is to make it easy for writers to master their craft and find their audience, and make it easy for readers to discover awesome fiction.</p>
+	<h2>Write and Publish your stories</h2>
+	<p>Use our beautiful distraction-free editor to write your stories:</p>
+	<img src="/media/images/pages/about/editor.png"/><br/>
+	<p>And publish them in a beautiful, easy to read format:</p>
+	<img src="/media/images/pages/about/publish.png"/>
 	<!-- <p>[Editor screenshot]</p> -->
 	<h2>Find your audience</h2>
-	<p> Fiction Hub makes it easy for readers to discover your stories, and the best stories are featured on our front page, shared with our&nbsp;<a href="https://twitter.com/fictionhub">twitter followers</a>, and sent to all of our subscribers in the weekly email digest.</p>
-	<p>As you build your audience, you will have more and more readers following you and receiving updates on your stories.</p>
-	<!-- <p>[something screenshot]</p> -->
-	<!-- <p>build your following and receive view</p> -->
+	<p> Our <a href="/browse/">browse page</a> makes it very easy for readers to discover the stories you have shared with our community. The best stories are also featured on our front page, suggested to the readers who liked similar stories, shared with our&nbsp;<a href="https://twitter.com/fictionhub">social media followers</a>, and sent to all of our subscribers in the weekly email digest.</p>
+	<img src="/media/images/pages/about/story-suggestions.png"/>	
+	<p>Readers who've enjoyed your stories can subscribe to your blog and receive the updates whenever you publish something.</p>
+	<p>This way, you don't have to worry about learning how to use blogging software and spend your time on building traffic and self-promotion, you can just focus on doing what you love - writing - and we will make sure that the audience of readers finds your stories. </p>
 	<h2>Receive great feedback</h2>
-	<p> Fiction Hub is a great community of authors who share their experience, and help each other to get better at writing.</p>
+	<p> My goal is to build a friendly and helpful community of authors who share their experience, and help each other to get better at writing. Share your stories to receive useful advice and feedback, and give feedback to help others!</p>
 	<!-- <p>[Comments and feedback]</p> -->
 	<h2>Become a better writer</h2>
-	<p>We also have a great set of tools that will help you to become a better writer. Useful statistics will show you the calendar of your daily wordcount, and help you to develop regular writin habits.</p>
-	<p> Our <a href="/leaderboard">leaderboard</a> prominently displays the best authors, so you can make writing more fun by competing with others. </p>
-	<p> We have a Daily Practice section - a category that is not displayed in the main browse view, allwoing you to share your daily writing, without any pressure.</p>
-	<!-- <p>[Leaderboard and metrics]</p> -->
+	<p>We also have a great set of tools that will help you to develop good habits and practice your skill regularly, in a fun and engaging way.</p>
+	<p> On your profile page, you will find useful stats about your writing:</p>
+	<img src="/media/images/pages/about/profile-subheader.png"/>	
+	<p> Besides subscribers/upvotes/views your stories have received, and your position on the <a href="/leaderboard/">leaderboard</a> of our best writers, you can see a useful <b>calendar of your daily wordcount</b>. Brightness of the day depends on the amount of words you have written(0 - completely transparent, 1000 - completely white). Number to the right of it is your <b>writing streak</b> - how many days in a row you have written at least 100 words. </p>
+
+	<p>This brilliant tool is incredibly helpful for developing regular writing habits - at a glance you can see how many words you have written, and get motivated to continue your streak and keep writing every day!</p>
+	
+	<p>Under the editor, you will find a neat progress bar:</p>
+	<img src="/media/images/pages/about/progress-bar.png"/>
+	<p>It interactively displays the amount of words you have written today.(each mark represents a milestone of 100 words). This provides you an extremely satisfying visual feedback, motivating you to write more.</p>
+	<img src="https://cdn-images-1.medium.com/max/1520/1*FacPLsCuBatDoehS4S_X1Q.png"/>	
+	<p> Finally, we have a Daily Writing category. It's purpose is to inspire you to write more, to give you helpful feedback and encouragement. Stories submitted to this category are not displayed in the main browse page, so you can share your daily writing exercises without any pressure to keep them high-quality. Don't be shy, feel free to jump in and post something even if it's the first thign you've ever written! </p>
+	<p> Use these tools to practice your skills, become a better writer, and have fun interacting and competing with others!</p>
+
 	<h2> Writing resources </h2>
-	<p> If you're new, you can check out our <a href="/on-writing">learning resources for aspiring writers</a> that will help you to take your first steps on your journey to becoming an amazing fiction writer. </p>
-	<p> Come over and join our growing community! </p>
-	<!-- Competitions -->
-	<!-- Marketplace -->
+	<img src="/media/images/pages/about/kids.jpg"/>
+	<p> We also have a <a href="/on-writing/">category</a> where you can find helpful learning resources that will guide you on your path to becomming a better writer and help you to take your skill to the next level. </p>
+	<h2> Upcoming Features </h2>
+	<img src="/media/images/pages/about/path.jpg"/>
+	<p> The goal of this project is to help people to go from a complete novice to a professional, published writer. In the future, you will be able to sell your stories on our marketplace, allowing you to to make money from your writing. We will also have writing competitions, prompts, and other tools that will help aspiring writers on their journey.
+
+	<p> So come in and join our growing community! </p>
 
 	{% if not user.is_authenticated or True%}
 	<a class="btn btn-cta full-width" data-toggle="modal" data-target="#login" >
 	  Join
 	</a>
 	{% endif %}
+
 
       </article>
     </div>   <!-- End .col-xs-12 -->

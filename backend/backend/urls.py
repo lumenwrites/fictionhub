@@ -30,7 +30,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^$', views.home),
-    url(r'^home$', views.home),        
+    url(r'^home/$', views.home),        
     url(r'^about$', views.about),
     url(r'^newsletter$', views.newsletter),
     
