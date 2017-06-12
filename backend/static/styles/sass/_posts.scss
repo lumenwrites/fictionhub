@@ -242,7 +242,7 @@ article {
 	border: 1px solid #ddd;
 	background: white;
     }
-    .editor-preview-side {
+    .CodeMirror-fullscreen, .editor-preview-side {
 	z-index: 1000;
     }    
     /* No gap between category and tags */
