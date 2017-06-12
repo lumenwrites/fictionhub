@@ -13,6 +13,18 @@ html, body {
     min-height: calc(100vh - 140px);
 }
 
+::-webkit-scrollbar {
+      width: 8px;
+}
+
+::-webkit-scrollbar-track {
+      background-color: #F2F2F2;
+}
+ 
+::-webkit-scrollbar-thumb {
+      background-color: rgba(119, 119, 119, 0.2); 
+}
+
 /* Typography */
 article h1, h1 a {
     /* font-size: 36px; */
