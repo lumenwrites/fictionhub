@@ -17,10 +17,13 @@
 	    <span data-toggle="tooltip" data-placement="top" title="Views">
 	      <i class="fi-eye"></i> {{view_count}}
 	    </span>
+
+	    {% if leaderboard_position %}
 	    <span data-toggle="tooltip" data-placement="top"
 		  title="Weekly leaderboard rank">
 	      <i class="fi-graph-trend"></i> {{leaderboard_position}}
 	    </span>
+	    {% endif %}	    
 
 
 	    <div class="calendar"

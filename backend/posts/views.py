@@ -164,7 +164,10 @@ class ProfileView(FilterMixin, ListView):
 
         # Position on the leaderboard
         leaderboard = list(User.objects.all().order_by('-karma')[:25])
-        context['leaderboard_position'] = leaderboard.index(profile) + 1
+        try:
+            context['leaderboard_position'] = leaderboard.index(profile) + 1
+        except:
+            context['leaderboard_position'] = False
 
         # View Stats
         view_count = 0
@@ -252,7 +255,7 @@ class PostDetailView(DetailView):
 
         # Prev/next chapters
         if post.series:
-            chapters = post.series.chapters.all()
+            chapters = post.series.chapters.filter(published=True)
             this_index = 0
             prev_chapter = 0
             next_chapter = 0                
@@ -262,8 +265,9 @@ class PostDetailView(DetailView):
                         this_index = index
             if this_index > 0:
                 prev_chapter = chapters[this_index - 1]
-            if this_index + 1 < len(chapters):
+            if this_index + 1 < len(chapters) and chapters[this_index + 1].published:
                 next_chapter = chapters[this_index + 1]
+                
             context['chapters'] = chapters
             context['prev_chapter'] = prev_chapter
             context['next_chapter'] = next_chapter        
