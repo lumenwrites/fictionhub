@@ -5,7 +5,7 @@ def update_wordcount(wordcount, author):
     calendar={}
     if author.calendar:
         calendar = eval(author.calendar)
-    if calendar[today]:
+    if today in calendar:
         calendar[today] += wordcount
     else:
         calendar[today] = wordcount                
