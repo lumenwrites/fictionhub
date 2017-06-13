@@ -9,10 +9,8 @@ def markdownify(post, truncate = False):
     body = post.body
     truncated = False
     if truncate:
-        try:
-            text = body.split("<!-- readmore -->")[0].strip()
-        except:
-            pass
+        if "<!-- more -->" in body:
+            body = body.split("<!-- more -->")[0].strip()
         text = body[:380]
         if len(text) < len(body):
             body = text
