@@ -81,7 +81,7 @@
 	   title="Profile">
 	  @{{post.author.username}}
 	</a>
-	{% if post.author in  user.subscribed_to.all %}
+	{% if post.author in user.subscribed_to.all %}
 	<a class="btn btn-default"
 	   href="/@{{post.author.username}}/unsubscribe"
 	   data-toggle="tooltip" data-placement="top"
@@ -90,7 +90,8 @@
 	  {{post.author.subscribers.count}}
 	</a>
 	{% else %}          
-	<a class="btn btn-default"
+	<a class="btn btn-default
+		  {% if user == profile %}disabled{% endif %}"
 	   href="/@{{post.author.username}}/subscribe"
 	   data-toggle="tooltip" data-placement="top"
 	   title="Subscribe">

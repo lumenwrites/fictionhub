@@ -56,7 +56,7 @@ class FilterMixin(object):
             qs = qs.filter(category=category)
         else:
             # Exclude categories
-            exclude_categories = ['discussion', 'daily-practice', 'on-writing']
+            exclude_categories = ['discussion', 'daily-practice', 'on-writing', 'blog']
             qs = qs.exclude(category__slug__in=exclude_categories)
             
         # Filter by tag
