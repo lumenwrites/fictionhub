@@ -59,7 +59,7 @@ article p {
 
 a {
     color: $black;
-    &:hover {
+    &:hover, &:active, &:focus, &:visited {
 	color: $black;
 	text-decoration: none;
     }
@@ -143,4 +143,14 @@ textarea, textarea:focus, textarea:active {
     box-shadow: none;
     padding: 20px;
     background: #fcfcfc;
+}
+
+.label {
+    a {
+	color: $black;
+	&:hover, &:active, &:focus, &:visited  {
+	    color: $black;
+	    text-decoration:none;
+	}
+    }
 }
