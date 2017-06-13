@@ -52,11 +52,12 @@
 	       If it's my own profile - can't subscribe.
 	       If not authenticated - open join modal. -->
 	  <a class="btn btn-default
-		    {% if user == profile %}ddisabled{% endif %}"
+		    {% if user == profile %}disabled{% endif %}"
 	     {% if not user.is_authenticated %}
 	     data-toggle="modal" data-target="#login"
-	     {% endif %}
-	     href="/@{{profile.username}}/subscribe">
+	     {% else %}
+	     href="/@{{profile.username}}/subscribe"
+	     {% endif %}>
 	    Subscribe
 	  </a>
 	  {% endif %}	  
