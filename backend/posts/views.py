@@ -1,5 +1,6 @@
 import re, time
 from datetime import datetime, timedelta
+from math import floor # to round views
 
 from django.views.generic import View
 from django.views.generic.list import ListView
