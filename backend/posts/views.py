@@ -321,10 +321,11 @@ def post_create(request):
                 # If I'm being sent from a post that doesn't have series
                 # (by clicking "Add Chapter")
                 # I create series
-                series = Series()
+                first_chapter = Post.objects.get(slug=request.GET.get('post'))
+                series_title = first_chapter.body.splitlines()[0][:100]
+                series = Series(slug = first_chapter.slug, title = series_title)
                 series.save()
                 # Add the original post to it
-                first_chapter = Post.objects.get(slug=request.GET.get('post'))
                 first_chapter.series = series
                 first_chapter.save()
                 # Add the post I've just created to it
