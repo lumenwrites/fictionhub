@@ -175,7 +175,7 @@ article {
     padding: 20px;
     .footer {
 	float: right;
-	a {
+	a, .btn {
 	    cursor: pointer;
 	    color: $black;
 	    &:hover, &:active, &:focus, &:visited {
