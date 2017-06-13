@@ -91,7 +91,7 @@
 	</a>
 	{% else %}          
 	<a class="btn btn-default
-		  {% if user == profile %}disabled{% endif %}"
+		  {% if user == post.author %}disabled{% endif %}"
 	   href="/@{{post.author.username}}/subscribe"
 	   data-toggle="tooltip" data-placement="top"
 	   title="Subscribe">
