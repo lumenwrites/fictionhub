@@ -68,6 +68,9 @@ a {
 
 article a, article p a {
     color: $blue;
+    &:hover, &:active, &:focus, &:visited {
+        color: $blue;
+    }
 }
 
 hr {
@@ -98,7 +101,7 @@ textarea, textarea:focus, textarea:active {
     background: $orange;
     border: none;
     color: white;
-    &:hover {
+    &:hover, &:active, &:focus, &:visited {
 	color: white;
     }
 }
