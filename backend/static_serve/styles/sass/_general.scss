@@ -66,12 +66,13 @@ a {
     cursor: pointer;
 }
 
-article a, article p a {
+article .panel a, article p a {
     color: $blue;
     &:hover, &:active, &:focus, &:visited {
         color: $blue;
     }
 }
+
 
 hr {
     border:none;
