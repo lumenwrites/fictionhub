@@ -61,7 +61,7 @@
       {% for tag in post.tags.all %}
       <span class="label label-default">
 	{% if profile %}
-	<a href="/@{{profile.username}}/tag/{{post.category.slug}}">
+	<a href="/@{{profile.username}}/tag/{{tag.slug}}">
 	  {{tag.title}}</a>
 	{% else %}
 	<a href="/tag/{{tag.slug}}" >
