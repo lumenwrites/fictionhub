@@ -97,7 +97,12 @@ textarea, textarea:focus, textarea:active {
     color: $dark-gray;
     border: 1px solid $gray;
 }
-
+.btn-primary {
+    color: white;
+    &:hover, &:active, &:focus, &:visited {
+	color: white;
+    }
+}
 .btn-cta {
     background: $orange;
     border: none;
