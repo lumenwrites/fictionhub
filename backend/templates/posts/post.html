@@ -15,7 +15,7 @@
     <input type="hidden" name="return"
 	   value="https://fictionhub.io/series/{{post.series.slug}}/purchase">
     <input type="hidden" name="cancel_return"
-	   value="{{request.path}}">
+	   value="https://fictionhub.io{{request.path}}">
     <input type="hidden" name="hosted_button_id" value="C92NJKCFUTC6Y">
     <input type="hidden" name="os0" value="{{post.series.price|stringformat:'d'}}">
     <input type="hidden" name="currency_code" value="USD">
@@ -39,7 +39,7 @@
     <span class="btn btn-default">
       {{post|title|striptags}}
     </span>
-    <ul class="dropdown-menu dropdown-menu-right" role="menu">    
+    <ul class="dropdown-menu dropdown-menu-right toc-dropdown" role="menu">    
       {% for chapter in chapters %}	  	      
       <li>
 	<a href="{{chapter.get_absolute_url}}"
@@ -49,11 +49,10 @@
 	  {{ forloop.counter }}.
 	  {{chapter|title|striptags}}
 	  <!-- $ -->
-	  <!-- 
-	  {% if forloop.counter > post.series.free_chapters %}
+	  {% if post.series.price > 0 and forloop.counter > post.series.free_chapters %}
 	  <span class="right">$</span>
 	  {% endif %}
-	  -->
+
 	</a>
       </li>
       {% endfor %}	  	      

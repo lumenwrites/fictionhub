@@ -26,6 +26,7 @@ class User(AbstractUser):
     purchased_series = models.ManyToManyField('series.Series',
                                               related_name="purchased_by",
                                               blank=True)
+    paypal_email = models.CharField(max_length=64, blank=True)    
     
 
     # Email notifications

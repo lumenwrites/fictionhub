@@ -130,6 +130,15 @@ def settings(request):
     })
 
 @login_required
+def update_paypal_email(request):
+    if request.method == 'POST':
+        user = request.user
+        user.paypal_email = request.POST.get('paypal_email')
+        user.save()
+    return HttpResponseRedirect('/income/')            
+    
+
+@login_required
 def income(request):
     balance = request.user.balance
     return render(request, "profiles/income.html", {

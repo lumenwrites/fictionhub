@@ -23,18 +23,19 @@
 	    <h1>${{balance}}</h1>
 	  </div>
 	</div>	
-	Once your balance reaches $25, you can withdraw money to your PayPal account:
-	<form method="post" action="">{% csrf_token %}
+	<!-- Once your balance reaches $25, you can withdraw money to your PayPal account: -->
+	Once your balance reaches $25, the payment will be sent to your PayPal email address
+	<form method="post" action="/income/update-paypal-email/">{% csrf_token %}
 	  <div class="input-group">
 	    <!-- Paypal Email -->
-            <input class="form-control" name="paypal-email"
+            <input class="form-control" name="paypal_email"
 		   type="text" maxlength="254"
 		   placeholder="Your paypal email"
 		   value="{{user.paypal_email}}">
 	    <span class="input-group-btn">
-	      <a class="btn btn-disabled">
-		Withdraw Money
-	      </a>
+	      <button class="btn btn-primary" type="submit">
+		Save
+	      </button>
 	    </span>
 	  </div> <!-- End .input-group -->
 	</form>
