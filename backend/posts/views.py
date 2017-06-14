@@ -73,7 +73,7 @@ class FilterMixin(object):
         if sorting == 'top':
             qs = qs.order_by('-score')
         elif sorting == 'new':
-            qs = qs.order_by('created_at')
+            qs = qs.order_by('-created_at')
         else:
             qs = rank_hot(qs)
 
