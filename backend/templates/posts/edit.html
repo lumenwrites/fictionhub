@@ -22,6 +22,10 @@
 	  <!-- Chapters	-->
 	  <div class="chapters">
 	    {% if post.series %}
+	    <a class="btn btn-default"
+	       data-toggle="modal" data-target="#edit-series">
+	      Edit Series
+	    </a>
 	    <!-- If post already has series, create chapter under this series. -->
 	    <a class="btn btn-default"
 	       href="/write?series={{post.series.pk}}">
@@ -39,7 +43,7 @@
 
 	    <!-- If it's a part of the Series, show other chapters -->
 	    {% if post.series %}	  
-	    <div class="dropdown">
+	    <div class="dropdown chapter-titles">
 	      <span class="btn btn-default chapter-title">
 		<!-- Chapter title. Removed markdown. -->
 		{{post|title|striptags}}
@@ -58,8 +62,9 @@
 		{% endfor %}	  	      
 	      </ul>
 	    </div>
-	    {% endif %}	  
-	  </div>
+	    {% endif %}
+	    <div class="clearfix"></div>
+	  </div> <!-- end .chapters -->
 
 
 	  <!-- Editor Body -->
@@ -160,9 +165,86 @@
   </div> <!-- End .modal-dialog -->
 </div>	 <!-- End .modal -->
 
+<div id="edit-series" class="modal fade edit-series" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit Series</h4>
+      </div>
+      <div class="modal-body">
+
+	<!-- Series form -->
+	<form method="post"
+	      action="/series/{{post.series.slug}}/update?next={{request.path}}">
+	  {% csrf_token %}
+	  <!-- Series title -->
+          <input class="form-control" name="title"
+		 type="text" maxlength="254"
+		 placeholder="Series Title"
+		 value="{{post.series.title}}">
+	  <br/>
+
+	  <!-- Price and Free Chapters -->
+	  <!-- 
+	  <div class="price">
+	    <label class="control-label" for="series-price">Price:</label>
+	    <select name="price" class="form-control col-xs-8">
+	      <option value="0"
+		      {% if post.series.price == 0 %}selected{% endif %}>
+		$0
+	      </option>
+	      <option value="5"
+		      {% if post.series.price == 5 %}selected{% endif %}>
+		$5 (you make $4)
+	      </option>
+	      <option value="10"
+		      {% if post.series.price == 10 %}selected{% endif %}>
+		$10 (you make $9)
+	      </option>
+	      <option value="15"
+		      {% if post.series.price == 15 %}selected{% endif %}>
+		$15 (you make $14)
+	      </option>
+	    </select>
+	  </div>
+	  <div class="free-chapters">
+	    <label class="control-label" for="free-chapters">Free Chapters:</label>
+            <input class="form-control" name="free_chapters"
+		   type="number" maxlength="254"
+		   value="{{post.series.free_chapters}}">
+	  </div>
+	  <div class="clearfix"></div> <br/>
+	  -->
+	  <!-- Buttons -->
+	  <button class="btn btn-primary right"
+		  type="submit">
+	    Save
+	  </button>
+          <button class="btn btn-default right margins-h-10" data-dismiss="modal">
+	    Cancel
+	  </button>
+	</form>
+	<div class="clearfix"></div>
+      </div> <!-- End .modal-body -->
+    </div> <!-- End .modal-content -->
+  </div> <!-- End .modal-dialog -->
+</div>	 <!-- End .modal -->
 
 <script src="/static/js/vendor/jquery-3.2.1.min.js"></script>
+<!-- Auto-open modal -->
+<!-- 
+<script src="/static/js/vendor/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#edit-series').modal('show');
+    });
+</script>
+ -->
+
 <script src="/static/js/vendor/simplemde.min.js"></script>
+<!-- Editor -->
 <script>
     $(document).ready(function() {
 	var simplemde = new SimpleMDE({

@@ -2,7 +2,7 @@ from django.conf.urls import url
 from django.contrib.auth.views import logout
 
 from .views import login, join, email_subscribe
-from .views import settings, update_password
+from .views import settings, update_password, income
 from .views import subscribe, unsubscribe
 from .views import leaderboard
 
@@ -16,6 +16,7 @@ urlpatterns = [
     
     url(r'^settings/$', settings),
     url(r'^update-password/$', update_password),
+    url(r'^income/$', income),
 
     url(r'^subscribe/', email_subscribe),
 

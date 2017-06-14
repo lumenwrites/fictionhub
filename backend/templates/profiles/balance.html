@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row edit">
+    <div class="col-xs-12">
+      <article>
+	<h1> Balance </h1>
+	Your balance is <b>{{balance}}</b>.
+	<form method="post" action="">{% csrf_token %}
+	  <!-- Paypal Email -->
+          <input class="form-control left" name="paypal-email"
+		 type="text" maxlength="254"
+		 placeholder="Your paypal email"
+		 value="{{user.paypal_email}}">
+	  <a class="btn btn-primary right disabled"
+	     href="">
+	    Withdraw Money
+	  </a>
+	
+      </article>
+    </div>   <!-- End .col-xs-12 -->
+  </div> <!-- End .row .edit -->
+</div> <!-- End .container -->
+
+{% endblock %}

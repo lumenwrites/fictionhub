@@ -130,6 +130,13 @@ def settings(request):
     })
 
 @login_required
+def income(request):
+    balance = request.user.balance
+    return render(request, "profiles/income.html", {
+        'balance': balance
+    })
+
+@login_required
 def update_password(request):
     form = PasswordChangeForm(user=request.user)
 

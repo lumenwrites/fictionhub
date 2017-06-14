@@ -80,6 +80,13 @@
 		    <i class="fa fa-gear"></i> Settings
 		  </a>
 		</li>
+		{% if user.balance > 0 %}
+		<li>
+		  <a href="/income">
+		    <i class="fa fa-usd"></i> Income
+		  </a>
+		</li>
+		{% endif %}		
 		<!-- Logout -->
 		<li>
 		  <a href="/logout">

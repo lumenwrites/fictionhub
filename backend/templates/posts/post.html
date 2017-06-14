@@ -1,9 +1,37 @@
 {% load markdownify %}
 {% load title %}
 <article>
+  {% if paywall %}
+  <h1>{{post|title|striptags}}</h1>
+  <p>This is a premium chapter. Buy the rest of the series to read more!</p>
+  {% if paywall == "login" %}
+  <a class="btn btn-cta full-width" data-toggle="modal" data-target="#login">
+    <i class="fa fa-paypal"></i>
+    Read the rest of the series (${{post.series.price|stringformat:'d'}})
+  </a>
+  {% else %}
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <input type="hidden" name="cmd" value="_s-xclick">
+    <input type="hidden" name="return"
+	   value="https://fictionhub.io/series/{{post.series.slug}}/purchase">
+    <input type="hidden" name="cancel_return"
+	   value="{{request.path}}">
+    <input type="hidden" name="hosted_button_id" value="C92NJKCFUTC6Y">
+    <input type="hidden" name="os0" value="{{post.series.price|stringformat:'d'}}">
+    <input type="hidden" name="currency_code" value="USD">
+    <button class="btn btn-cta full-width" type="submit">
+      <i class="fa fa-paypal"></i>
+      Read the rest of the series (${{post.series.price|stringformat:'d'}})
+    </button>
+  </form>
+  {% endif %} <!-- endif login modal -->
+
+  <div class="clearfix"></div> <br/>
+  {% else %}  
   <!-- Post body -->
   {{post | markdownify:truncate | safe}}
-  
+  {% endif %} <!-- End if price -->
+
   <div class="clearfix"></div>
   <!-- Chapters -->
   {% if post.series and not truncate %}
@@ -19,7 +47,11 @@
 	   class="active"
 	   {% endif %}>
 	  {{ forloop.counter }}.
-	  {{chapter|title|striptags}}		    
+	  {{chapter|title|striptags}}
+	  <!-- $ -->
+	  {% if forloop.counter > post.series.free_chapters %}
+	  <span class="right">$</span>
+	  {% endif %}
 	</a>
       </li>
       {% endfor %}	  	      
@@ -69,8 +101,16 @@
 	{% endif %}      
       </span>
       {% endfor %}
+      <!-- Price -->
+      {% if post.series in user.purchased_series.all %}
+      <span class="label label-default">Purchased</span>
+      {% elif post.series and post.series.price > 0 %}
+      <span class="label label-default">${{post.series.price|stringformat:'d'}}</span>
+      {% endif %}    
     </div> <!-- End col-xs-12 col-sm-6 -->
 
+
+    
     <!-- Actions -->
     <div class="col-xs-12 col-sm-6">
       <div class="actions">

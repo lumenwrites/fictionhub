@@ -20,13 +20,6 @@ article {
 	color: rgba(0, 0, 0, 0.44);
     }
 
-    .prev {
-	margin-left: -10px;	    
-    }
-    .next {
-	margin-right: -10px;	    
-    }
-    
     .prev, .next {
 	margin-top: -38.5px;
 	@media (max-width: 500px) {
@@ -218,10 +211,22 @@ article {
 	top:26px;
 	z-index:10;
 	.chapter-title {
-	    width: 220px;
+	    width: 200px;
 	    text-align:left;
 	}
 
+	@media (max-width: 700px) {
+	    position:inherit;
+	    .btn {
+		background: white;
+		width: 50%;
+		float:left;
+	    }
+	    .chapter-titles, .chapter-title {
+		width: 100%;		
+	    }
+	}
+	
 	.nulis {
 	    margin-right: 5px;
 	    float:left;
@@ -254,6 +259,19 @@ article {
 	padding: 0;
     }
 }
+
+/* Edit series modal */
+.edit-series {
+    .price {
+	float:left;
+	width: 60%;
+    }
+    .free-chapters {
+	float:left;
+	width: 40%;
+    }    
+}
+
 
 /* Wordcount widget */
 .progressbar-outer {

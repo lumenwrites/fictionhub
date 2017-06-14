@@ -22,6 +22,12 @@ class User(AbstractUser):
 
     calendar = models.TextField(default="", null=True, blank=True)
 
+    balance = models.FloatField(default=0)
+    purchased_series = models.ManyToManyField('series.Series',
+                                              related_name="purchased_by",
+                                              blank=True)
+    
+
     # Email notifications
     # email_subscriptions = models.BooleanField(default=True,
     # verbose_name='Send me email notifications when someone I follow publishes a new story')
