@@ -73,7 +73,12 @@ article .panel a, article p a {
     }
 }
 
-
+article li {
+    font-size: 22px;
+}
+article ul {
+    padding-left: 22px;
+}
 hr {
     border:none;
     border-top: 1px solid rgba(0,0,0,.15);
