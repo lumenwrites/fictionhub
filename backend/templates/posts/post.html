@@ -12,6 +12,8 @@
   {% else %}
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
     <input type="hidden" name="cmd" value="_s-xclick">
+    <input name="notify_url" type="hidden"
+	   value="https://fictionhub.io/series/{{post.series.slug}}/purchase" />
     <input type="hidden" name="return"
 	   value="https://fictionhub.io/series/{{post.series.slug}}/purchase">
     <input type="hidden" name="cancel_return"
