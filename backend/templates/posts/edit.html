@@ -249,11 +249,13 @@
     $(document).ready(function() {
 	var simplemde = new SimpleMDE({
 	    autofocus: true,
+	    {% if post %}
 	    autosave: {
-		enabled: false,
-		uniqueId: "MyUniqueID",
-		delay: 1000
+		enabled: true,
+		uniqueId: "{{post.slug}}",
+		delay: 10000
 	    },
+	    {% endif %}	    
 	    toolbar: ["bold", "italic", "heading", "|", "quote",
 		      {
 			  name: "readmore",

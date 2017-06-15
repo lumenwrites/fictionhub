@@ -12,13 +12,22 @@
   {% else %}
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
     <input type="hidden" name="cmd" value="_s-xclick">
+    <!-- IPN, instant payment notification, supposed to post data here. -->
     <input name="notify_url" type="hidden"
 	   value="https://fictionhub.io/series/{{post.series.slug}}/purchase" />
+    <!-- Pass data custom vars -->
+    <input type="hidden" name="item_name" value="{{post.series.slug}}"/>
+    <input type="hidden" name="username" value="{{user.username}}"/>
+    <!-- Send post request with the info to this url -->
+    <input type="hidden" name="rm" value="2">    
     <input type="hidden" name="return"
 	   value="https://fictionhub.io/series/{{post.series.slug}}/purchase">
+    <!-- Cancel button? Not sure if works -->
+    <input type="hidden" name="cbt" value="Cancel">
     <input type="hidden" name="cancel_return"
 	   value="https://fictionhub.io{{request.path}}">
     <input type="hidden" name="hosted_button_id" value="C92NJKCFUTC6Y">
+    <!-- Set price dropdown value -->
     <input type="hidden" name="os0" value="{{post.series.price|stringformat:'d'}}">
     <input type="hidden" name="currency_code" value="USD">
     <button class="btn btn-cta full-width" type="submit">

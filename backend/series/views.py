@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 
+from profiles.models import User
 from .models import Series
 from .forms import SeriesForm
 
@@ -23,8 +24,13 @@ def series_update(request, slug):
 
 
 def series_purchase(request, slug):
-    series = Series.objects.get(slug=slug)
-    user = request.user
+    # series = Series.objects.get(slug=slug)
+    # user = request.user
+    # Grab data from POST request sent by paypal
+    series_slug = request.POST.get('item_name')
+    username = request.POST.get('username')
+    user = User.objects.get(username=username)
+    series = Series.objects.get(slug=series_slug)
     # Add to user's purchased series
     user.purchased_series.add(series)
     user.save()
@@ -32,8 +38,9 @@ def series_purchase(request, slug):
     # Update author's balance
     first_paid_chapter = series.chapters.all()[series.free_chapters]
     author = first_paid_chapter.author
+    # Increment authors balance (minus $1 which goes to me)
     author.balance += series.price - 1
     author.save()
 
     # Redirect to first paid chapter
-    return HttpResponseRedirect(first_paid_chapter.get_absolute_url())
+    # return HttpResponseRedirect(first_paid_chapter.get_absolute_url())
