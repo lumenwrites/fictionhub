@@ -244,7 +244,7 @@
  -->
 
 <script src="/static/js/vendor/simplemde.min.js"></script>
-<!-- Editor -->
+<!-- Editor '-->
 <script>
     $(document).ready(function() {
 	var simplemde = new SimpleMDE({
@@ -252,10 +252,19 @@
 	    autosave: {
 		enabled: false,
 		uniqueId: "MyUniqueID",
-		delay: 1000,
+		delay: 1000
 	    },
+	    toolbar: ["bold", "italic", "heading", "|", "quote",
+		      {
+			  name: "readmore",
+			  action: SimpleMDE.drawHorizontalRule,
+			  className: "fa fa-ellipsis-h",
+			  title: "Insert Read More",
+		      },
+		      "|", "link", "image", "|",
+		      "preview", "side-by-side", "fullscreen"],
 	    insertTexts: {
-		horizontalRule: ["", "\n\n-- readmore ---\n\n"],
+		horizontalRule: ["", "\n<!-- more -->\n"],
 	    },
 	    placeholder: "Write here...",
 	    spellChecker: false,
@@ -273,7 +282,7 @@
 	    var current_wordcount = text.split(' ').length;
 	    var new_words = current_wordcount - initial_wordcount;
 	    var total_progress = (todays_wordcount + new_words) * 0.1;
-	    console.log(total_progress);
+	    // console.log(total_progress);
 	    $('.progressbar-inner').css("width",total_progress+"%");	    
 	});
     });
