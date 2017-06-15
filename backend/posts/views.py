@@ -139,7 +139,7 @@ class BrowseView(FilterMixin, ListView):
         if not category:
             # Exclude categories
             exclude_categories = ['discussion', 'daily-practice', 'on-writing', 'blog']
-            qs = [p for p in qs if (p.category.slug not in exclude_categories)]
+            qs = [p for p in qs if (not p.category or p.category.slug not in exclude_categories)]
         
         return qs
     
