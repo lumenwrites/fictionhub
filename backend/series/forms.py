@@ -8,3 +8,4 @@ class SeriesForm(ModelForm):
     class Meta:
         model = Series
         fields = ['title', 'free_chapters', 'price']
+        
