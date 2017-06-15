@@ -54,10 +54,6 @@ class FilterMixin(object):
         if category:
             category = Category.objects.get(slug=category)
             qs = qs.filter(category=category)
-        else:
-            # Exclude categories
-            exclude_categories = ['discussion', 'daily-practice', 'on-writing', 'blog']
-            qs = qs.exclude(category__slug__in=exclude_categories)
             
         # Filter by tag
         tag = self.request.GET.get('tag')
@@ -137,6 +133,14 @@ class BrowseView(FilterMixin, ListView):
         qs = [p for p in qs if (p.published == True and
                                 (not p.series or p.series.chapters.all()[0] == p))]
 
+        category = self.request.GET.get('category')
+        if 'category' in self.kwargs:
+            category = self.kwargs['category']
+        if not category:
+            # Exclude categories
+            exclude_categories = ['discussion', 'daily-practice', 'on-writing', 'blog']
+            qs = qs.exclude(category__slug__in=exclude_categories)
+        
         return qs
     
 
