@@ -3,12 +3,13 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container settings">
   <div class="row">
     <div class="col-xs-12">
       <article>
 	<h2> Settigns </h2>
-	<form method="post" action="/settings/">{% csrf_token %}
+	<form method="post" enctype="multipart/form-data"
+	      action="/settings/">{% csrf_token %}
 	  <!-- Username -->
           <input class="form-control" name="username"
 		 type="text" maxlength="254"
@@ -36,6 +37,32 @@
 		 placeholder="Website"
 		 value="{{user.website}}">
 	  <br/>
+
+	  <!-- Avatar -->
+	  <label class="btn btn-default btn-file left">
+	    <i class="fa fa-upload"></i>
+	    Avatar
+	    <input name="avatar" type="file" class="hidden">
+	  </label>
+	  {% if user.avatar %}
+	  <img class="avatar left"
+	       src="{{user.avatar.url}}"/>
+	  {% endif %}
+	  <div class="clearfix"></div>
+	  <!-- Background -->
+	  <label class="btn btn-default btn-file left">
+	    <i class="fa fa-upload"></i>
+	    Background
+	    <input name="background" type="file" class="hidden">
+	  </label>
+	  {% if user.background %}
+	  <img class="background left"
+	       src="{{user.background.url}}"/>
+	  {% endif %}
+	  
+	  <div class="clearfix"></div>
+
+
 	  
 	  <!-- Submit -->
 	  <button type="submit"

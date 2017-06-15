@@ -118,7 +118,7 @@ def leaderboard(request):
 @login_required
 def settings(request):
     if request.method == 'POST':
-        form = UserForm(request.POST, instance=request.user)
+        form = UserForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/settings/')            
