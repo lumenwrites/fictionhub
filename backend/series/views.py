@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.views.decorators.csrf import csrf_exempt
 
 from profiles.models import User
 from .models import Series
@@ -22,7 +23,7 @@ def series_update(request, slug):
     return HttpResponseRedirect(prev_url)
 
 
-
+@csrf_exempt
 def series_purchase(request, slug, username):
     # Grab data from POST request sent by paypal
     # slug = request.POST.get('item_name')
@@ -45,6 +46,7 @@ def series_purchase(request, slug, username):
 
 
 # Trying to do the same from specified url
+@csrf_exempt
 def purchase(request):
     # Grab data from POST request sent by paypal
     slug = request.POST.get('item_name')
