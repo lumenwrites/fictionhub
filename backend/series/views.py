@@ -24,13 +24,11 @@ def series_update(request, slug):
 
 
 def series_purchase(request, slug, username):
-    # series = Series.objects.get(slug=slug)
-    # user = request.user
     # Grab data from POST request sent by paypal
-    # series_slug = request.POST.get('item_name')
+    # slug = request.POST.get('item_name')
     # username = request.POST.get('username')
+    series = Series.objects.get(slug=slug)
     user = User.objects.get(username=username)
-    series = Series.objects.get(slug=series_slug)
     # Add to user's purchased series
     user.purchased_series.add(series)
     user.save()
@@ -43,4 +41,4 @@ def series_purchase(request, slug, username):
     author.save()
 
     # Redirect to first paid chapter
-    # return HttpResponseRedirect(first_paid_chapter.get_absolute_url())
+    return HttpResponseRedirect(first_paid_chapter.get_absolute_url())
