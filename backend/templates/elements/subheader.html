@@ -1,10 +1,21 @@
+{% if profile.background %}
+<style>
+.subheader {
+background: white url("{{profile.background.url}}") no-repeat center;
+background-size: cover;
+}
+</style>
+{% endif %}	  
+
 <div class="subheader">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
 	<div class="left">
-	  <img class="avatar left hidden"
-	       src="/media/images/profiles/avatars/signature-256x256.png"/>
+	  {% if profile.avatar %}
+	  <img class="avatar left"
+	       src="{{profile.avatar.url}}"/>
+	  {% endif %}	  
 	  <a class="username" href="/@{{profile.username}}"><h1>{{profile.username}}</h1></a>
 	  <div class="stats">
 	    <span data-toggle="tooltip" data-placement="top" title="Subscribers">

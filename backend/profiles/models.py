@@ -1,3 +1,4 @@
+import os 
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.db.models import permalink
@@ -6,7 +7,13 @@ from posts.models import Post
 from notifications.models import Message
 from comments.models import Comment
 
+def get_image_path(instance, filename):
+    return os.path.join('users', str(instance.id), filename)
+
 class User(AbstractUser):  
+    avatar = models.ImageField(upload_to=get_image_path, blank=True, null=True)
+    background = models.ImageField(upload_to=get_image_path, blank=True, null=True)    
+
     karma = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
 

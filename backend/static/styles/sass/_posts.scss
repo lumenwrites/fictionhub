@@ -288,6 +288,7 @@ article {
     overflow: hidden;
     .progressbar-inner {
 	height: 100%;
+	width: 0;	
 	background: rgba(246, 99, 3, 0.8);
     }
     .marks {
