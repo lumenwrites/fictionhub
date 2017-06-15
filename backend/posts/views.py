@@ -136,7 +136,10 @@ class BrowseView(FilterMixin, ListView):
         category = self.request.GET.get('category')
         if 'category' in self.kwargs:
             category = self.kwargs['category']
-        if not category:
+        tag = self.request.GET.get('tag')
+        if 'tag' in self.kwargs:
+            tag = self.kwargs['tag']
+        if not category and not tag:
             # Exclude categories
             exclude_categories = ['discussion', 'daily-practice', 'on-writing', 'blog']
             qs = [p for p in qs if (not p.category or p.category.slug not in exclude_categories)]
