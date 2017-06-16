@@ -37,8 +37,8 @@ $(document).ready(function() {
 	event.preventDefault();
 	event.stopPropagation();
 
-	var query = $('#searchbar').val(); 
-	var url = $.query.set('query', query);
+	var query = $('#searchbar').val().trim(); 
+	var url = $.query.set('query', query).trim();
 	/* Send the get request */
 	var current_url_without_query = window.location.href.split('?')[0];	
 	window.location = current_url_without_query + url;
@@ -48,7 +48,7 @@ $(document).ready(function() {
     $('.query-filter').on('click', 'a', function(e) {
 	e.preventDefault();
 	/* Grab the value (Hot/Top or SciFi/Fantasy) */
-	var value = $(this).attr('id');
+	var value = $(this).attr('id').trim();
 	/* Grab the filter ("sorting" or "category")  */
 	var filter = $(this).parent().parent().attr('id');
 	/* Add the value to GET request */
