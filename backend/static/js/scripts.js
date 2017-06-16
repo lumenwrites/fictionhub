@@ -38,7 +38,7 @@ $(document).ready(function() {
 	event.stopPropagation();
 
 	var query = $('#searchbar').val().trim(); 
-	var url = $.query.set('query', query).trim();
+	var url = $.query.set('query', query);
 	/* Send the get request */
 	var current_url_without_query = window.location.href.split('?')[0];	
 	window.location = current_url_without_query + url;
