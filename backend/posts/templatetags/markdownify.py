@@ -19,11 +19,10 @@ def markdownify(post, truncate = False):
 
     firstline = body.splitlines()[0]
     if "# " in firstline:
-        firstline += '\n\n'
-    rest = str(''.join(body.splitlines()[1:]))
-    rest = rest.replace('\n\n','<br/>')
-    rest = rest.replace('\n',' ')
-    body = str(firstline) + rest
+        body = body.replace('# ','<h1>',1)
+        body = body.replace('\n','</h1>',1)        
+    body = body.replace('\n\n','<br/>')        
+    body = body.replace('\n',' ')
 
     html = markdown(body)
     firstline = html.splitlines()[0]
