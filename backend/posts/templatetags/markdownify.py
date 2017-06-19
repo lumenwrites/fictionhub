@@ -17,6 +17,8 @@ def markdownify(post, truncate = False):
             body = text
             truncated = True
 
+    body.replace('\n\n','<br/>')
+    body.replace('\n',' ')    
     html = markdown(body)
     firstline = html.splitlines()[0]
     rest = html.splitlines()[1:]
