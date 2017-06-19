@@ -5,6 +5,12 @@ article {
     border: 1px solid rgba(0,0,0,.09);
     margin-top: 20px;
 
+    br {
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+	content: " ";	
+    }
     img {
 	max-width: 100%;
 	display: block;
