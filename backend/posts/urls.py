@@ -16,8 +16,8 @@ urlpatterns = [
     url(r'^post/(?P<slug>[^\.]+)/delete$', post_delete),
     url(r'^post/(?P<slug>[^\.]+)/publish$', post_publish),
     url(r'^post/(?P<slug>[^\.]+)/unpublish$', post_unpublish),        
-    url(r'^post/(?P<slug>[^\.]+)/$', PostDetailView.as_view(), name='post-detail'),
-    url(r'^story/(?P<slug>[^\.]+)/$', PostDetailView.as_view()),    
+    url(r'^post/(?P<slug>[^\.]+)$', PostDetailView.as_view(), name='post-detail'),
+    url(r'^story/(?P<slug>[^\.]+)$', PostDetailView.as_view()),    
 
     url(r'^create$', post_create),    
     url(r'^write$', post_create),
@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^browse/$', BrowseView.as_view()),    
     url(r'^subscriptions/$', SubscriptionsView.as_view()),    
     url(r'^tag/(?P<tag>[^\.]+)/$', BrowseView.as_view()),
+    url(r'^(?P<category>[^\.]+)/(?P<tag>[^\.]+)/$', BrowseView.as_view()),    
     url(r'^(?P<category>[^\.]+)/$', BrowseView.as_view()),
     url(r'^$', BrowseView.as_view()),
 ]
