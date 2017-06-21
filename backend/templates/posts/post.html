@@ -54,10 +54,17 @@
   </a>
   {% endif %}  
   {% if next_chapter %}
+  {% if next_chapter == chapters.1 %}
+  <a class="btn btn-cta right next"
+     href="{{next_chapter.get_absolute_url}}">
+    Read >
+  </a>
+  {% else %}    
   <a class="btn btn-default right next"
      href="{{next_chapter.get_absolute_url}}">
     Next >
   </a>
+  {% endif %}      
   {% endif %}  
   
   <div class="clearfix"></div>
