@@ -278,10 +278,10 @@ class PostDetailView(DetailView):
             this_index = 0
             prev_chapter = 0
             next_chapter = 0                
-            if post.series:
-                for index, chapter in enumerate(chapters):
-                    if post == chapter:
-                        this_index = index
+            # if post.series:
+            #     for index, chapter in enumerate(chapters):
+            #         if post == chapter:
+            #             this_index = index
             if this_index > 0:
                 prev_chapter = chapters[this_index - 1]
             if this_index + 1 < len(chapters) and chapters[this_index + 1].published:
