@@ -17,13 +17,13 @@ def markdownify(post, truncate = False):
             body = text
             truncated = True
 
-    firstline = body.splitlines()[0]
-    if "# " in firstline:
-        body = body.replace('# ','<h1>',1)
-        body = body.replace('\n','</h1>',1)        
-    body = body.replace('\n\n','<br/>')        
-    body = body.replace('\n',' ')
-    body = body.replace('</h1>','</h1>\n\n',1) 
+    # firstline = body.splitlines()[0]
+    # if "# " in firstline:
+    #     body = body.replace('# ','<h1>',1)
+    #     body = body.replace('\n','</h1>',1)        
+    # body = body.replace('\n\n','<br/>')        
+    # body = body.replace('\n',' ')
+    # body = body.replace('</h1>','</h1>\n\n',1) 
 
     html = markdown(body)
     firstline = html.splitlines()[0]
