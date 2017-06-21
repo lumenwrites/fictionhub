@@ -278,19 +278,17 @@ class PostDetailView(DetailView):
             this_index = 0
             prev_chapter = 0
             next_chapter = 0                
-            # for index, chapter in enumerate(chapters):
-            #     if post == chapter:
-            #         this_index = index
-            # if this_index > 0:
-            #     prev_chapter = chapters[this_index - 1]
-            # if this_index + 1 < len(chapters) and chapters[this_index + 1].published:
-            #     next_chapter = chapters[this_index + 1]
+            for index, chapter in enumerate(chapters):
+                if post == chapter:
+                    this_index = index
+            if this_index > 0:
+                prev_chapter = chapters[this_index - 1]
+            if this_index + 1 < len(chapters) and chapters[this_index + 1].published:
+                next_chapter = chapters[this_index + 1]
                 
             context['chapters'] = chapters
-            # context['prev_chapter'] = prev_chapter
-            # context['next_chapter'] = next_chapter
-            if post == chapters[0]:
-                context['next_chapter'] = chapters[1]
+            context['prev_chapter'] = prev_chapter
+            context['next_chapter'] = next_chapter
 
             # Paywall
             paywall = False

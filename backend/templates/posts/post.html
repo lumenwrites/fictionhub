@@ -45,33 +45,7 @@
   {{post | markdownify:truncate | safe}}
   {% endif %} <!-- End if price -->
 
-  <div class="clearfix"></div>
-  <!-- Chapters -->
-  {% if post.series and not truncate %}
-  <div class="dropdown toc">
-    <span class="btn btn-default">
-      {{post|title|striptags}}
-    </span>
-    <ul class="dropdown-menu dropdown-menu-right toc-dropdown" role="menu">    
-      {% for chapter in chapters %}	  	      
-      <li>
-	<a href="{{chapter.get_absolute_url}}"
-	   {% if chapter == post %}
-	   class="active"
-	   {% endif %}>
-	  {{ forloop.counter }}.
-	  {{chapter|title|striptags}}
-	  <!-- $ -->
-	  {% if post.series.price > 0 and forloop.counter > post.series.free_chapters %}
-	  <span class="right">$</span>
-	  {% endif %}
-
-	</a>
-      </li>
-      {% endfor %}	  	      
-    </ul>
-  </div>
-  {% endif %}
+  <div class="clearfix"></div><br/>
   <!-- Prev/Next chapters -->
   {% if prev_chapter %}
   <a class="btn btn-default left prev"
