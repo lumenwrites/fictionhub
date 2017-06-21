@@ -251,12 +251,12 @@ class PostDetailView(DetailView):
     template_name = "posts/post-detail.html"
 
 
-    def dispatch(self, request, *args, **kwargs):
-        # Redirect from slash to no slash
-        if request.path[-1] == '/':
-            return redirect(request.path[:-1])
-        else:
-            return super(PostDetailView, self).dispatch(request, *args, **kwargs)
+    # def dispatch(self, request, *args, **kwargs):
+    #     # Redirect from slash to no slash
+    #     if request.path[-1] == '/':
+    #         return redirect(request.path[:-1])
+    #     else:
+    #         return super(PostDetailView, self).dispatch(request, *args, **kwargs)
     
 
     def get_context_data(self, **kwargs):
