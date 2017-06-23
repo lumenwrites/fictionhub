@@ -33,6 +33,7 @@
       </a>
     </div>   <!-- End .col-xs-12 col-sm-4 -->	  
 
+    {% if 12|make_list|random == '1'%}
     <div class="col-xs-12 col-sm-4">
       <a href="/post/story-writing-process">
 	<article class="story-box">
@@ -47,6 +48,23 @@
 	  </div>
 	</article>
       </a>
-    </div>   <!-- End .col-xs-12 col-sm-4 -->	  
+    </div>   <!-- End .col-xs-12 col-sm-4 -->
+    {% else %}
+    <div class="col-xs-12 col-sm-4">
+      <a href="/post/story-writing-process">
+	<article class="story-box">
+	  <div class="thumbnail"
+	       style="background-image:
+		      url('/media/images/posts/hermione.jpg');"
+	       >
+	  </div>
+	  <div class="description">
+	    <h1>Writing Resources</h1>
+	    <p>Best learning resources for aspiring writers.</p>
+	  </div>
+	</article>
+      </a>
+    </div>   <!-- End .col-xs-12 col-sm-4 -->    
+    {% endif %}    
   </div> <!-- End .row .edit -->
 </div> <!-- End .story-suggestions -->
