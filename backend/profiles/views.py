@@ -48,6 +48,7 @@ def join(request):
                                             None,
                                             form.cleaned_data['password1'])
             user.email = form.cleaned_data['email']
+            user.src = form.cleaned_data['src']            
             user.save()
 
             # log user in after signig up
@@ -73,12 +74,14 @@ def join(request):
 def email_subscribe(request):
     if request.method == 'POST':    
         email = request.POST.get('email')
-        ref = request.GET.get('ref')
+        src = request.POST.get('src')        
         redirect_to = request.GET.get('next')
         # Add ?notification=subscribed to show the success alert and close the box
         # Use furl to magically add it to anything, even if I already have a get query
         redirect_to =  furl(redirect_to).add({'notification':'subscribed'}).url
-        email_subscriber, created = Subscriber.objects.get_or_create(email=email,ref=ref)
+        email_subscriber, created = Subscriber.objects.get_or_create(email=email)
+        if src:
+            email_subscriber.src = src
         email_subscriber.save()
         return HttpResponseRedirect(redirect_to)
 

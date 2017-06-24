@@ -16,6 +16,7 @@ class User(AbstractUser):
 
     karma = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
+    src = models.CharField(max_length=64, blank=True, default="", null=True)        
 
     upvoted = models.ManyToManyField('posts.Post', related_name="upvoters", blank=True)
     comments_upvoted = models.ManyToManyField('comments.Comment', related_name="upvoters", blank=True)    
@@ -51,15 +52,21 @@ class User(AbstractUser):
             return True
         else:
             return False            
-    
+
+    def __str__(self):
+        if not self.src:
+            return self.username
+        else:
+            return self.src + " | " + self.username
+        
 
 # Email subscriber
 class Subscriber(models.Model):
     email = models.CharField(max_length=64, blank=True, null=True)
-    ref = models.CharField(max_length=64, blank=True, default="", null=True)        
+    src = models.CharField(max_length=64, blank=True, default="", null=True)        
 
     def __str__(self):
-        if not self.ref:
+        if not self.src:
             return self.email
         else:
-            return self.ref + " | " + self.email
+            return self.src + " | " + self.email

@@ -20,6 +20,7 @@
 			  action="/subscribe/?next={{request.path}}">{% csrf_token %}  
 		      <input type="text" name="email"
 			     class="form-control" placeholder="email" />
+                      <input name="src" type="hidden" id="email-src" />
 		      <button class="btn btn-default" type="submit">
 			Subscribe
 		      </button>
