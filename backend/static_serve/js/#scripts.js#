@@ -30,7 +30,19 @@ $(document).ready(function() {
 	$(".alert").delay(3000).fadeOut();	
     }
 
-    
+    /* Set src cookie */
+    var source = $.query.get('src');
+    if (source) {
+	Cookies.set('src', source, { expires: 10 });	
+    } else {
+	/* If there's no src in url, try getting source from cookies */
+	source = Cookies.get('src');
+    }
+    if (source) {
+	$("#src").val(source);
+	$("#email-src").val(source);			
+    }
+
     /* Search */
     $('#search-form').submit(function(event){
 	/* Custom get request */
