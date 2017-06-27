@@ -401,3 +401,20 @@ article {
 .subheader h1 {
     color: #A2A8A6!important;
 }
+
+article h1, article h2 {
+    color: #a2a8a7;
+}
+header {
+    border: none;
+}
+article p {
+    font-size: 1em;
+    font-family: "Noto Sans";
+    /* font-family: "Open Sans"; */
+    letter-spacing: 0.5px;      
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
