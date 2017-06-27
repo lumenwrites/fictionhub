@@ -18,7 +18,7 @@ header .logo b {
 }
 
 /* line 17, sass/dark.scss */
-.page {
+body, .page {
   background: #232626;
   background: #111111;
 }
