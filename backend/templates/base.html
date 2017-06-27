@@ -50,10 +50,26 @@
   <script src="{% static "/js/analytics.js" %}" async></script>  
   <script src="{% static "/js/dist/fictionhub.js" %}" async></script>
 
-
+  {% if post %}
   <script>
-  </script>
-  
+  $(document).ready(function() {
+  // there's nothing we can do if the browser doesn't have 
+  // localStorage
+  if (window.localStorage) {
+      var ls = window.localStorage;
+      // sets the scroll to the previous, saved value, or to 0 
+      // if no value is saved.
+      var val = Number(ls['{{post.slug}}']);
+      $(document).scrollTop(val);
+      
+      // update the saved value on scroll
+      $(document).scroll(function(e) {
+          ls['{{post.slug}}'] = $(document).scrollTop();
+      });
+  }
+  }); /* End document ready */
+  </script>  
+  {% endif %}
 </body>
 
 </html>
