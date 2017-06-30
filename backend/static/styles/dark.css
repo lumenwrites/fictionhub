@@ -18,54 +18,91 @@ header .logo b {
 }
 
 /* line 17, sass/dark.scss */
+.subnav {
+  background: rgba(162, 168, 171, 0.1);
+  border: none;
+}
+
+/* line 23, sass/dark.scss */
 body, .page {
   background: #232626;
   background: #111111;
 }
 
-/* line 22, sass/dark.scss */
+/* line 28, sass/dark.scss */
 article {
   background: #1f1f1f;
 }
 
-/* line 26, sass/dark.scss */
+/* line 32, sass/dark.scss */
 a, p, li {
   color: #a2a8ab;
 }
 
-/* line 29, sass/dark.scss */
+/* line 35, sass/dark.scss */
 .btn-default {
   background: #222;
   color: #a2a8ab !important;
 }
-/* line 33, sass/dark.scss */
+/* line 39, sass/dark.scss */
 .btn-default:hover {
   background: #222 !important;
 }
 
-/* line 37, sass/dark.scss */
-.dropdown-menu {
+/* line 43, sass/dark.scss */
+.dropdown-menu, .subnav .btn-default {
   background: #222222;
 }
-/* line 39, sass/dark.scss */
-.dropdown-menu a {
+/* line 45, sass/dark.scss */
+.dropdown-menu a, .subnav .btn-default a {
   color: #a2a8ab !important;
 }
 
-/* line 43, sass/dark.scss */
+/* line 49, sass/dark.scss */
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
   background: #2f3333;
 }
 
-/* line 46, sass/dark.scss */
+/* line 52, sass/dark.scss */
 article h1 {
   color: #a2a8ab;
   border-bottom: 1px solid rgba(162, 168, 171, 0.52);
 }
 
-/* line 52, sass/dark.scss */
-input {
+/* line 56, sass/dark.scss */
+article .panel {
+  border: none;
+  background: #2d2d2e;
+  color: #a2a8ab;
+}
+
+/* line 61, sass/dark.scss */
+article .post-footer {
+  background: rgba(162, 168, 171, 0.1);
+  border: none;
+}
+
+/* line 66, sass/dark.scss */
+input, textarea {
   background: #1a1c1c !important;
   border: none !important;
   outline: none !important;
+}
+
+/* SimpleMDE */
+/* line 74, sass/dark.scss */
+.editor .CodeMirror {
+  background: #1a1c1c !important;
+  color: white !important;
+  border: none !important;
+}
+/* line 79, sass/dark.scss */
+.editor .editor-toolbar {
+  background: #1a1c1c !important;
+  border: none !important;
+}
+/* line 83, sass/dark.scss */
+.editor .editor-statusbar {
+  border: none !important;
+  background: #1a1c1c !important;
 }
