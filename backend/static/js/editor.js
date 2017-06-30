@@ -16,6 +16,9 @@ $(document).ready(function() {
 	    },
 	    placeholder: "Write here...",
 	    spellChecker: false,
+	    previewRender: function(plainText) {
+		return customMarkdownParser(plainText); 
+	    },
 	    status: ["autosave", "words"], // Optional usage
 	    status: ["autosave", "words", {
 		className: "keystrokes",

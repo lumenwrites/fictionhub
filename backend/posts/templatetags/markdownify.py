@@ -1,6 +1,7 @@
 # markdownify
 from django import template
 from markdown import markdown
+
  
 register = template.Library()
  
@@ -18,13 +19,22 @@ def markdownify(post, truncate = False):
             truncated = True
 
     firstline = body.splitlines()[0]
+    rest = body.splitlines()[1:]
+    if "Format: screenplay" in firstline:
+        output = '<div class="screenplay">' + str('\n'.join(rest)) + '</div>'
+        if truncated:
+            output += '<a class="read-more" href="'+post.get_absolute_url()+'">Read more...</a>'
+        return output
+
+
+
+    firstline = body.splitlines()[0]
     if "# " in firstline:
         body = body.replace('# ','<h1>',1)
         body = body.replace('\n','</h1>',1)        
     body = body.replace('\n\n','<br/>')        
     body = body.replace('\n',' ')
     body = body.replace('</h1>','</h1>\n\n',1) 
-
 
     html = markdown(body)
     firstline = html.splitlines()[0]

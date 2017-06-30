@@ -244,6 +244,7 @@
  -->
 
 <script src="/static/js/vendor/simplemde.min.js"></script>
+<script src="/static/js/vendor/fountain.js"></script>
 <!-- Editor '-->
 <script>
     $(document).ready(function() {
@@ -268,6 +269,12 @@
 	    insertTexts: {
 		horizontalRule: ["", "\n<!-- more -->\n"],
 	    },
+	    {% if "Format: screenplay" in post.body %}
+            previewRender: function(text) {
+                var html = fountain.parse(text).html;
+                return '<div class="title-page">'+html.title_page+'</div>' + html.script;    
+            },
+	    {% endif %}	    
 	    placeholder: "Write here...",
 	    spellChecker: false,
 	    status: ["autosave", "words"], // Optional usage

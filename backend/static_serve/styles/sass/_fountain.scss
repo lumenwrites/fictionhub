@@ -1,0 +1,129 @@
+/*
+From
+https://github.com/mattdaly/Fountain.js/blob/master/app/assets/css/fountain-js.css
+*/
+/* script */
+.screenplay h2 {
+    text-align: right;
+}
+.screenplay h2.left-aligned {
+    text-align: left
+}
+.screenplay h3 {
+    position: relative;
+}
+.screenplay h3:before {
+    content: attr(id); font-weight: bold; left: -45px; position: absolute;
+}
+.screenplay h3:after {
+    content: attr(id); font-weight: bold; right: -45px; position: absolute;
+}
+
+.screenplay div.dialogue {
+    margin-left: auto; margin-right: auto; width: 68%;
+}
+.screenplay div.dialogue h4 { margin-bottom: 0; margin-left: 23%; }
+.screenplay div.dialogue p.parenthetical { margin-bottom: 0; margin-top: 0; margin-left: 11%;}
+.screenplay div.dialogue p { margin-bottom: 0; margin-top: 0; }
+
+.screenplay div.dual-dialogue { margin: 2em 0 0.9em 2%; width: 95%; }
+.screenplay div.dual-dialogue div.dialogue { display: inline-block; margin: 0; width: 45%; }
+.screenplay div.dual-dialogue div.dialogue h4 { margin-top: 0;}
+.screenplay div.dual-dialogue div.dialogue.right { float: right; }
+
+.screenplay p.centered { text-align: center; width: 92.5%; }
+
+.screenplay p.section {  margin-left: -30px; }
+.screenplay p.synopsis {  margin-left: -20px; }
+
+.screenplay span.italic { font-style: italic; }
+.screenplay span.bold { font-weight: bold; }
+.screenplay span.underline { text-decoration: underline; }
+
+/* Custom */
+.title-page {
+    text-align: center;
+}
+.screenplay {
+    width: 80%;
+    @media  (max-width: 740px) {
+	width: 100%;
+    }    
+    margin: auto;
+    font-family: "Courier";        
+    h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	font-family: "Courier";        
+    }
+}
+.screenplay div.dialogue {    
+    margin-bottom: 20px!important;    
+}
+
+
+
+
+
+
+
+/* Simplemde */
+/* script */
+.editor-preview-side h2 {
+    text-align: right;
+}
+.editor-preview-side h2.left-aligned {
+    text-align: left
+}
+.editor-preview-side h3 {
+    position: relative;
+}
+.editor-preview-side h3:before {
+    content: attr(id); font-weight: bold; left: -45px; position: absolute;
+}
+.editor-preview-side h3:after {
+    content: attr(id); font-weight: bold; right: -45px; position: absolute;
+}
+
+.editor-preview-side div.dialogue {
+    margin-left: auto; margin-right: auto; width: 68%;
+}
+.editor-preview-side div.dialogue h4 { margin-bottom: 0; margin-left: 23%; }
+.editor-preview-side div.dialogue p.parenthetical { margin-bottom: 0; margin-top: 0; margin-left: 11%;}
+.editor-preview-side div.dialogue p { margin-bottom: 0; margin-top: 0; }
+
+.editor-preview-side div.dual-dialogue { margin: 2em 0 0.9em 2%; width: 95%; }
+.editor-preview-side div.dual-dialogue div.dialogue { display: inline-block; margin: 0; width: 45%; }
+.editor-preview-side div.dual-dialogue div.dialogue h4 { margin-top: 0;}
+.editor-preview-side div.dual-dialogue div.dialogue.right { float: right; }
+
+.editor-preview-side p.centered { text-align: center; width: 92.5%; }
+
+.editor-preview-side p.section {  margin-left: -30px; }
+.editor-preview-side p.synopsis {  margin-left: -20px; }
+
+.editor-preview-side span.italic { font-style: italic; }
+.editor-preview-side span.bold { font-weight: bold; }
+.editor-preview-side span.underline { text-decoration: underline; }
+
+/* Custom */
+.editor-preview-side {
+    font-family: "Courier";        
+    h1, h2, h3, h4, h5, h6 {
+	@extend p;
+	font-weight: normal;
+	font-family: "Courier";
+	margin: 0;
+	height: 20px;
+	font-size: 21px;	
+    }
+    .title-page {
+	text-align: center;
+	height: 120px;
+    }
+}
+.editor-preview-side div.dialogue {    
+    margin-bottom: 20px!important;    
+}
+
+
+

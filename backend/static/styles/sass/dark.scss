@@ -25,6 +25,15 @@ body, .page {
     background: #111111;
 }
 
+::-webkit-scrollbar-track {
+      background-color:#1f1f1f;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background-color: #111111;
+}
+
+
 article {
     background: #1f1f1f;
 }
@@ -49,9 +58,15 @@ a, p, li {
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
     background: #2f3333;
 }
-article h1 {
-    color: #a2a8ab;
-    border-bottom: 1px solid rgba(162, 168, 171, 0.52);
+article {
+    h1, h2, h3, h4, h5, h6, .read-more {
+	color: #a2a8ab;
+    }
+    h1 {
+	border-bottom: 1px solid rgba(162, 168, 171, 0.52);
+	    
+    }
+
 }
 article .panel {
 border: none;

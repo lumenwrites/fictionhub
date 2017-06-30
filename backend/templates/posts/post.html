@@ -1,6 +1,6 @@
 {% load markdownify %}
 {% load title %}
-<article>
+<article class="post">
   {% if paywall %}
   <h1>{{post|title|striptags}}</h1>
   <p>This is a premium chapter. Buy the rest of the series to read more!</p>
@@ -42,7 +42,9 @@
   <div class="clearfix"></div> <br/>
   {% else %}  
   <!-- Post body -->
+  <div class="post-body">
   {{post | markdownify:truncate | safe}}
+  </div>
   {% endif %} <!-- End if price -->
 
   <div class="clearfix"></div><br/>

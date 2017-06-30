@@ -1,1 +1,1402 @@
-.left{float:left}.right{float:right}.centered{margin:auto}.center-text{text-align:center}.hidden{display:none}.bold{font-weight:bold}.pointer{cursor:pointer}.fill{min-height:100%;height:100%}.vertical-center{display:flex;align-items:center}.full-width{width:100%}.black{color:rgba(0,0,0,0.8)}.gray{color:#999}.paddings-10{padding:10px}.margins-h-10{margin:0 10px}html,body{font-family:"Open Sans", sans-serif;background:#faf4e9;color:rgba(0,0,0,0.8)}.page{min-height:calc(100vh - 140px)}::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background-color:#F2F2F2}::-webkit-scrollbar-thumb{background-color:rgba(110,110,110,0.2)}article h1{font-size:32px;font-weight:bold;border-bottom:1px solid #dddddd;line-height:50px;margin-top:0;color:#3d454b}article h2,h2 a{font-size:30px;font-weight:bold;color:#3d454b}h3{font-size:24px;font-weight:bold}h4{font-size:24px;font-weight:bold}article p{font-size:22px;margin-bottom:20px}a{color:rgba(0,0,0,0.8);cursor:pointer}a:hover,a:active,a:focus,a:visited{color:rgba(0,0,0,0.8);text-decoration:none}article .panel a,article p a{color:#008cba}article .panel a:hover,article .panel a:active,article .panel a:focus,article .panel a:visited,article p a:hover,article p a:active,article p a:focus,article p a:visited{color:#008cba}article li{font-size:22px}article ul{padding-left:22px}hr{border:none;border-top:1px solid rgba(0,0,0,0.15);margin:10px 0}textarea,textarea:focus,textarea:active{resize:none;box-shadow:none !important}.container{max-width:900px}.btn-default{border-radius:2px;background:transparent;color:rgba(0,0,0,0.6);border:1px solid #999}.btn-primary{color:white;height:40px}.btn-primary:hover,.btn-primary:active,.btn-primary:focus,.btn-primary:visited{color:white}.btn-cta,.btn-cta-large{background:#f66303;border:none;color:white}.btn-cta:hover,.btn-cta-large:hover,.btn-cta:active,.btn-cta-large:active,.btn-cta:focus,.btn-cta-large:focus,.btn-cta:visited,.btn-cta-large:visited{color:white}.btn-cta-large{padding:15px 20px}.btn-disabled{background:gray;color:white;height:40px;cursor:default}.btn-disabled:hover,.btn-disabled:active,.btn-disabled:focus,.btn-disabled:visited{color:white}.form-control,.form-control-cta{height:40px}.form-control-cta{height:auto;padding:12px 15px;width:100%;text-align:center}.close{margin:20px}.row-centered{text-align:center}.col-centered{display:inline-block;float:none;text-align:left;margin-right:-4px}article .panel{border:1px solid #e9e9e9;webkit-box-shadow:none;box-shadow:none;padding:20px;background:#fcfcfc}.label a{color:rgba(0,0,0,0.8)}.label a:hover,.label a:active,.label a:focus,.label a:visited{color:rgba(0,0,0,0.8);text-decoration:none}header{background:#fff;padding:20px;border-top:3px solid #f66303}header .search{height:38px}@media (max-width: 740px){header .search{padding:0}}header .logo{font-size:36px;color:#3d454b}header .logo img{width:50px;float:left;margin-right:10px}header .nulis{padding:4px 0;border:none;box-shadow:none}header .tagline{margin:10px;color:#999}header .main-menu{padding-top:5.5px;float:right}@media (max-width: 740px){header .main-menu{float:left}}header .main-menu .btn{padding-top:10px;padding-bottom:10px;border:1px solid rgba(0,0,0,0.1);margin-right:5px;border-radius:0}header .main-menu .btn:hover{background-color:#eeeeee}header .main-menu .notifications{color:#f66303}.subheader{background:#fff url("/static/img/orange-bg.jpg") no-repeat center;background-size:cover;color:white;padding-top:20px}.subheader .avatar{float:left;width:50px;margin:20px 10px 0 0;border-radius:2px}.subheader .username{display:inline-block}.subheader a h1{color:white}.subheader h1{text-shadow:0.5px 0.5px 0.5px black}.subheader .stats{padding-top:10px}.subheader .stats span{margin-right:4px}.subheader .stats .calendar{display:inline-block}.subheader .stats .calendar .mark{width:8px;height:8px;background:rgba(255,255,255,0);border:0.5px solid rgba(255,255,255,0.6);float:left;margin-right:1px;height:11px}.subheader .buttons{float:right;padding-top:30px}.subheader .buttons .btn{color:white;background:#403c30;border:none;border-radius:0;padding:15px 20px}.subheader .description{color:#fefefe;background:rgba(10,10,10,0.5);padding:10px 0;margin-top:10px}.subheader .description a{color:#fefefe;margin-right:5px}.subnav{background-color:rgba(251,251,251,0.9);box-shadow:0 1px 0 0 rgba(0,0,0,0.05),0 2px 4px 0 rgba(0,0,0,0.06)}@media (max-width: 420px){.subnav .filters{width:100%}}.subnav .btn{border-radius:0;border:none;background:rgba(241,239,239,0.9);height:38px}@media (max-width: 420px){.subnav .btn{padding:8px 7px}}.subnav form{float:right}@media (max-width: 500px){.subnav form{width:100%}}.subnav form input{height:38px;background:rgba(241,239,239,0.9);background:none;border:none;box-shadow:none}.subnav form input:focus{outline:1px solid #cccccc;box-shadow:none;background:white}.subnav form .active{outline:1px solid #cccccc;box-shadow:none;background:white}.subnav form .fa-search{position:absolute;right:26px;top:12px;color:#999;pointer-events:none}.subnav form .typeahead.dropdown-menu{width:calc(100% - 80px)}.dropdown{float:left;margin-right:5px}.dropdown li{border-bottom:1px solid rgba(0,0,0,0.15)}.dropdown:hover .dropdown-menu{display:block;min-width:100%}.home .header{text-align:center;background:#253153 url("/static/img/space_medium.jpg") no-repeat center;background-position:50% calc(50% - 90px);background-size:cover;color:white}.home .header .overlay{background:rgba(0,0,0,0.175);padding:80px}@media (max-width: 700px){.home .header .overlay{padding:20px}}@media (max-width: 700px){.home .header{background-position:initial}}.home .header img{width:125px}.home .header h1{font-size:43px;margin-top:10px}.home .header h2{font-size:22px;margin-bottom:25px;text-shadow:0.5px 0.5px 0.5px black}.home .header .btn{border:0.5px solid #f66303}.home .header .learn-more{margin-left:10px}.home .subnav{background:#f6630a;padding:20px 0}.home .subnav a{color:#FFC99E;margin-right:10px}.stories article,.stories .story-box,.story-suggestions article,.story-suggestions .story-box{padding:10px}.stories article .thumbnail,.stories .story-box .thumbnail,.story-suggestions article .thumbnail,.story-suggestions .story-box .thumbnail{height:120px;background-position:50% 50%;background-size:cover;width:100%;margin:-10px;width:calc(100% + 20px);max-width:calc(100% + 20px);border:none}.stories article .description,.stories .story-box .description,.story-suggestions article .description,.story-suggestions .story-box .description{height:140px}.stories article h1,.stories .story-box h1,.story-suggestions article h1,.story-suggestions .story-box h1{font-size:22px;border:none;margin-top:10px;margin-bottom:0;line-height:32px}.stories article p,.stories .story-box p,.story-suggestions article p,.story-suggestions .story-box p{font-size:18px}article{background:white;padding:20px 40px;box-shadow:0 1px 4px rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.09);margin-top:20px}article br{display:block;width:100%;margin-bottom:20px;content:" "}article img{max-width:100%;display:block;margin:auto}article .top-image{margin:-40px -40px 0 -40px;max-width:calc(100% + 80px);width:calc(100% + 80px)}article .read-more{font-size:12px;color:rgba(0,0,0,0.44)}article .prev,article .next{margin-top:-38.5px}@media (max-width: 500px){article .prev,article .next{width:50%;margin:0;margin-top:4px}}article .toc{display:block;width:calc(100% - 150px);margin-left:auto;margin-right:auto;float:none;text-align:center}@media (max-width: 500px){article .toc{width:100%}}article .toc .btn{width:100%}article .toc .active{font-weight:bold !important}article .toc .toc-dropdown li{font-size:16px}article .post-footer{font-size:14px;color:#999;background:rgba(242,242,242,0.6);padding:7px 40px;margin:5px -40px -20px -40px;background-color:#fcfcfc;border-top:1px solid #e8e8e8}@media (max-width: 700px){article .post-footer{padding:10px}}article .post-footer .col-xs-12,article .post-footer .col-sm-6{padding:0}article .post-footer .label{margin-right:4px;line-height:25px}article .post-footer .btn{padding:2px 8px;margin-left:5px;float:left}article .post-footer .btn:hover{background:#e7e7e7}article .post-footer .fi-arrow-up:before{transform:scale(1.2, 1)}article .post-footer .upvoted{background:#f66303;border:1px solid #f66303;color:white}article .post-footer .actions{float:right}@media (max-width: 600px){article .post-footer .actions{float:left;margin-top:10px}}@media (max-width: 600px){article .post-footer .actions .btn{margin-right:2px}}article .subtitle{color:rgba(0,0,0,0.44) !important;font-weight:normal !important;font-size:1.5em !important}@media (max-width: 768px){article{padding:10px}article .post-footer{margin:5px -10px -10px -10px;width:calc(100% + 20px)}article h1{line-height:45px}}@media (max-width: 768px){padding:0}.post-detail article{border:none;padding:40px 40px 20px 40px}@media (max-width: 768px){.post-detail article{padding:10px}.post-detail article .post-footer{margin:5px -10px -10px -10px;width:calc(100% + 20px)}}.tag-description{margin-top:20px}.tag-description .panel{padding:20px;margin-bottom:0}.tag-description .panel h1{font-weight:bold;font-size:20px;margin-top:0}.tag-description .panel h2{font-weight:normal;font-size:18px;margin:0}.comment{box-shadow:-1px 1px 3px 0px rgba(0,0,0,0.1);min-height:0;padding:20px}.comment .footer{float:right}.comment .footer a{cursor:pointer;color:rgba(0,0,0,0.8)}.comment .footer a:hover,.comment .footer a:active,.comment .footer a:focus,.comment .footer a:visited{color:rgba(0,0,0,0.8)}.comment .footer .score{font-weight:bold}.comment .footer .comment-upvoted{color:#f66303}.comment .comment{margin-right:-40.5px}.editor{padding-top:20px;position:relative}.editor .dropdown{z-index:10}.editor .dropdown .dropdown-menu{box-sizing:border-box;width:100%}.editor .dropdown .dropdown-menu .active{font-weight:bold !important}.editor .chapters{position:absolute;right:10px;top:26px;z-index:10}.editor .chapters .chapter-title{width:200px;text-align:left}@media (max-width: 700px){.editor .chapters{position:inherit}.editor .chapters .btn{background:white;width:50%;float:left}.editor .chapters .chapter-titles,.editor .chapters .chapter-title{width:100%}}.editor .chapters .nulis{margin-right:5px;float:left}.editor .editor-toolbar{border-radius:0;background:white;opacity:1;border:1px solid #d4d2cd;border-bottom:snow}.editor .editor-toolbar a:before{color:#7e878d}.editor .CodeMirror{border-radius:0;border-bottom:none}.editor .editor-statusbar{border:1px solid #ddd;background:white}.editor .CodeMirror-fullscreen,.editor .editor-preview-side{z-index:1000}.editor .col-sm-3,.editor .col-sm-9{padding:0}.edit-series .price{float:left;width:60%}.edit-series .free-chapters{float:left;width:40%}.progressbar-outer{height:10px;width:100%;border:1px solid rgba(0,0,0,0.1);border-top:none;border-bottom:none;overflow:hidden}.progressbar-outer .progressbar-inner{height:100%;width:0;background:rgba(246,99,3,0.8)}.progressbar-outer .marks{height:100%;margin-top:-6px;background:none}.progressbar-outer .marks .mark{height:4px;float:left;width:10%;background:none;border-right:0.5px solid #dddddd}.message p{font-size:16px}.subscription-box{margin-top:20px;display:none}.subscription-box .cta-description{padding:0 5px}.subscription-box .panel{margin-bottom:0}.subscription-box .cta{padding:10px;float:left;margin-right:20px;font-weight:bold}.subscription-box .email-form{float:right;margin-right:10px}@media (max-width: 500px){.subscription-box .email-form{margin-right:0px}}.subscription-box .email-form input{float:left;width:200px}@media (max-width: 500px){.subscription-box .email-form input{width:100%}}.subscription-box .email-form .btn{float:left;width:100px}@media (max-width: 500px){.subscription-box .email-form .btn{width:100%}}.subscription-box input{height:40px}.subscription-box .btn{background:#f66303;color:white;height:40px}.subscription-box .close{position:absolute;margin:0;top:20px;right:32px;font-size:32px;z-index:10}@media (max-width: 740px){.subscription-box .close{top:10px;right:30px}}.alert{position:absolute;top:0;left:0;width:100%;display:none;padding:22px;text-align:center;font-size:18px}.pagination{width:100%;margin:10px 0;padding:5px;text-align:center}.pagination .fa{margin-top:6px;color:#999}footer{height:40px;padding:0 10px;background-color:#333a42;color:#babfc2}footer a{color:#999;font-weight:bold}.settings .avatar{width:40px;margin-left:10px}.settings .background{margin-left:10px;height:40px}
+/* Vendor */
+/* @import "../vendor/bootstrap.min.scss"; */
+/* @import "../vendor/font-awesome.min.scss"; */
+/* @import "../vendor/foundation-icons.scss"; */
+/* #da552f; */
+/* Helpers */
+/* line 2, sass/_helpers.scss */
+.left {
+  float: left;
+}
+
+/* line 6, sass/_helpers.scss */
+.right {
+  float: right;
+}
+
+/* line 9, sass/_helpers.scss */
+.centered {
+  margin: auto;
+}
+
+/* line 12, sass/_helpers.scss */
+.center-text {
+  text-align: center;
+}
+
+/* line 15, sass/_helpers.scss */
+.hidden {
+  display: none;
+}
+
+/* line 19, sass/_helpers.scss */
+.bold {
+  font-weight: bold;
+}
+
+/* line 23, sass/_helpers.scss */
+.pointer {
+  cursor: pointer;
+}
+
+/* line 27, sass/_helpers.scss */
+.fill {
+  min-height: 100%;
+  height: 100%;
+}
+
+/* line 32, sass/_helpers.scss */
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+/* line 37, sass/_helpers.scss */
+.full-width {
+  width: 100%;
+}
+
+/* line 41, sass/_helpers.scss */
+.black {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* line 44, sass/_helpers.scss */
+.gray {
+  color: #999;
+}
+
+/* line 48, sass/_helpers.scss */
+.paddings-10 {
+  padding: 10px;
+}
+
+/* line 52, sass/_helpers.scss */
+.margins-h-10 {
+  margin: 0 10px;
+}
+
+/* line 1, sass/_general.scss */
+html, body {
+  font-family: "Open Sans", sans-serif;
+  /* background: $background; */
+  /* background: #f6f3ea; */
+  /* background: #fdf5e7 url("/static/img/bg.png");     */
+  /* background: #faf7f1; */
+  /* bright */
+  /* background: #faf6ef;  */
+  /* mid */
+  background: #faf4e9;
+  /* more staturated */
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* line 12, sass/_general.scss */
+.page {
+  min-height: calc(100vh - 140px);
+}
+
+/* line 16, sass/_general.scss */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* line 20, sass/_general.scss */
+::-webkit-scrollbar-track {
+  background-color: #F2F2F2;
+}
+
+/* line 24, sass/_general.scss */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(110, 110, 110, 0.2);
+}
+
+/* Typography */
+/* line 29, sass/_general.scss */
+article h1 {
+  /* font-size: 36px; */
+  font-size: 32px;
+  font-weight: bold;
+  border-bottom: 1px solid #dddddd;
+  line-height: 50px;
+  margin-top: 0;
+  color: #3d454b;
+}
+
+/* line 38, sass/_general.scss */
+article h2, h2 a {
+  font-size: 30px;
+  font-weight: bold;
+  color: #3d454b;
+}
+
+/* line 43, sass/_general.scss */
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* line 47, sass/_general.scss */
+h4 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* line 52, sass/_general.scss */
+article p, article .editor-preview-side h1, .editor-preview-side article h1, article .editor-preview-side h2, .editor-preview-side article h2, article .editor-preview-side h3, .editor-preview-side article h3, article .editor-preview-side h4, .editor-preview-side article h4, article .editor-preview-side h5, .editor-preview-side article h5, article .editor-preview-side h6, .editor-preview-side article h6 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+/* line 60, sass/_general.scss */
+a {
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+/* line 62, sass/_general.scss */
+a:hover, a:active, a:focus, a:visited {
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+}
+
+/* line 69, sass/_general.scss */
+article .panel a, article p a, article .editor-preview-side h1 a, .editor-preview-side article h1 a, article .editor-preview-side h2 a, .editor-preview-side article h2 a, article .editor-preview-side h3 a, .editor-preview-side article h3 a, article .editor-preview-side h4 a, .editor-preview-side article h4 a, article .editor-preview-side h5 a, .editor-preview-side article h5 a, article .editor-preview-side h6 a, .editor-preview-side article h6 a {
+  color: #008cba;
+}
+/* line 71, sass/_general.scss */
+article .panel a:hover, article .panel a:active, article .panel a:focus, article .panel a:visited, article p a:hover, article .editor-preview-side h1 a:hover, .editor-preview-side article h1 a:hover, article .editor-preview-side h2 a:hover, .editor-preview-side article h2 a:hover, article .editor-preview-side h3 a:hover, .editor-preview-side article h3 a:hover, article .editor-preview-side h4 a:hover, .editor-preview-side article h4 a:hover, article .editor-preview-side h5 a:hover, .editor-preview-side article h5 a:hover, article .editor-preview-side h6 a:hover, .editor-preview-side article h6 a:hover, article p a:active, article .editor-preview-side h1 a:active, .editor-preview-side article h1 a:active, article .editor-preview-side h2 a:active, .editor-preview-side article h2 a:active, article .editor-preview-side h3 a:active, .editor-preview-side article h3 a:active, article .editor-preview-side h4 a:active, .editor-preview-side article h4 a:active, article .editor-preview-side h5 a:active, .editor-preview-side article h5 a:active, article .editor-preview-side h6 a:active, .editor-preview-side article h6 a:active, article p a:focus, article .editor-preview-side h1 a:focus, .editor-preview-side article h1 a:focus, article .editor-preview-side h2 a:focus, .editor-preview-side article h2 a:focus, article .editor-preview-side h3 a:focus, .editor-preview-side article h3 a:focus, article .editor-preview-side h4 a:focus, .editor-preview-side article h4 a:focus, article .editor-preview-side h5 a:focus, .editor-preview-side article h5 a:focus, article .editor-preview-side h6 a:focus, .editor-preview-side article h6 a:focus, article p a:visited, article .editor-preview-side h1 a:visited, .editor-preview-side article h1 a:visited, article .editor-preview-side h2 a:visited, .editor-preview-side article h2 a:visited, article .editor-preview-side h3 a:visited, .editor-preview-side article h3 a:visited, article .editor-preview-side h4 a:visited, .editor-preview-side article h4 a:visited, article .editor-preview-side h5 a:visited, .editor-preview-side article h5 a:visited, article .editor-preview-side h6 a:visited, .editor-preview-side article h6 a:visited {
+  color: #008cba;
+}
+
+/* line 76, sass/_general.scss */
+article li {
+  font-size: 22px;
+}
+
+/* line 79, sass/_general.scss */
+article ul {
+  padding-left: 22px;
+}
+
+/* line 82, sass/_general.scss */
+hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  margin: 10px 0;
+}
+
+/* line 88, sass/_general.scss */
+textarea, textarea:focus, textarea:active {
+  resize: none;
+  box-shadow: none !important;
+}
+
+/* Customize bootstrap */
+/* line 96, sass/_general.scss */
+.container {
+  max-width: 900px;
+}
+
+/* line 99, sass/_general.scss */
+.btn-default {
+  border-radius: 2px;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.6);
+  border: 1px solid #999;
+}
+
+/* line 105, sass/_general.scss */
+.btn-primary {
+  color: white;
+  height: 40px;
+}
+/* line 108, sass/_general.scss */
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:visited {
+  color: white;
+}
+
+/* line 112, sass/_general.scss */
+.btn-cta, .btn-cta-large {
+  background: #f66303;
+  border: none;
+  color: white;
+}
+/* line 116, sass/_general.scss */
+.btn-cta:hover, .btn-cta-large:hover, .btn-cta:active, .btn-cta-large:active, .btn-cta:focus, .btn-cta-large:focus, .btn-cta:visited, .btn-cta-large:visited {
+  color: white;
+}
+
+/* line 121, sass/_general.scss */
+.btn-cta-large {
+  padding: 15px 20px;
+}
+
+/* line 125, sass/_general.scss */
+.btn-disabled {
+  background: gray;
+  color: white;
+  height: 40px;
+  cursor: default;
+}
+/* line 130, sass/_general.scss */
+.btn-disabled:hover, .btn-disabled:active, .btn-disabled:focus, .btn-disabled:visited {
+  color: white;
+}
+
+/* line 135, sass/_general.scss */
+.form-control, .form-control-cta {
+  height: 40px;
+}
+
+/* line 139, sass/_general.scss */
+.form-control-cta {
+  height: auto;
+  padding: 12px 15px;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 147, sass/_general.scss */
+.close {
+  margin: 20px;
+}
+
+/* centered columns styles */
+/* line 151, sass/_general.scss */
+.row-centered {
+  text-align: center;
+}
+
+/* line 154, sass/_general.scss */
+.col-centered {
+  display: inline-block;
+  float: none;
+  /* reset the text-align */
+  text-align: left;
+  /* inline-block space fix */
+  margin-right: -4px;
+}
+
+/* line 163, sass/_general.scss */
+article .panel {
+  border: 1px solid #e9e9e9;
+  webkit-box-shadow: none;
+  box-shadow: none;
+  padding: 20px;
+  background: #fcfcfc;
+}
+
+/* line 172, sass/_general.scss */
+.label a {
+  color: rgba(0, 0, 0, 0.8);
+}
+/* line 174, sass/_general.scss */
+.label a:hover, .label a:active, .label a:focus, .label a:visited {
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+}
+
+/* line 1, sass/_header.scss */
+header {
+  background: #fff;
+  padding: 20px;
+  border-top: 3px solid #f66303;
+}
+/* line 6, sass/_header.scss */
+header .search {
+  height: 38px;
+}
+@media (max-width: 740px) {
+  /* line 6, sass/_header.scss */
+  header .search {
+    padding: 0;
+  }
+}
+/* line 12, sass/_header.scss */
+header .logo {
+  font-size: 36px;
+  color: #3d454b;
+}
+/* line 15, sass/_header.scss */
+header .logo img {
+  width: 50px;
+  float: left;
+  margin-right: 10px;
+}
+/* line 23, sass/_header.scss */
+header .nulis {
+  padding: 4px 0;
+  border: none;
+  box-shadow: none;
+}
+/* line 29, sass/_header.scss */
+header .tagline {
+  margin: 10px;
+  color: #999;
+}
+/* line 34, sass/_header.scss */
+header .main-menu {
+  padding-top: 5.5px;
+  float: right;
+}
+@media (max-width: 740px) {
+  /* line 34, sass/_header.scss */
+  header .main-menu {
+    float: left;
+  }
+}
+/* line 40, sass/_header.scss */
+header .main-menu .btn {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-right: 5px;
+  border-radius: 0;
+}
+/* line 46, sass/_header.scss */
+header .main-menu .btn:hover {
+  background-color: #eeeeee;
+}
+/* line 51, sass/_header.scss */
+header .main-menu .notifications {
+  color: #f66303;
+}
+
+/* Profile Subheader */
+/* line 61, sass/_header.scss */
+.subheader {
+  background: white url("/static/img/orange-bg.jpg") no-repeat center;
+  background-size: cover;
+  color: white;
+  padding-top: 20px;
+}
+/* line 67, sass/_header.scss */
+.subheader .avatar {
+  float: left;
+  width: 50px;
+  margin: 20px 10px 0 0;
+  border-radius: 2px;
+}
+/* line 73, sass/_header.scss */
+.subheader .username {
+  display: inline-block;
+}
+/* line 76, sass/_header.scss */
+.subheader a h1 {
+  color: white;
+}
+/* line 79, sass/_header.scss */
+.subheader h1 {
+  text-shadow: 0.5px 0.5px 0.5px black;
+}
+/* line 82, sass/_header.scss */
+.subheader .stats {
+  padding-top: 10px;
+}
+/* line 85, sass/_header.scss */
+.subheader .stats span {
+  margin-right: 4px;
+}
+/* line 88, sass/_header.scss */
+.subheader .stats .calendar {
+  display: inline-block;
+}
+/* line 90, sass/_header.scss */
+.subheader .stats .calendar .mark {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0);
+  border: 0.5px solid rgba(255, 255, 255, 0.6);
+  float: left;
+  margin-right: 1px;
+  height: 11px;
+}
+/* line 102, sass/_header.scss */
+.subheader .buttons {
+  float: right;
+  padding-top: 30px;
+}
+/* line 105, sass/_header.scss */
+.subheader .buttons .btn {
+  color: white;
+  background: #403c30;
+  border: none;
+  border-radius: 0;
+  padding: 15px 20px;
+}
+/* line 114, sass/_header.scss */
+.subheader .description {
+  color: #fefefe;
+  background: rgba(10, 10, 10, 0.5);
+  padding: 10px 0;
+  margin-top: 10px;
+}
+/* line 119, sass/_header.scss */
+.subheader .description a {
+  color: #fefefe;
+  margin-right: 5px;
+}
+
+/* Subnav */
+/* line 130, sass/_header.scss */
+.subnav {
+  /* background-color: rgba(255, 255, 255, 0.33); */
+  /* background-color: #fbfbfb; */
+  background-color: rgba(251, 251, 251, 0.9);
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+@media (max-width: 420px) {
+  /* line 135, sass/_header.scss */
+  .subnav .filters {
+    width: 100%;
+  }
+}
+/* line 141, sass/_header.scss */
+.subnav .btn {
+  border-radius: 0;
+  border: none;
+  background: rgba(241, 239, 239, 0.9);
+  height: 38px;
+}
+@media (max-width: 420px) {
+  /* line 141, sass/_header.scss */
+  .subnav .btn {
+    padding: 8px 7px;
+  }
+}
+/* line 152, sass/_header.scss */
+.subnav form {
+  float: right;
+  /* Search */
+}
+@media (max-width: 500px) {
+  /* line 152, sass/_header.scss */
+  .subnav form {
+    width: 100%;
+  }
+}
+/* line 160, sass/_header.scss */
+.subnav form input {
+  height: 38px;
+  background: rgba(241, 239, 239, 0.9);
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+/* line 166, sass/_header.scss */
+.subnav form input:focus {
+  outline: 1px solid #cccccc;
+  box-shadow: none;
+  background: white;
+}
+/* line 172, sass/_header.scss */
+.subnav form .active {
+  outline: 1px solid #cccccc;
+  box-shadow: none;
+  background: white;
+}
+/* line 178, sass/_header.scss */
+.subnav form .fa-search {
+  position: absolute;
+  right: 26px;
+  top: 12px;
+  color: #999;
+  /* Click behind it into the input */
+  pointer-events: none;
+}
+/* line 187, sass/_header.scss */
+.subnav form .typeahead.dropdown-menu {
+  width: calc(100% - 80px);
+}
+
+/* line 196, sass/_header.scss */
+.dropdown {
+  float: left;
+  margin-right: 5px;
+}
+/* line 199, sass/_header.scss */
+.dropdown li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* line 205, sass/_header.scss */
+.dropdown:hover .dropdown-menu {
+  display: block;
+  min-width: 100%;
+}
+
+/* line 2, sass/_home.scss */
+.home .header {
+  text-align: center;
+  background: #253153 url("/static/img/space_medium.jpg") no-repeat center;
+  background-position: 50% calc(50% - 90px);
+  background-size: cover;
+  color: white;
+}
+/* line 8, sass/_home.scss */
+.home .header .overlay {
+  background: rgba(0, 0, 0, 0.175);
+  padding: 80px;
+}
+@media (max-width: 700px) {
+  /* line 8, sass/_home.scss */
+  .home .header .overlay {
+    padding: 20px;
+  }
+}
+@media (max-width: 700px) {
+  /* line 2, sass/_home.scss */
+  .home .header {
+    background-position: initial;
+  }
+}
+/* line 19, sass/_home.scss */
+.home .header img {
+  width: 125px;
+}
+/* line 22, sass/_home.scss */
+.home .header h1 {
+  font-size: 43px;
+  margin-top: 10px;
+}
+/* line 26, sass/_home.scss */
+.home .header h2 {
+  font-size: 22px;
+  margin-bottom: 25px;
+  text-shadow: 0.5px 0.5px 0.5px black;
+}
+/* line 31, sass/_home.scss */
+.home .header .btn {
+  border: 0.5px solid #f66303;
+}
+/* line 34, sass/_home.scss */
+.home .header .learn-more {
+  /* background: transparent; */
+  margin-left: 10px;
+}
+/* line 40, sass/_home.scss */
+.home .subnav {
+  background: #f6630a;
+  padding: 20px 0;
+}
+/* line 43, sass/_home.scss */
+.home .subnav a {
+  color: #FFC99E;
+  margin-right: 10px;
+}
+
+/* line 53, sass/_home.scss */
+.stories article, .stories .story-box, .story-suggestions article, .story-suggestions .story-box {
+  padding: 10px;
+}
+/* line 55, sass/_home.scss */
+.stories article .thumbnail, .stories .story-box .thumbnail, .story-suggestions article .thumbnail, .story-suggestions .story-box .thumbnail {
+  height: 120px;
+  background-position: 50% 50%;
+  background-size: cover;
+  width: 100%;
+  margin: -10px;
+  width: calc(100% + 20px);
+  max-width: calc(100% + 20px);
+  border: none;
+}
+/* line 65, sass/_home.scss */
+.stories article .description, .stories .story-box .description, .story-suggestions article .description, .story-suggestions .story-box .description {
+  height: 140px;
+}
+/* line 68, sass/_home.scss */
+.stories article h1, .stories .story-box h1, .story-suggestions article h1, .story-suggestions .story-box h1 {
+  font-size: 22px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 0;
+  line-height: 32px;
+}
+/* line 75, sass/_home.scss */
+.stories article p, .stories article .editor-preview-side h1, .editor-preview-side .stories article h1, .stories article .editor-preview-side h2, .editor-preview-side .stories article h2, .stories article .editor-preview-side h3, .editor-preview-side .stories article h3, .stories article .editor-preview-side h4, .editor-preview-side .stories article h4, .stories article .editor-preview-side h5, .editor-preview-side .stories article h5, .stories article .editor-preview-side h6, .editor-preview-side .stories article h6, .stories .story-box p, .stories .story-box .editor-preview-side h1, .editor-preview-side .stories .story-box h1, .stories .story-box .editor-preview-side h2, .editor-preview-side .stories .story-box h2, .stories .story-box .editor-preview-side h3, .editor-preview-side .stories .story-box h3, .stories .story-box .editor-preview-side h4, .editor-preview-side .stories .story-box h4, .stories .story-box .editor-preview-side h5, .editor-preview-side .stories .story-box h5, .stories .story-box .editor-preview-side h6, .editor-preview-side .stories .story-box h6, .story-suggestions article p, .story-suggestions article .editor-preview-side h1, .editor-preview-side .story-suggestions article h1, .story-suggestions article .editor-preview-side h2, .editor-preview-side .story-suggestions article h2, .story-suggestions article .editor-preview-side h3, .editor-preview-side .story-suggestions article h3, .story-suggestions article .editor-preview-side h4, .editor-preview-side .story-suggestions article h4, .story-suggestions article .editor-preview-side h5, .editor-preview-side .story-suggestions article h5, .story-suggestions article .editor-preview-side h6, .editor-preview-side .story-suggestions article h6, .story-suggestions .story-box p, .story-suggestions .story-box .editor-preview-side h1, .editor-preview-side .story-suggestions .story-box h1, .story-suggestions .story-box .editor-preview-side h2, .editor-preview-side .story-suggestions .story-box h2, .story-suggestions .story-box .editor-preview-side h3, .editor-preview-side .story-suggestions .story-box h3, .story-suggestions .story-box .editor-preview-side h4, .editor-preview-side .story-suggestions .story-box h4, .story-suggestions .story-box .editor-preview-side h5, .editor-preview-side .story-suggestions .story-box h5, .story-suggestions .story-box .editor-preview-side h6, .editor-preview-side .story-suggestions .story-box h6 {
+  font-size: 18px;
+}
+
+/* line 1, sass/_posts.scss */
+article {
+  background: white;
+  padding: 20px 40px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  margin-top: 20px;
+}
+/* line 8, sass/_posts.scss */
+article br {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  content: " ";
+}
+/* line 14, sass/_posts.scss */
+article img {
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+/* line 19, sass/_posts.scss */
+article .top-image {
+  margin: -40px -40px 0 -40px;
+  max-width: calc(100% + 80px);
+  width: calc(100% + 80px);
+}
+/* line 24, sass/_posts.scss */
+article .read-more {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.44);
+}
+/* line 29, sass/_posts.scss */
+article .prev, article .next {
+  margin-top: -38.5px;
+}
+@media (max-width: 500px) {
+  /* line 29, sass/_posts.scss */
+  article .prev, article .next {
+    width: 50%;
+    margin: 0;
+    margin-top: 4px;
+  }
+}
+/* line 37, sass/_posts.scss */
+article .toc {
+  display: block;
+  width: calc(100% - 150px);
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  /* line 37, sass/_posts.scss */
+  article .toc {
+    width: 100%;
+  }
+}
+/* line 47, sass/_posts.scss */
+article .toc .btn {
+  width: 100%;
+}
+/* line 50, sass/_posts.scss */
+article .toc .active {
+  font-weight: bold !important;
+}
+/* line 53, sass/_posts.scss */
+article .toc .toc-dropdown li {
+  font-size: 16px;
+}
+/* line 57, sass/_posts.scss */
+article .post-footer {
+  font-size: 14px;
+  color: #999;
+  /* background: rgba(0,0,0,0.02); */
+  /* brighter */
+  background: rgba(242, 242, 242, 0.6);
+  padding: 7px 40px;
+  margin: 5px -40px -20px -40px;
+  background-color: #fcfcfc;
+  border-top: 1px solid #e8e8e8;
+  /* Buttons/Voting */
+}
+@media (max-width: 700px) {
+  /* line 57, sass/_posts.scss */
+  article .post-footer {
+    padding: 10px;
+  }
+}
+/* line 72, sass/_posts.scss */
+article .post-footer .col-xs-12, article .post-footer .col-sm-6 {
+  padding: 0;
+}
+/* line 75, sass/_posts.scss */
+article .post-footer .label {
+  margin-right: 4px;
+  line-height: 25px;
+}
+/* line 80, sass/_posts.scss */
+article .post-footer .btn {
+  padding: 2px 8px;
+  margin-left: 5px;
+  float: left;
+}
+/* line 84, sass/_posts.scss */
+article .post-footer .btn:hover {
+  background: #e7e7e7;
+}
+/* line 89, sass/_posts.scss */
+article .post-footer .fi-arrow-up:before {
+  transform: scale(1.2, 1);
+}
+/* line 92, sass/_posts.scss */
+article .post-footer .upvoted {
+  background: #f66303;
+  border: 1px solid #f66303;
+  color: white;
+}
+/* line 98, sass/_posts.scss */
+article .post-footer .actions {
+  float: right;
+}
+@media (max-width: 600px) {
+  /* line 98, sass/_posts.scss */
+  article .post-footer .actions {
+    float: left;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 600px) {
+  /* line 104, sass/_posts.scss */
+  article .post-footer .actions .btn {
+    margin-right: 2px;
+  }
+}
+/* line 112, sass/_posts.scss */
+article .subtitle {
+  color: rgba(0, 0, 0, 0.44) !important;
+  font-weight: normal !important;
+  font-size: 1.5em !important;
+}
+@media (max-width: 768px) {
+  /* line 1, sass/_posts.scss */
+  article {
+    padding: 10px;
+  }
+  /* line 121, sass/_posts.scss */
+  article .post-footer {
+    margin: 5px -10px -10px -10px;
+    width: calc(100% + 20px);
+  }
+  /* line 125, sass/_posts.scss */
+  article h1 {
+    line-height: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  padding: 0;
+}
+/* line 136, sass/_posts.scss */
+.post-detail article {
+  border: none;
+  padding: 40px 40px 20px 40px;
+}
+@media (max-width: 768px) {
+  /* line 136, sass/_posts.scss */
+  .post-detail article {
+    padding: 10px;
+  }
+  /* line 142, sass/_posts.scss */
+  .post-detail article .post-footer {
+    margin: 5px -10px -10px -10px;
+    width: calc(100% + 20px);
+  }
+}
+
+/* line 151, sass/_posts.scss */
+.tag-description {
+  margin-top: 20px;
+}
+/* line 153, sass/_posts.scss */
+.tag-description .panel {
+  padding: 20px;
+  margin-bottom: 0;
+}
+/* line 157, sass/_posts.scss */
+.tag-description .panel h1 {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 0;
+}
+/* line 162, sass/_posts.scss */
+.tag-description .panel h2 {
+  font-weight: normal;
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Post detail */
+/* line 173, sass/_posts.scss */
+.comment {
+  /* box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.04); */
+  box-shadow: -1px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  min-height: 0;
+  padding: 20px;
+}
+/* line 178, sass/_posts.scss */
+.comment .footer {
+  float: right;
+}
+/* line 180, sass/_posts.scss */
+.comment .footer a {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.8);
+}
+/* line 183, sass/_posts.scss */
+.comment .footer a:hover, .comment .footer a:active, .comment .footer a:focus, .comment .footer a:visited {
+  color: rgba(0, 0, 0, 0.8);
+}
+/* line 187, sass/_posts.scss */
+.comment .footer .score {
+  font-weight: bold;
+}
+/* line 191, sass/_posts.scss */
+.comment .footer .comment-upvoted {
+  color: #f66303;
+}
+
+/* line 198, sass/_posts.scss */
+.comment .comment {
+  /* margin-right: -20.5px; */
+  margin-right: -40.5px;
+}
+
+/* line 205, sass/_posts.scss */
+.editor {
+  padding-top: 20px;
+  position: relative;
+  /* SimpleMDE */
+  /* No gap between category and tags */
+}
+/* line 209, sass/_posts.scss */
+.editor .dropdown {
+  z-index: 10;
+}
+/* line 211, sass/_posts.scss */
+.editor .dropdown .dropdown-menu {
+  box-sizing: border-box;
+  width: 100%;
+}
+/* line 214, sass/_posts.scss */
+.editor .dropdown .dropdown-menu .active {
+  font-weight: bold !important;
+}
+/* line 220, sass/_posts.scss */
+.editor .chapters {
+  position: absolute;
+  right: 10px;
+  top: 26px;
+  z-index: 10;
+}
+/* line 225, sass/_posts.scss */
+.editor .chapters .chapter-title {
+  width: 200px;
+  text-align: left;
+}
+@media (max-width: 700px) {
+  /* line 220, sass/_posts.scss */
+  .editor .chapters {
+    position: inherit;
+  }
+  /* line 232, sass/_posts.scss */
+  .editor .chapters .btn {
+    background: white;
+    width: 50%;
+    float: left;
+  }
+  /* line 237, sass/_posts.scss */
+  .editor .chapters .chapter-titles, .editor .chapters .chapter-title {
+    width: 100%;
+  }
+}
+/* line 242, sass/_posts.scss */
+.editor .chapters .nulis {
+  margin-right: 5px;
+  float: left;
+}
+/* line 248, sass/_posts.scss */
+.editor .editor-toolbar {
+  border-radius: 0;
+  background: white;
+  opacity: 1;
+  border: 1px solid #d4d2cd;
+  border-bottom: snow;
+}
+/* line 254, sass/_posts.scss */
+.editor .editor-toolbar a:before {
+  color: #7e878d;
+}
+/* line 258, sass/_posts.scss */
+.editor .CodeMirror {
+  border-radius: 0;
+  border-bottom: none;
+}
+/* line 262, sass/_posts.scss */
+.editor .editor-statusbar {
+  border: 1px solid #ddd;
+  background: white;
+}
+/* line 266, sass/_posts.scss */
+.editor .CodeMirror-fullscreen, .editor .editor-preview-side {
+  z-index: 1000;
+}
+/* line 270, sass/_posts.scss */
+.editor .col-sm-3, .editor .col-sm-9 {
+  padding: 0;
+}
+
+/* Edit series modal */
+/* line 277, sass/_posts.scss */
+.edit-series .price {
+  float: left;
+  width: 60%;
+}
+/* line 281, sass/_posts.scss */
+.edit-series .free-chapters {
+  float: left;
+  width: 40%;
+}
+
+/* Wordcount widget */
+/* line 289, sass/_posts.scss */
+.progressbar-outer {
+  height: 10px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: none;
+  border-bottom: none;
+  overflow: hidden;
+}
+/* line 295, sass/_posts.scss */
+.progressbar-outer .progressbar-inner {
+  height: 100%;
+  width: 0;
+  background: rgba(246, 99, 3, 0.8);
+}
+/* line 300, sass/_posts.scss */
+.progressbar-outer .marks {
+  height: 100%;
+  margin-top: -6px;
+  background: none;
+}
+/* line 304, sass/_posts.scss */
+.progressbar-outer .marks .mark {
+  height: 4px;
+  float: left;
+  width: 10%;
+  background: none;
+  border-right: 0.5px solid #dddddd;
+}
+
+/* Messages */
+/* line 316, sass/_posts.scss */
+.message p, .message .editor-preview-side h1, .editor-preview-side .message h1, .message .editor-preview-side h2, .editor-preview-side .message h2, .message .editor-preview-side h3, .editor-preview-side .message h3, .message .editor-preview-side h4, .editor-preview-side .message h4, .message .editor-preview-side h5, .editor-preview-side .message h5, .message .editor-preview-side h6, .editor-preview-side .message h6 {
+  font-size: 16px;
+}
+
+/*
+From
+https://github.com/mattdaly/Fountain.js/blob/master/app/assets/css/fountain-js.css
+*/
+/* script */
+/* line 6, sass/_fountain.scss */
+.screenplay h2 {
+  text-align: right;
+}
+
+/* line 9, sass/_fountain.scss */
+.screenplay h2.left-aligned {
+  text-align: left;
+}
+
+/* line 12, sass/_fountain.scss */
+.screenplay h3 {
+  position: relative;
+}
+
+/* line 15, sass/_fountain.scss */
+.screenplay h3:before {
+  content: attr(id);
+  font-weight: bold;
+  left: -45px;
+  position: absolute;
+}
+
+/* line 18, sass/_fountain.scss */
+.screenplay h3:after {
+  content: attr(id);
+  font-weight: bold;
+  right: -45px;
+  position: absolute;
+}
+
+/* line 22, sass/_fountain.scss */
+.screenplay div.dialogue {
+  margin-left: auto;
+  margin-right: auto;
+  width: 68%;
+}
+
+/* line 25, sass/_fountain.scss */
+.screenplay div.dialogue h4 {
+  margin-bottom: 0;
+  margin-left: 23%;
+}
+
+/* line 26, sass/_fountain.scss */
+.screenplay div.dialogue p.parenthetical, .screenplay div.dialogue .editor-preview-side h1.parenthetical, .editor-preview-side .screenplay div.dialogue h1.parenthetical, .screenplay div.dialogue .editor-preview-side h2.parenthetical, .editor-preview-side .screenplay div.dialogue h2.parenthetical, .screenplay div.dialogue .editor-preview-side h3.parenthetical, .editor-preview-side .screenplay div.dialogue h3.parenthetical, .screenplay div.dialogue .editor-preview-side h4.parenthetical, .editor-preview-side .screenplay div.dialogue h4.parenthetical, .screenplay div.dialogue .editor-preview-side h5.parenthetical, .editor-preview-side .screenplay div.dialogue h5.parenthetical, .screenplay div.dialogue .editor-preview-side h6.parenthetical, .editor-preview-side .screenplay div.dialogue h6.parenthetical {
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: 11%;
+}
+
+/* line 27, sass/_fountain.scss */
+.screenplay div.dialogue p, .screenplay div.dialogue .editor-preview-side h1, .editor-preview-side .screenplay div.dialogue h1, .screenplay div.dialogue .editor-preview-side h2, .editor-preview-side .screenplay div.dialogue h2, .screenplay div.dialogue .editor-preview-side h3, .editor-preview-side .screenplay div.dialogue h3, .screenplay div.dialogue .editor-preview-side h4, .editor-preview-side .screenplay div.dialogue h4, .screenplay div.dialogue .editor-preview-side h5, .editor-preview-side .screenplay div.dialogue h5, .screenplay div.dialogue .editor-preview-side h6, .editor-preview-side .screenplay div.dialogue h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* line 29, sass/_fountain.scss */
+.screenplay div.dual-dialogue {
+  margin: 2em 0 0.9em 2%;
+  width: 95%;
+}
+
+/* line 30, sass/_fountain.scss */
+.screenplay div.dual-dialogue div.dialogue {
+  display: inline-block;
+  margin: 0;
+  width: 45%;
+}
+
+/* line 31, sass/_fountain.scss */
+.screenplay div.dual-dialogue div.dialogue h4 {
+  margin-top: 0;
+}
+
+/* line 32, sass/_fountain.scss */
+.screenplay div.dual-dialogue div.dialogue.right {
+  float: right;
+}
+
+/* line 34, sass/_fountain.scss */
+.screenplay p.centered, .screenplay .editor-preview-side h1.centered, .editor-preview-side .screenplay h1.centered, .screenplay .editor-preview-side h2.centered, .editor-preview-side .screenplay h2.centered, .screenplay .editor-preview-side h3.centered, .editor-preview-side .screenplay h3.centered, .screenplay .editor-preview-side h4.centered, .editor-preview-side .screenplay h4.centered, .screenplay .editor-preview-side h5.centered, .editor-preview-side .screenplay h5.centered, .screenplay .editor-preview-side h6.centered, .editor-preview-side .screenplay h6.centered {
+  text-align: center;
+  width: 92.5%;
+}
+
+/* line 36, sass/_fountain.scss */
+.screenplay p.section, .screenplay .editor-preview-side h1.section, .editor-preview-side .screenplay h1.section, .screenplay .editor-preview-side h2.section, .editor-preview-side .screenplay h2.section, .screenplay .editor-preview-side h3.section, .editor-preview-side .screenplay h3.section, .screenplay .editor-preview-side h4.section, .editor-preview-side .screenplay h4.section, .screenplay .editor-preview-side h5.section, .editor-preview-side .screenplay h5.section, .screenplay .editor-preview-side h6.section, .editor-preview-side .screenplay h6.section {
+  margin-left: -30px;
+}
+
+/* line 37, sass/_fountain.scss */
+.screenplay p.synopsis, .screenplay .editor-preview-side h1.synopsis, .editor-preview-side .screenplay h1.synopsis, .screenplay .editor-preview-side h2.synopsis, .editor-preview-side .screenplay h2.synopsis, .screenplay .editor-preview-side h3.synopsis, .editor-preview-side .screenplay h3.synopsis, .screenplay .editor-preview-side h4.synopsis, .editor-preview-side .screenplay h4.synopsis, .screenplay .editor-preview-side h5.synopsis, .editor-preview-side .screenplay h5.synopsis, .screenplay .editor-preview-side h6.synopsis, .editor-preview-side .screenplay h6.synopsis {
+  margin-left: -20px;
+}
+
+/* line 39, sass/_fountain.scss */
+.screenplay span.italic {
+  font-style: italic;
+}
+
+/* line 40, sass/_fountain.scss */
+.screenplay span.bold {
+  font-weight: bold;
+}
+
+/* line 41, sass/_fountain.scss */
+.screenplay span.underline {
+  text-decoration: underline;
+}
+
+/* Custom */
+/* line 44, sass/_fountain.scss */
+.title-page {
+  text-align: center;
+}
+
+/* line 47, sass/_fountain.scss */
+.screenplay {
+  width: 80%;
+  margin: auto;
+  font-family: "Courier";
+}
+@media (max-width: 740px) {
+  /* line 47, sass/_fountain.scss */
+  .screenplay {
+    width: 100%;
+  }
+}
+/* line 54, sass/_fountain.scss */
+.screenplay h1, .screenplay h2, .screenplay h3, .screenplay h4, .screenplay h5, .screenplay h6 {
+  font-weight: normal;
+  font-family: "Courier";
+}
+
+/* line 59, sass/_fountain.scss */
+.screenplay div.dialogue {
+  margin-bottom: 20px !important;
+}
+
+/* Simplemde */
+/* script */
+/* line 71, sass/_fountain.scss */
+.editor-preview-side h2 {
+  text-align: right;
+}
+
+/* line 74, sass/_fountain.scss */
+.editor-preview-side h2.left-aligned {
+  text-align: left;
+}
+
+/* line 77, sass/_fountain.scss */
+.editor-preview-side h3 {
+  position: relative;
+}
+
+/* line 80, sass/_fountain.scss */
+.editor-preview-side h3:before {
+  content: attr(id);
+  font-weight: bold;
+  left: -45px;
+  position: absolute;
+}
+
+/* line 83, sass/_fountain.scss */
+.editor-preview-side h3:after {
+  content: attr(id);
+  font-weight: bold;
+  right: -45px;
+  position: absolute;
+}
+
+/* line 87, sass/_fountain.scss */
+.editor-preview-side div.dialogue {
+  margin-left: auto;
+  margin-right: auto;
+  width: 68%;
+}
+
+/* line 90, sass/_fountain.scss */
+.editor-preview-side div.dialogue h4 {
+  margin-bottom: 0;
+  margin-left: 23%;
+}
+
+/* line 91, sass/_fountain.scss */
+.editor-preview-side div.dialogue p.parenthetical, .editor-preview-side div.dialogue h1.parenthetical, .editor-preview-side div.dialogue h2.parenthetical, .editor-preview-side div.dialogue h3.parenthetical, .editor-preview-side div.dialogue h4.parenthetical, .editor-preview-side div.dialogue h5.parenthetical, .editor-preview-side div.dialogue h6.parenthetical {
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: 11%;
+}
+
+/* line 92, sass/_fountain.scss */
+.editor-preview-side div.dialogue p, .editor-preview-side div.dialogue h1, .editor-preview-side div.dialogue h2, .editor-preview-side div.dialogue h3, .editor-preview-side div.dialogue h4, .editor-preview-side div.dialogue h5, .editor-preview-side div.dialogue h6 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* line 94, sass/_fountain.scss */
+.editor-preview-side div.dual-dialogue {
+  margin: 2em 0 0.9em 2%;
+  width: 95%;
+}
+
+/* line 95, sass/_fountain.scss */
+.editor-preview-side div.dual-dialogue div.dialogue {
+  display: inline-block;
+  margin: 0;
+  width: 45%;
+}
+
+/* line 96, sass/_fountain.scss */
+.editor-preview-side div.dual-dialogue div.dialogue h4 {
+  margin-top: 0;
+}
+
+/* line 97, sass/_fountain.scss */
+.editor-preview-side div.dual-dialogue div.dialogue.right {
+  float: right;
+}
+
+/* line 99, sass/_fountain.scss */
+.editor-preview-side p.centered, .editor-preview-side h1.centered, .editor-preview-side h2.centered, .editor-preview-side h3.centered, .editor-preview-side h4.centered, .editor-preview-side h5.centered, .editor-preview-side h6.centered {
+  text-align: center;
+  width: 92.5%;
+}
+
+/* line 101, sass/_fountain.scss */
+.editor-preview-side p.section, .editor-preview-side h1.section, .editor-preview-side h2.section, .editor-preview-side h3.section, .editor-preview-side h4.section, .editor-preview-side h5.section, .editor-preview-side h6.section {
+  margin-left: -30px;
+}
+
+/* line 102, sass/_fountain.scss */
+.editor-preview-side p.synopsis, .editor-preview-side h1.synopsis, .editor-preview-side h2.synopsis, .editor-preview-side h3.synopsis, .editor-preview-side h4.synopsis, .editor-preview-side h5.synopsis, .editor-preview-side h6.synopsis {
+  margin-left: -20px;
+}
+
+/* line 104, sass/_fountain.scss */
+.editor-preview-side span.italic {
+  font-style: italic;
+}
+
+/* line 105, sass/_fountain.scss */
+.editor-preview-side span.bold {
+  font-weight: bold;
+}
+
+/* line 106, sass/_fountain.scss */
+.editor-preview-side span.underline {
+  text-decoration: underline;
+}
+
+/* Custom */
+/* line 109, sass/_fountain.scss */
+.editor-preview-side {
+  font-family: "Courier";
+}
+/* line 111, sass/_fountain.scss */
+.editor-preview-side h1, .editor-preview-side h2, .editor-preview-side h3, .editor-preview-side h4, .editor-preview-side h5, .editor-preview-side h6 {
+  font-weight: normal;
+  font-family: "Courier";
+  margin: 0;
+  height: 20px;
+  font-size: 21px;
+}
+/* line 119, sass/_fountain.scss */
+.editor-preview-side .title-page {
+  text-align: center;
+  height: 120px;
+}
+
+/* line 124, sass/_fountain.scss */
+.editor-preview-side div.dialogue {
+  margin-bottom: 20px !important;
+}
+
+/* line 23, sass/style.scss */
+.subscription-box {
+  margin-top: 20px;
+  display: none;
+}
+/* line 27, sass/style.scss */
+.subscription-box .cta-description {
+  padding: 0 5px;
+}
+/* line 30, sass/style.scss */
+.subscription-box .panel {
+  margin-bottom: 0;
+}
+/* line 33, sass/style.scss */
+.subscription-box .cta {
+  padding: 10px;
+  float: left;
+  margin-right: 20px;
+  font-weight: bold;
+}
+/* line 40, sass/style.scss */
+.subscription-box .email-form {
+  float: right;
+  margin-right: 10px;
+}
+@media (max-width: 500px) {
+  /* line 40, sass/style.scss */
+  .subscription-box .email-form {
+    margin-right: 0px;
+  }
+}
+/* line 46, sass/style.scss */
+.subscription-box .email-form input {
+  float: left;
+  width: 200px;
+}
+@media (max-width: 500px) {
+  /* line 46, sass/style.scss */
+  .subscription-box .email-form input {
+    width: 100%;
+  }
+}
+/* line 53, sass/style.scss */
+.subscription-box .email-form .btn {
+  float: left;
+  width: 100px;
+}
+@media (max-width: 500px) {
+  /* line 53, sass/style.scss */
+  .subscription-box .email-form .btn {
+    width: 100%;
+  }
+}
+/* line 62, sass/style.scss */
+.subscription-box input {
+  height: 40px;
+}
+/* line 66, sass/style.scss */
+.subscription-box .btn {
+  background: #f66303;
+  color: white;
+  height: 40px;
+}
+/* line 72, sass/style.scss */
+.subscription-box .close {
+  position: absolute;
+  margin: 0;
+  top: 20px;
+  right: 32px;
+  font-size: 32px;
+  z-index: 10;
+}
+@media (max-width: 740px) {
+  /* line 72, sass/style.scss */
+  .subscription-box .close {
+    top: 10px;
+    right: 30px;
+  }
+}
+
+/* line 87, sass/style.scss */
+.alert {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  padding: 22px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* Modals */
+/* Pagination */
+/* line 102, sass/style.scss */
+.pagination {
+  width: 100%;
+  margin: 10px 0;
+  padding: 5px;
+  text-align: center;
+}
+/* line 108, sass/style.scss */
+.pagination .fa {
+  margin-top: 6px;
+  color: #999;
+}
+
+/* Footer */
+/* line 116, sass/style.scss */
+footer {
+  height: 40px;
+  padding: 0 10px;
+  background-color: #333a42;
+  color: #babfc2;
+}
+/* line 121, sass/style.scss */
+footer a {
+  color: #999;
+  font-weight: bold;
+}
+
+/* Settings */
+/* line 129, sass/style.scss */
+.settings .avatar {
+  width: 40px;
+  margin-left: 10px;
+}
+/* line 133, sass/style.scss */
+.settings .background {
+  margin-left: 10px;
+  height: 40px;
+}

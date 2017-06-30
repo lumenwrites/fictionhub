@@ -1,0 +1,49 @@
+/*
+From
+https://github.com/mattdaly/Fountain.js/blob/master/app/assets/css/fountain-js.css
+*/
+/* script */
+.post-body h2 {
+    text-align: right;
+}
+.post-body h2.left-aligned {
+    text-align: left
+}
+.post-body h3 {
+    position: relative;
+}
+.post-body h3:before {
+    content: attr(id); font-weight: bold; left: -45px; position: absolute;
+}
+.post-body h3:after {
+    content: attr(id); font-weight: bold; right: -45px; position: absolute;
+}
+
+.post-body div.dialogue {
+    margin-left: auto; margin-right: auto; width: 68%;
+}
+.post-body div.dialogue h4 { margin-bottom: 0; margin-left: 23%; }
+.post-body div.dialogue p.parenthetical { margin-bottom: 0; margin-top: 0; margin-left: 11%;}
+.post-body div.dialogue p { margin-bottom: 0; margin-top: 0; }
+
+.post-body div.dual-dialogue { margin: 2em 0 0.9em 2%; auto; width: 95%; }
+.post-body div.dual-dialogue div.dialogue { display: inline-block; margin: 0; width: 45%; }
+.post-body div.dual-dialogue div.dialogue h4 { margin-top: 0;}
+.post-body div.dual-dialogue div.dialogue.right { float: right; }
+
+.post-body p.centered { text-align: center; width: 92.5%; }
+
+.post-body p.section {  margin-left: -30px; }
+.post-body p.synopsis {  margin-left: -20px; }
+
+.post-body span.italic { font-style: italic; }
+.post-body span.bold { font-weight: bold; }
+.post-body span.underline { text-decoration: underline;
+
+/* Custom */
+.post-body {
+    width: 80%;
+}
+.post-body div.dialogue {    
+    margin-bottom: 20px!important;    
+}			    
