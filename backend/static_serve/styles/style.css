@@ -1260,7 +1260,7 @@ https://github.com/mattdaly/Fountain.js/blob/master/app/assets/css/fountain-js.c
 /* line 119, sass/_fountain.scss */
 .editor-preview-side .title-page {
   text-align: center;
-  height: 120px;
+  min-height: 120px;
 }
 
 /* line 124, sass/_fountain.scss */

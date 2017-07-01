@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+ 
+<head>
+  <meta charset="utf-8">
+  {% block meta %}
+  <title>Fiction Hub</title>
+  {% include "elements/meta.html" %}  
+  {% endblock %}
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{% static "/styles/vendor.css" %}">  
+  <link rel="stylesheet" href="{% static "/styles/style.css" %}">
+  {% if user.dark_interface %}
+  <link rel="stylesheet" href="{% static "/styles/dark.css" %}">  
+  {% endif  %}
+  <meta name="flattr:id" content="xvwjrw">
+</head>
+
+<body>
+  
+  <!-- Header -->
+  {% include "elements/header.html" %}
+
+  <!-- Content -->
+  <div class="page">
+  {% block content %}
+  {% endblock %}
+  </div>
+  <!-- Footer -->
+  <footer>
+    <hr/>
+    contact@fictionhub.io
+    <div class="right">
+      Made by <a href="http://rayalez.com">Ray Alez</a>
+    </div>
+  </footer>
+  
+  </div> <!-- End .container -->
+
+  <!-- Modal forms -->
+  {% include "elements/submit.html" %}
+  {% include "elements/login.html" %}
+
+  <!-- Alerts -->
+  {% include "elements/alert-subscribed.html" %}      
+
+  <!-- Scripts -->
+  <script src="/static/js/vendor/jquery-3.2.1.min.js"></script>
+  <script src="/static/js/vendor/mousetrap.min.js"></script>
+  <script src="/static/js/autoscroll.js"></script>
+  <script src="/static/js/vendor/fountain.js"></script>
+  <script src="/static/js/screenplay.js"></script>      
+  <!-- <script src="/static/js/vendor/js.cookie-2.1.4.min.js" async></script> -->
+  <!-- <script src="/static/js/vendor/jquery.query-object.js" async></script> -->
+  <script src="{% static "/js/analytics.js" %}" async></script>  
+  <script src="{% static "/js/dist/fictionhub.js" %}" async></script>
+
+
+  {% if post %}
+  <script>
+  $(document).ready(function() {
+  // there's nothing we can do if the browser doesn't have 
+  // localStorage
+  if (window.localStorage) {
+      var ls = window.localStorage;
+      // sets the scroll to the previous, saved value, or to 0 
+      // if no value is saved.
+      var val = Number(ls['{{post.slug}}']);
+      $(document).scrollTop(val);
+      
+      // update the saved value on scroll
+      $(document).scroll(function(e) {
+          ls['{{post.slug}}'] = $(document).scrollTop();
+      });
+  }
+  }); /* End document ready */
+  </script>  
+  {% endif %}
+</body>
+
+
+
+</html>
