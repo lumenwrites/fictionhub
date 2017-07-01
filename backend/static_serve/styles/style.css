@@ -1118,43 +1118,44 @@ https://github.com/mattdaly/Fountain.js/blob/master/app/assets/css/fountain-js.c
   /* line 47, sass/_fountain.scss */
   .screenplay {
     width: 100%;
+    word-wrap: break-word;
   }
 }
-/* line 54, sass/_fountain.scss */
+/* line 55, sass/_fountain.scss */
 .screenplay h1, .screenplay h2, .screenplay h3, .screenplay h4, .screenplay h5, .screenplay h6 {
   font-weight: normal;
   font-family: "Courier";
   font-size: 22px;
   margin: 0;
 }
-/* line 60, sass/_fountain.scss */
+/* line 61, sass/_fountain.scss */
 .screenplay h3 {
   font-weight: bold;
 }
 
-/* line 64, sass/_fountain.scss */
+/* line 65, sass/_fountain.scss */
 .screenplay div.dialogue {
   margin-bottom: 20px !important;
 }
 
 /* Simplemde */
 /* script */
-/* line 76, sass/_fountain.scss */
+/* line 77, sass/_fountain.scss */
 .editor-preview-side h2 {
   text-align: right;
 }
 
-/* line 79, sass/_fountain.scss */
+/* line 80, sass/_fountain.scss */
 .editor-preview-side h2.left-aligned {
   text-align: left;
 }
 
-/* line 82, sass/_fountain.scss */
+/* line 83, sass/_fountain.scss */
 .editor-preview-side h3 {
   position: relative;
 }
 
-/* line 85, sass/_fountain.scss */
+/* line 86, sass/_fountain.scss */
 .editor-preview-side h3:before {
   content: attr(id);
   font-weight: bold;
@@ -1162,7 +1163,7 @@ https://github.com/mattdaly/Fountain.js/blob/master/app/assets/css/fountain-js.c
   position: absolute;
 }
 
-/* line 88, sass/_fountain.scss */
+/* line 89, sass/_fountain.scss */
 .editor-preview-side h3:after {
   content: attr(id);
   font-weight: bold;
@@ -1170,92 +1171,92 @@ https://github.com/mattdaly/Fountain.js/blob/master/app/assets/css/fountain-js.c
   position: absolute;
 }
 
-/* line 92, sass/_fountain.scss */
+/* line 93, sass/_fountain.scss */
 .editor-preview-side div.dialogue {
   margin-left: auto;
   margin-right: auto;
   width: 68%;
 }
 
-/* line 95, sass/_fountain.scss */
+/* line 96, sass/_fountain.scss */
 .editor-preview-side div.dialogue h4 {
   margin-bottom: 0;
   margin-left: 23%;
 }
 
-/* line 96, sass/_fountain.scss */
+/* line 97, sass/_fountain.scss */
 .editor-preview-side div.dialogue p.parenthetical, .editor-preview-side div.dialogue h1.parenthetical, .editor-preview-side div.dialogue h2.parenthetical, .editor-preview-side div.dialogue h3.parenthetical, .editor-preview-side div.dialogue h4.parenthetical, .editor-preview-side div.dialogue h5.parenthetical, .editor-preview-side div.dialogue h6.parenthetical {
   margin-bottom: 0;
   margin-top: 0;
   margin-left: 11%;
 }
 
-/* line 97, sass/_fountain.scss */
+/* line 98, sass/_fountain.scss */
 .editor-preview-side div.dialogue p, .editor-preview-side div.dialogue h1, .editor-preview-side div.dialogue h2, .editor-preview-side div.dialogue h3, .editor-preview-side div.dialogue h4, .editor-preview-side div.dialogue h5, .editor-preview-side div.dialogue h6 {
   margin-bottom: 0;
   margin-top: 0;
 }
 
-/* line 99, sass/_fountain.scss */
+/* line 100, sass/_fountain.scss */
 .editor-preview-side div.dual-dialogue {
   margin: 2em 0 0.9em 2%;
   width: 95%;
 }
 
-/* line 100, sass/_fountain.scss */
+/* line 101, sass/_fountain.scss */
 .editor-preview-side div.dual-dialogue div.dialogue {
   display: inline-block;
   margin: 0;
   width: 45%;
 }
 
-/* line 101, sass/_fountain.scss */
+/* line 102, sass/_fountain.scss */
 .editor-preview-side div.dual-dialogue div.dialogue h4 {
   margin-top: 0;
 }
 
-/* line 102, sass/_fountain.scss */
+/* line 103, sass/_fountain.scss */
 .editor-preview-side div.dual-dialogue div.dialogue.right {
   float: right;
 }
 
-/* line 104, sass/_fountain.scss */
+/* line 105, sass/_fountain.scss */
 .editor-preview-side p.centered, .editor-preview-side h1.centered, .editor-preview-side h2.centered, .editor-preview-side h3.centered, .editor-preview-side h4.centered, .editor-preview-side h5.centered, .editor-preview-side h6.centered {
   text-align: center;
   width: 92.5%;
 }
 
-/* line 106, sass/_fountain.scss */
+/* line 107, sass/_fountain.scss */
 .editor-preview-side p.section, .editor-preview-side h1.section, .editor-preview-side h2.section, .editor-preview-side h3.section, .editor-preview-side h4.section, .editor-preview-side h5.section, .editor-preview-side h6.section {
   margin-left: -30px;
 }
 
-/* line 107, sass/_fountain.scss */
+/* line 108, sass/_fountain.scss */
 .editor-preview-side p.synopsis, .editor-preview-side h1.synopsis, .editor-preview-side h2.synopsis, .editor-preview-side h3.synopsis, .editor-preview-side h4.synopsis, .editor-preview-side h5.synopsis, .editor-preview-side h6.synopsis {
   margin-left: -20px;
 }
 
-/* line 109, sass/_fountain.scss */
+/* line 110, sass/_fountain.scss */
 .editor-preview-side span.italic {
   font-style: italic;
 }
 
-/* line 110, sass/_fountain.scss */
+/* line 111, sass/_fountain.scss */
 .editor-preview-side span.bold {
   font-weight: bold;
 }
 
-/* line 111, sass/_fountain.scss */
+/* line 112, sass/_fountain.scss */
 .editor-preview-side span.underline {
   text-decoration: underline;
 }
 
 /* Custom */
-/* line 114, sass/_fountain.scss */
+/* line 115, sass/_fountain.scss */
 .editor-preview-side {
   font-family: "Courier";
 }
-/* line 116, sass/_fountain.scss */
+/* line 117, sass/_fountain.scss */
 .editor-preview-side h1, .editor-preview-side h2, .editor-preview-side h3, .editor-preview-side h4, .editor-preview-side h5, .editor-preview-side h6 {
   font-weight: normal;
   font-family: "Courier";
@@ -1263,13 +1264,13 @@ https://github.com/mattdaly/Fountain.js/blob/master/app/assets/css/fountain-js.c
   height: 20px;
   font-size: 21px;
 }
-/* line 124, sass/_fountain.scss */
+/* line 125, sass/_fountain.scss */
 .editor-preview-side .title-page {
   text-align: center;
   min-height: 120px;
 }
 
-/* line 129, sass/_fountain.scss */
+/* line 130, sass/_fountain.scss */
 .editor-preview-side div.dialogue {
   margin-bottom: 20px !important;
 }
