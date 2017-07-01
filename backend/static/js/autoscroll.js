@@ -7,11 +7,11 @@ Mousetrap.bind('s', function(e) {
     pageScroll(10);
 });
 
-Mousetrap.bind('shift+s', function(e) {
+Mousetrap.bind('w', function(e) {
     window.clearTimeout(scroll);
 });
 
-Mousetrap.bind('esc', function(e) {
+Mousetrap.bind('q', function(e) {
     // Set a fake timeout to get the highest timeout id
     var highestTimeoutId = setTimeout(";");
     for (var i = 0 ; i < highestTimeoutId ; i++) {
