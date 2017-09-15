@@ -8,3 +8,4 @@ This project is still very much work in progress, so feel free to suggest improv
 
 If you are looking for web development or consulting services - come visit my latest project [Startup lab](https://startuplab.io/).
 
+If you have found this useful, you can also check out another big project I have open sourced recently - [a tree text editor for writers](https://github.com/raymestalez/nulis).
