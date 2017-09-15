@@ -1,0 +1,179 @@
+html, body {
+    font-family: "Open Sans", sans-serif;
+    /* background: $background; */
+    /* background: #f6f3ea; */
+    /* background: #fdf5e7 url("/static/img/bg.png");     */
+    /* background: #faf7f1; */ /* bright */
+    /* background: #faf6ef;  *//* mid */
+    background: #faf4e9; /* more staturated */
+    color: $black;
+}
+
+.page {
+    min-height: calc(100vh - 140px);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+      background-color: #F2F2F2;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background-color: rgba(110, 110, 110, 0.2);
+}
+
+/* Typography */
+article h1 {
+    /* font-size: 36px; */
+    font-size: 32px;    
+    font-weight: bold;
+    border-bottom: 1px solid #dddddd;
+    line-height: 50px;
+    margin-top: 0;
+    color: $black-bluish;
+}
+article h2, h2 a {
+    font-size: 30px;
+    font-weight: bold;
+    color: $black-bluish;
+}
+h3 {
+    font-size: 24px;
+    font-weight: bold;		
+}
+h4 {
+    font-size: 24px;
+    font-weight: bold;		
+}
+
+article p {
+    font-size: 22px;
+    margin-bottom:20px;
+}
+
+
+
+
+a {
+    color: $black;
+    &:hover, &:active, &:focus, &:visited {
+	color: $black;
+	text-decoration: none;
+    }
+    cursor: pointer;
+}
+
+article .panel a, article p a {
+    color: $blue;
+    &:hover, &:active, &:focus, &:visited {
+        color: $blue;
+    }
+}
+
+article li {
+    font-size: 22px;
+}
+article ul {
+    padding-left: 22px;
+}
+hr {
+    border:none;
+    border-top: 1px solid rgba(0,0,0,.15);
+    margin: 10px 0;
+}
+
+textarea, textarea:focus, textarea:active {
+    resize: none;
+    box-shadow: none!important;    
+}
+
+
+/* Customize bootstrap */
+
+.container {
+    max-width: 900px;
+}
+.btn-default {
+    border-radius: 2px;
+    background: transparent;
+    color: $dark-gray;
+    border: 1px solid $gray;
+}
+.btn-primary {
+    color: white;
+    height: 40px;
+    &:hover, &:active, &:focus, &:visited {
+	color: white;
+    }
+}
+.btn-cta {
+    background: $orange;
+    border: none;
+    color: white;
+    &:hover, &:active, &:focus, &:visited {
+	color: white;
+    }
+}
+
+.btn-cta-large {
+    @extend .btn-cta;
+    padding: 15px 20px; 
+}
+.btn-disabled {
+    background: gray;
+    color: white;
+    height: 40px;
+    cursor: default;
+    &:hover, &:active, &:focus, &:visited {
+	color: white;
+    }
+}
+
+.form-control {
+    height: 40px;
+}
+
+.form-control-cta {
+    @extend .form-control;
+    height: auto;
+    padding: 12px 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.close {
+    margin: 20px;
+}
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+article .panel {
+    border: 1px solid #e9e9e9;
+    webkit-box-shadow: none;
+    box-shadow: none;
+    padding: 20px;
+    background: #fcfcfc;
+}
+
+.label {
+    a {
+	color: $black;
+	&:hover, &:active, &:focus, &:visited  {
+	    color: $black;
+	    text-decoration:none;
+	}
+    }
+}

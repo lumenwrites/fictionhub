@@ -1,0 +1,25 @@
+<!-- Pagination -->
+{% if is_paginated %}
+<div class="pagination panel">
+  <span class="step-links">
+    {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}">
+          <i class="fa fa-chevron-left left" style="margin: 5px 0;"></i>
+    </a>
+    {% endif %}
+
+    <span class="current">
+      Page {{ page_obj.number }}
+    </span>
+
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">
+      <i class="fa fa-chevron-right right"></i>    
+    </a>
+    {% endif %}
+  </span>
+</div>
+{% else %}
+<!-- If not paginated -->
+<br/>
+{% endif %}

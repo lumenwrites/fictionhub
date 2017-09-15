@@ -1,13 +1,40 @@
 {% extends "base.html" %}
 {% load static %}
+{% load markdownify %}
+{% load title %}
 
+{% block meta %}
+  <!-- Meta -->
+  <title>{{post | title | striptags }} - Fiction Hub</title>
+  <meta name="description"
+	content="{{post | markdownify:True | striptags }}">
+  <meta name="keywords" content="Fiction, SciFi, Fantasy, Writing, Reading, Stories.">
+  <meta name="author" content="Ray Alez">
+  <link rel="canonical" href="https://fictionhub.io/post/{{post.slug}}">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
+  <link rel="shortcut icon" href="https://fictionhub.io/static/img/favicon.ico"/>
+  <!-- Facebook -->
+  <meta property="og:description" content="{{post | markdownify:True | striptags }}">
+  <meta property="og:url" content="https://fictionhub.io{{request.path}}">
+  <meta property="og:image" content="https://fictionhub.io/static/img/social.png">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://fictionhub.io{{request.path}}" />
+  <meta property="twitter:title" content="{{post | title | striptags }} - Fiction Hub" />
+  <meta property="twitter:description" content="{{post | markdownify:True | striptags }}" />
+  <meta property="twitter:creator" content="@raymestalez" />
+  <meta property="twitter:site" content="@fictionhub" />  
+  <meta property="twitter:image" content="https://fictionhub.io/static/img/social.png" />  
+{% endblock %}
 {% block content %}
-<div class="container">
+{# {% include "elements/subheader.html" %} #}
+<div class="container post-detail">
   <div class="row">
     <div class="col-md-12 col-sm-12 post-detail">
-      {% include "posts/post.html" %}
-      <br/>
+      {% include "posts/post.html" with truncate=False %}
       {% include "elements/subscription-box.html" %}
+      {% include "elements/story-suggestions.html" %}
       <br/>
       {% include "comments/comments.html" %}        
     </div>
