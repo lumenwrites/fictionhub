@@ -1,6 +1,6 @@
 from datetime import datetime
 import uuid # for unique slug
-
+from markdown import Markdown   # To parse meta data
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.conf import settings
@@ -9,6 +9,7 @@ from django.db.models import permalink
 from tags.models import Tag
 from categories.models import Category
 from series.models import Series
+
 
 
 # Generate unique slug
@@ -61,8 +62,18 @@ class Post(models.Model):
     def save(self, slug="", *args, **kwargs):
         if not self.id:
             self.created_at = datetime.now()
-            firstline = self.body.splitlines()[0]
-            self.slug = unique_slug(firstline[:30])
+            
+            # Parsing meta data (if it's there, for a Screenplay)
+            md = Markdown(extensions = ['markdown.extensions.meta'])
+            html = md.convert(self.body)    
+            if "title" in md.Meta:
+                # If it's a screenplay
+                title = md.Meta["title"]
+                self.slug = unique_slug(title)                
+            else:
+                # Turn header or the first line into a slug
+                firstline = self.body.splitlines()[0]
+                self.slug = unique_slug(firstline[:30])
 
         return super(Post, self).save(*args, **kwargs)
     

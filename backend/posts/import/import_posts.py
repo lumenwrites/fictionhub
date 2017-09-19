@@ -4,10 +4,10 @@ from profiles.models import User
 from categories.models import Category
 from series.models import Series
 
-with open('posts.json') as data_file:    
+with open('posts/import/posts.json') as data_file:    
     all_posts = json.load(data_file)
 
-with open('users.json') as data_file:    
+with open('posts/import/users.json') as data_file:    
     all_users = json.load(data_file)
 
 posts = []

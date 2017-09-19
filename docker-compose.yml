@@ -8,6 +8,9 @@ services:
     # Volume to preserve database data
     volumes:
       - ./pgdata:/var/lib/postgresql/data
+    # Local postgres doesnt work, using docker's one for nowzies
+    ports:
+      - '5432:8000'
 
   backend:
     build: ./backend
