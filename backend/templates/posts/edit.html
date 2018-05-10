@@ -185,38 +185,6 @@
 		 placeholder="Series Title"
 		 value="{{post.series.title}}">
 	  <br/>
-
-	  <!-- Price and Free Chapters -->
-	  <div class="price">
-	    <label class="control-label" for="series-price">Price:</label>
-	    <select name="price" class="form-control col-xs-8">
-	      <option value="0"
-		      {% if post.series.price == 0 %}selected{% endif %}>
-		$0
-	      </option>
-	      <option value="5"
-		      {% if post.series.price == 5 %}selected{% endif %}>
-		$5 (you make $4)
-	      </option>
-	      <option value="10"
-		      {% if post.series.price == 10 %}selected{% endif %}>
-		$10 (you make $9)
-	      </option>
-	      <option value="15"
-		      {% if post.series.price == 15 %}selected{% endif %}>
-		$15 (you make $14)
-	      </option>
-	    </select>
-	  </div>
-
-	  <div class="free-chapters">
-	    <label class="control-label" for="free-chapters">Free Chapters:</label>
-            <input class="form-control" name="free_chapters"
-		   type="number" maxlength="254"
-		   value="{{post.series.free_chapters}}">
-	  </div>
-	  <div class="clearfix"></div> <br/>
-
 	  <!-- Buttons -->
 	  <button class="btn btn-primary right"
 		  type="submit">

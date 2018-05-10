@@ -6,9 +6,9 @@ from django.conf import settings
 
 class Message(models.Model):
     from_user = models.ForeignKey(settings.AUTH_USER_MODEL,
-                                  related_name="sent_messages", default="")
+                                  related_name="sent_messages", default="", on_delete=models.CASCADE)
     to_user = models.ForeignKey(settings.AUTH_USER_MODEL,
-                                related_name="received_messages", default="") 
+                                related_name="received_messages", default="", on_delete=models.CASCADE) 
     body = models.TextField(default="", null=True, blank=True)
 
     created_at = models.DateTimeField(blank=True, null=True)

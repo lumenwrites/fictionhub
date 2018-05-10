@@ -52,7 +52,7 @@ class Post(models.Model):
 
     # Chapter
     series = models.ForeignKey('series.Series', related_name="chapters",
-                               default=None, null=True, blank=True)
+                               default=None, null=True, blank=True, on_delete=models.CASCADE)
     # chapter_number = models.IntegerField(default=1) 
 
 

@@ -1,13 +1,11 @@
-Django==1.10
+Django
 djangorestframework
 psycopg2
 django-cors-headers
 
-Mastodon.py
-								
 markdown
 html2text
-pycurl
+# pycurl
 bleach
 beautifulsoup4
 

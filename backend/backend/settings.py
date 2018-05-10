@@ -97,7 +97,7 @@ DATABASES = {
         'NAME':"fictionhub",
         'USER':os.environ["POSTGRES_USER"],
         'PASSWORD':os.environ["POSTGRES_PASSWORD"],
-        'HOST': 'postgres',
+        'HOST': '127.0.0.1',
         'PORT': '',
     }
 }

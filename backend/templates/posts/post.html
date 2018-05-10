@@ -2,51 +2,10 @@
 {% load markdownify %}
 {% load title %}
 <article class="post">
-  {% if paywall %}
-  <h1>{{post|title|striptags}}</h1>
-  <p>This is a premium chapter. Buy the rest of the series to read more!</p>
-  {% if paywall == "login" %}
-  <a class="btn btn-cta full-width" data-toggle="modal" data-target="#login">
-    <i class="fa fa-paypal"></i>
-    Read the rest of the series (${{post.series.price|stringformat:'d'}})
-  </a>
-  {% else %}
-  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-    <input type="hidden" name="cmd" value="_s-xclick">
-    <!-- Pass data custom vars -->
-    <input type="hidden" name="item_name" value="{{post.series.slug}}"/>
-    <input type="hidden" name="username" value="{{user.username}}"/>
-    <!-- IPN, instant payment notification, supposed to post data here. -->
-    <input name="notify_url" type="hidden"
-	   value="https://fictionhub.io/series/{{post.series.slug}}/{{user.username}}/purchase" />
-    <!-- Or send post request with the info to this url -->
-    <input type="hidden" name="rm" value="2">    
-    <input type="hidden" name="return"
-	   value="https://fictionhub.io/series/{{post.series.slug}}/{{user.username}}/purchase">
-    <input name="return_url" type="hidden"
-	   value="https://fictionhub.io/series/{{post.series.slug}}/{{user.username}}/purchase" />
-    <!-- Cancel button? Not sure if works -->
-    <input type="hidden" name="cbt" value="Cancel">
-    <input type="hidden" name="cancel_return"
-	   value="https://fictionhub.io{{request.path}}">
-    <input type="hidden" name="hosted_button_id" value="C92NJKCFUTC6Y">
-    <!-- Set price dropdown value -->
-    <input type="hidden" name="os0" value="{{post.series.price|stringformat:'d'}}">
-    <input type="hidden" name="currency_code" value="USD">
-    <button class="btn btn-cta full-width" type="submit">
-      <i class="fa fa-paypal"></i>
-      Read the rest of the series (${{post.series.price|stringformat:'d'}})
-    </button>
-  </form>
-  {% endif %} <!-- endif login modal -->
-
-  <div class="clearfix"></div> <br/>
-  {% else %}  
   <!-- Post body -->
   <div class="post-body">
   {{post | markdownify:truncate | safe}}
   </div>
-  {% endif %} <!-- End if price -->
 
   <div class="clearfix"></div><br/>
   <!-- Prev/Next chapters -->
