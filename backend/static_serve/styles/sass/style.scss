@@ -12,6 +12,7 @@ $gray: #999;
 $dark-gray: rgba(0,0,0,.6);
 $light-gray: #e7e7e7;
 $black-bluish: #3d454b;
+$link:#008cba;
 
 @import 'helpers';
 @import 'general';
@@ -84,6 +85,13 @@ $black-bluish: #3d454b;
     }
 }
 
+.panel.cta {
+    font-weight: normal;
+    width: 100%;
+    a {
+	color: $link;
+    }
+}
 .alert {
     position: absolute;
     top: 0;
