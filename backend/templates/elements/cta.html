@@ -1,0 +1,24 @@
+{% if not user.is_authenticated and not profile %}
+<div class="row subscription-box"  id="subscription-box">
+  <div class="col-xs-12">
+    <div class="panel cta">
+      <p>If you like this site, you should check out my other projects:</p>
+      <ul>
+	<li>
+	  Outline your stories with
+	  <b><a href="https://nulis.io/?src=fictionhub">Nulis</a></b></li>
+	<li>
+	  Develop a daily writing habit with
+	  <b><a href="https://writingstreak.io/?src=fictionhub">
+	      Writing Streak
+	  </a></b>
+	</li>
+	<li>
+	  Read excellent screenplays at
+	  <b><a href="https://screenplays.io/?src=fictionhub">screenplays.io</a></b>
+	</li>
+      </ul>
+    </div> <!-- End .panel -->
+  </div> <!-- End .col-md-12 -->
+</div> <!-- End .subscription-box -->
+{% endif %}

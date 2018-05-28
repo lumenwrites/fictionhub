@@ -295,12 +295,12 @@ class PostDetailView(DetailView):
             user = self.request.user
             # Show paywall if series isn't free, and isn't purchased by user,
             # and this isn't a free chapter
-            if user != post.author and user.is_authenticated() \
+            if user != post.author and user.is_authenticated \
                and post.series.price > 0  \
                and not post.series in user.purchased_series.all() \
                and this_index > post.series.free_chapters - 1:
                 paywall = True
-            if not user.is_authenticated() \
+            if not user.is_authenticated \
                and post.series.price > 0  \
                and this_index > post.series.free_chapters - 1:
                 paywall = "login"
